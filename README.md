@@ -1,8 +1,8 @@
-# Handlebars::Helpers
+# Handlebars Helpers
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/handlebars/helpers`. To experiment with that code, run `bin/console` for an interactive prompt.
+> Handlebars Helpers provides (Nx) handlebars helpers across (Ny) categories
 
-TODO: Delete this and the text above, and describe your gem
+When using the source code for this gem, start by running `bin/setup` to install locally or `bundle install`
 
 ## Installation
 
@@ -14,15 +14,32 @@ gem 'handlebars-helpers'
 
 And then execute:
 
-    $ bundle install
+```bash
+bundle install
+```
 
 Or install it yourself as:
 
-    $ gem install handlebars-helpers
+```bash
+gem install handlebars-helpers
+```
+
+## Stories
+
+### Main Story
+
+
+
+See all [stories](./STORIES.md)
+
+### Featured Stories
+
 
 ## Usage
 
-TODO: Write usage instructions here
+See all [usage examples](./USAGE.md)
+
+
 
 ## Development
 
@@ -32,8 +49,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/handlebars-helpers. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/handlebars-helpers/blob/master/CODE_OF_CONDUCT.md).
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/klueless-io/handlebars-helpers. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -41,4 +57,8 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Handlebars::Helpers project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/handlebars-helpers/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Handlebars Helpers project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/klueless-io/handlebars-helpers/blob/master/CODE_OF_CONDUCT.md).
+
+## Copyright
+
+Copyright (c) David Cruwys. See [MIT License](LICENSE.txt) for further details.
