@@ -1,6 +1,6 @@
 # Handlebars Helpers
 
-> Handlebars Helpers provides (Nx) handlebars helpers across (Ny) categories
+> Handlebars Helpers is a library that provides (x) handlebars helpers across (y) categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
 
 As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I have a rich templating experience
 

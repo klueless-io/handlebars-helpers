@@ -1,6 +1,6 @@
 # Handlebars Helpers
 
-> Handlebars Helpers provides (Nx) handlebars helpers across (Ny) categories
+> Handlebars Helpers is a library that provides (x) handlebars helpers across (y) categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
 
 As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I have a rich templating experience
 
@@ -8,9 +8,17 @@ As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I h
 
 ### Stories next on list
 
-As a Developer, I can DO_SOMETHING, so that I QUALITY_OF_LIFE
+As a Developer, I can easily render Handlebar Templates, so that I am more efficient
 
-- xxxx
+- Build simplified API for rendering templates
+
+As a Developer, I can alias existing helpers, so that I have helper names that make sense to me
+
+- Provide a flexible mechanism for template aliases
+
+As a Developer, I can load specific groups of helpers, so that memory consumption can be minimized
+
+- Lazy load ruby helpers on an as needed basis
 
 ### Tasks next on list
 
@@ -19,16 +27,16 @@ Setup RubyGems and RubyDoc
 - Build and deploy gem to rubygems.org
 - Attach documentation to rubydoc.info
 
+## Stories and tasks
+
+### Tasks - completed
+
 Setup GitHub Action (test and lint)
 
 - Setup Rspec action
 - Setup RuboCop action
 
-## Stories and tasks
-
-### Tasks - completed
-
-Setup project management, requirement and planning documents
+Setup project management, requirement and SCRUM documents
 
 - Setup readme file
 - Setup user stories and tasks
@@ -38,7 +46,7 @@ Setup project management, requirement and planning documents
 Setup new Ruby GEM
 
 - Build out a standard GEM structure
-- Add semantic versioning
+- Add automated semantic versioning
 - Add Rspec unit testing framework
 - Add RuboCop linting
 - Add Guard for automatic watch and test
