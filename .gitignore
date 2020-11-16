@@ -12,6 +12,7 @@
 /bin/runonce/
 handlebars_helpers.yml
 
+/_/
 /.bundle/
 /.history/
 /.yardoc
