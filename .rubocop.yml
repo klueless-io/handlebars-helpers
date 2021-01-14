@@ -1,3 +1,4 @@
+require: rubocop-rake
 inherit_from: .rubocop_todo.yml
 
 AllCops:
@@ -12,7 +13,7 @@ Metrics/BlockLength:
   Exclude:
     - "**/spec/**/*"
     - "*.gemspec"
-  ExcludeMethods:
+  IgnoredMethods:
     - configure
     - context
     - define

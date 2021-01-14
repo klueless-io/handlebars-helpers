@@ -7,6 +7,7 @@ RSpec::Core::RakeTask.new(:spec)
 
 require 'rake/extensiontask'
 
+desc 'Compile all the extensions'
 task build: :compile
 
 Rake::ExtensionTask.new('handlebars_helpers') do |ext|
