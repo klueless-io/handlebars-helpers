@@ -13,7 +13,7 @@ module Handlebars
         end
 
         # Get tokenizer to use when cleaning strings for case changes.
-        # 
+        #
         # When not configured, it will default to [Handlebars::Helpers::StringTokenizer]
         def tokenizer
           unless defined?(@tokenizer)
