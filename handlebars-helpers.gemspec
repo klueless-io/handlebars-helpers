@@ -39,4 +39,5 @@ Gem::Specification.new do |spec|
   # spec.extensions    = ['ext/handlebars_helpers/extconf.rb']
 
   # spec.add_dependency 'tty-box',         '~> 0.5.0'
+  spec.add_dependency 'activesupport'
 end
