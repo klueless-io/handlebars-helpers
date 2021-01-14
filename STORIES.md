@@ -20,16 +20,14 @@ As a Developer, I can load specific groups of helpers, so that memory consumptio
 
 - Lazy load ruby helpers on an as needed basis
 
-### Tasks next on list
-
-Setup RubyGems and RubyDoc
-
-- Build and deploy gem to rubygems.org
-- Attach documentation to rubydoc.info
-
 ## Stories and tasks
 
 ### Tasks - completed
+
+Setup RubyGems and RubyDoc
+
+- Build and deploy gem to [rubygems.org](https://rubygems.org/gems/handlebars-helpers)
+- Attach documentation to [rubydoc.info](https://rubydoc.info/github/klueless-io/handlebars-helpers/master)
 
 Setup GitHub Action (test and lint)
 
