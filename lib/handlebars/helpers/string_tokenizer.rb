@@ -11,7 +11,7 @@ module Handlebars
       def self.parse(value)
         return '' if value.nil?
 
-        value.parameterize#(separator: ' ')
+        value.parameterize # (separator: ' ')
       end
     end
   end
