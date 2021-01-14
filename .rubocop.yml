@@ -10,9 +10,9 @@ AllCops:
 
 Metrics/BlockLength:
   Exclude:
-    - "**/spec/*"
+    - "**/spec/**/*"
     - "*.gemspec"
-  ExcludedMethods:
+  ExcludeMethods:
     - configure
     - context
     - define
