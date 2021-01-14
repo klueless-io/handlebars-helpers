@@ -29,6 +29,7 @@ handlebars_helpers.yml
 *.so
 *.o
 *.a
+*.gem
 mkmf.log
 
 # Ruby Version
