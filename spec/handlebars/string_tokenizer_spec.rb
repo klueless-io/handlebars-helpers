@@ -84,7 +84,7 @@ RSpec.describe Handlebars::Helpers::StringTokenizer do
         context 'when compress_suffix_numerals is false' do
           let(:compress_prefix_numerals) { false }
 
-          fit { is_expected.to eq('99-the-quick-brown-fox') }
+          it { is_expected.to eq('99-the-quick-brown-fox') }
         end
       end
     end
