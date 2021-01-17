@@ -11,7 +11,8 @@ module Handlebars
       def self.parse(value,
                      preserve_case: false,
                      compress_prefix_numerals: true,
-                     compress_suffix_numerals: true)
+                     compress_suffix_numerals: true,
+                     separator: '-')
         return '' if value.nil?
 
         # Insert space before any lowercaseUppercase
@@ -28,7 +29,7 @@ module Handlebars
         # Technique2: make sure that trailing space followed by number is compressed
         value = value.gsub(/(\s*)(\d*)$/, '\2') if compress_suffix_numerals
 
-        value.parameterize(preserve_case: preserve_case) # (separator: ' ')
+        value.parameterize(preserve_case: preserve_case, separator: separator) # (separator: ' ')
       end
     end
   end
