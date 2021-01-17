@@ -49,9 +49,7 @@ RSpec.describe Handlebars::Helpers::Formatters::CodeRuby do
 
       let(:value) { 'Admin::Post' }
 
-      fit { is_expected.to eq('post_id') }
-
-      it_behaves_like 'nil will parse to empty'
+      it { is_expected.to eq('post_id') }
     end
 
     describe '#tableize' do
