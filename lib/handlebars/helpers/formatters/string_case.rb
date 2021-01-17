@@ -30,6 +30,21 @@ module Handlebars
           @tokenizer
         end
 
+        # convert to back slash notation
+        #
+        # @side effects
+        #
+        #   Text casing is preserved.
+        #
+        # @example
+        #
+        #   puts back_slash('the Quick brown Fox 99')
+        #
+        #   the\quick\brown\fox99
+        def back_slash(value)
+          tokenizer.parse(value, preserve_case: true, separator: '\\')
+        end
+
         # camel case the characters in the given 'string'.
         #
         # @example
@@ -43,6 +58,21 @@ module Handlebars
           tokenizer.parse(value).underscore.camelize
         end
 
+        # convert to dash notation
+        #
+        # @side effects
+        #
+        #   All text is in lower case
+        #
+        # @example
+        #
+        #   puts dasherize('the Quick brown Fox 99')
+        #
+        #   the-quick-brown-fox99
+        def dasherize(value)
+          tokenizer.parse(value)
+        end
+
         # camel case the characters in the given 'string', with the first character as lower case.
         #
         # @example
@@ -53,7 +83,7 @@ module Handlebars
         #
         # @return [String] value converted to camel case
         def lamel(value)
-          tokenizer.parse(value).underscore.camelize(:lower)
+          tokenizer.parse(value, separator: '_').camelize(:lower)
         end
 
         # snake case the characters in the given 'string'.
@@ -70,8 +100,7 @@ module Handlebars
         #
         # @return [String] value converted to snake case
         def snake(value)
-          # tokenizer.parse(value).underscore.camelize(:lower)
-          tokenizer.parse(value).underscore
+          tokenizer.parse(value, separator: '_')
         end
 
         # convert to slash (aka forward slash) notation
@@ -89,19 +118,46 @@ module Handlebars
           tokenizer.parse(value, preserve_case: true, separator: '/')
         end
 
-        # convert to back slash notation
+        # convert text to title case
         #
         # @side effects
         #
-        #   Text casing is preserved.
+        #   Text casing set to upper case for first letters.
+        #   Numbers will maintain their spacing
         #
         # @example
         #
-        #   puts back_slash('the Quick brown Fox 99')
+        #   puts titleize('the Quick brown Fox 99')
         #
-        #   the\quick\brown\fox99
-        def back_slash(value)
-          tokenizer.parse(value, preserve_case: true, separator: '\\')
+        #   The Quick Brown Fox 99
+        def titleize(value)
+          tokenizer.parse(value,
+                          separator: ' ',
+                          preserve_case: true,
+                          compress_prefix_numerals: false,
+                          compress_suffix_numerals: false)
+                   .titleize
+        end
+
+        # convert text to human case
+        #
+        # @side effects
+        #
+        #   Text casing set to upper case for first letter only.
+        #   Numbers will maintain their spacing
+        #
+        # @example
+        #
+        #   puts titleize('the Quick brown Fox 99')
+        #
+        #   The quick brown fox 99
+        def humanize(value)
+          tokenizer.parse(value,
+                          separator: ' ',
+                          preserve_case: true,
+                          compress_prefix_numerals: false,
+                          compress_suffix_numerals: false)
+                   .humanize
         end
       end
     end
