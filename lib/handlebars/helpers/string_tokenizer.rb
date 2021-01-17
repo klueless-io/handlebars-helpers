@@ -8,10 +8,27 @@ module Handlebars
     # represented in a consistent fashion
     class StringTokenizer
       # Tokenize string
-      def self.parse(value)
+      def self.parse(value,
+                     preserve_case: false,
+                     compress_prefix_numerals: true,
+                     compress_suffix_numerals: true)
         return '' if value.nil?
 
-        value.parameterize # (separator: ' ')
+        # Insert space before any lowercaseUppercase
+        value = value.gsub(/(?<=[a-z])(?=[A-Z])/, ' ')
+
+        # make sure that any numbers followed by space and then some text has the white space removed
+        value = value.gsub(/^(\d*)(\s*)/, '\1') if compress_prefix_numerals
+
+        # Technique1: make sure that trailing space followed by number is compressed
+        # NOTE: named groups don't seem to work with \1, \2 etc.
+        # ex = /(?<space>[\s]*)(?<number>[\d]*)$/
+        # value  =value.sub(ex) { |_| Regexp.last_match[:number] }
+
+        # Technique2: make sure that trailing space followed by number is compressed
+        value = value.gsub(/(\s*)(\d*)$/, '\2') if compress_suffix_numerals
+
+        value.parameterize(preserve_case: preserve_case) # (separator: ' ')
       end
     end
   end
