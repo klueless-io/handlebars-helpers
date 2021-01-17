@@ -89,6 +89,32 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'TwentyFive66'
     end
 
+    describe '#classify' do
+      subject { formatter.classify(value) }
+
+      let(:value) { 'the_quick_brown_foxes' }
+
+      it { is_expected.to eq('TheQuickBrownFox') }
+
+      it_behaves_like 'nil will parse to empty'
+    end
+
+    describe '#constantize' do
+      subject { formatter.constantize(value) }
+
+      it { is_expected.to eq('THE_QUICK_BROWN_FOX') }
+
+      it_behaves_like 'nil will parse to empty'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing number',
+                      'TwentyFive66',
+                      'TWENTY_FIVE66'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing space and number',
+                      'Twenty Five 66',
+                      'TWENTY_FIVE66'
+    end
+
     describe '#dasherize' do
       subject { formatter.dasherize(value) }
 
@@ -155,6 +181,14 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'trailing space and number',
                       'Twenty Five 66',
                       'Twenty/Five66'
+    end
+
+    describe '#tableize' do
+      subject { formatter.tableize(value) }
+
+      it { is_expected.to eq('the_quick_brown_foxes') }
+
+      it_behaves_like 'nil will parse to empty'
     end
 
     describe '#titleize' do
