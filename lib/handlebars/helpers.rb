@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'handlebars/helpers/version'
+require 'handlebars/helpers/template'
+require 'handlebars/helpers/registration'
 
 module Handlebars
   module Helpers
