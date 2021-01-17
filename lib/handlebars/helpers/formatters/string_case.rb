@@ -39,11 +39,23 @@ module Handlebars
         #
         # @example
         #
-        #   puts camel('the quick brown fox')
+        #   puts lamel('the quick brown fox')
         #
         #   theQuickBrownFox
         def lamel(value)
           tokenizer.parse(value).underscore.camelize(:lower)
+        end
+
+        # snake case the characters in the given 'string'.
+        #
+        # @example
+        #
+        #   puts snake('the quick brown fox')
+        #
+        #   the_quick_brown_fox
+        def snake(value)
+          # tokenizer.parse(value).underscore.camelize(:lower)
+          tokenizer.parse(value).underscore
         end
       end
     end
