@@ -6,6 +6,8 @@ module Handlebars
   module Helpers
     module Formatters
       # Extra general purpose string manipulation methods
+      #
+      # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
       module StringExtra
         # Append the specified `suffix` to the given string.
         def append(value, suffix)

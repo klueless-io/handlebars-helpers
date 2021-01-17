@@ -62,22 +62,6 @@ module Handlebars
           tokenizer.parse(value).underscore.camelize
         end
 
-        # Creates a class name from a plural table name like Rails does for table names to models.
-        #
-        # Note: This does not play well with number suffixes,
-        #       I'm not sure that the edge case is really needed.
-        #
-        # @example
-        #
-        #   puts classify('the_quick_brown_foxes')
-        #
-        #   TheQuickBrownFox
-        #
-        # @return [String] value converted to ruby class notation
-        def classify(value)
-          tokenizer.parse(value).classify
-        end
-
         # CONSTANT case the characters in the given 'string'.
         #
         # @example
@@ -153,22 +137,6 @@ module Handlebars
         # @return [String] value converted forward slash notation
         def slash(value)
           tokenizer.parse(value, preserve_case: true, separator: '/')
-        end
-
-        # Creates the name of a table like Rails does for models to table names.
-        #
-        # Note: This does not play well with number suffixes,
-        #       I'm not sure that the edge case is really needed.
-        #
-        # @example
-        #
-        #   puts titleize('the Quick brown Fox')
-        #
-        #   the_quick_brown_foxes
-        #
-        # @return [String] value converted to title case
-        def tableize(value)
-          tokenizer.parse(value).tableize
         end
 
         # convert text to title case

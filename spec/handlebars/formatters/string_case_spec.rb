@@ -56,7 +56,7 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
     end
   end
 
-  context 'case change methods' do
+  context 'formatter methods' do
     describe '#back_slash' do
       subject { formatter.back_slash(value) }
 
@@ -87,16 +87,6 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'trailing space and number',
                       'twenty five 66',
                       'TwentyFive66'
-    end
-
-    describe '#classify' do
-      subject { formatter.classify(value) }
-
-      let(:value) { 'the_quick_brown_foxes' }
-
-      it { is_expected.to eq('TheQuickBrownFox') }
-
-      it_behaves_like 'nil will parse to empty'
     end
 
     describe '#constantize' do
@@ -181,14 +171,6 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'trailing space and number',
                       'Twenty Five 66',
                       'Twenty/Five66'
-    end
-
-    describe '#tableize' do
-      subject { formatter.tableize(value) }
-
-      it { is_expected.to eq('the_quick_brown_foxes') }
-
-      it_behaves_like 'nil will parse to empty'
     end
 
     describe '#titleize' do
