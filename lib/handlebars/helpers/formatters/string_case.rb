@@ -6,6 +6,8 @@ module Handlebars
   module Helpers
     module Formatters
       # Case modification string manipulation methods
+      #
+      # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
       module StringCase
         # Set default tokenizer to use when cleaning strings for case changes
         def tokenizer=(tokenizer)
@@ -41,6 +43,8 @@ module Handlebars
         #   puts back_slash('the Quick brown Fox 99')
         #
         #   the\quick\brown\fox99
+        #
+        # @return [String] value converted forward back slash notation
         def back_slash(value)
           tokenizer.parse(value, preserve_case: true, separator: '\\')
         end
@@ -58,6 +62,35 @@ module Handlebars
           tokenizer.parse(value).underscore.camelize
         end
 
+        # Creates a class name from a plural table name like Rails does for table names to models.
+        #
+        # Note: This does not play well with number suffixes,
+        #       I'm not sure that the edge case is really needed.
+        #
+        # @example
+        #
+        #   puts classify('the_quick_brown_foxes')
+        #
+        #   TheQuickBrownFox
+        #
+        # @return [String] value converted to ruby class notation
+        def classify(value)
+          tokenizer.parse(value).classify
+        end
+
+        # CONSTANT case the characters in the given 'string'.
+        #
+        # @example
+        #
+        #   puts camel('the quick brown fox 99')
+        #
+        #   THE_QUICK_BROWN_FOX99
+        #
+        # @return [String] value converted to constant case
+        def constantize(value)
+          tokenizer.parse(value, separator: '_').upcase
+        end
+
         # convert to dash notation
         #
         # @side effects
@@ -69,6 +102,8 @@ module Handlebars
         #   puts dasherize('the Quick brown Fox 99')
         #
         #   the-quick-brown-fox99
+        #
+        # @return [String] value converted to dash notation
         def dasherize(value)
           tokenizer.parse(value)
         end
@@ -81,7 +116,7 @@ module Handlebars
         #
         #   theQuickBrownFox99
         #
-        # @return [String] value converted to camel case
+        # @return [String] value converted to lower first camel case
         def lamel(value)
           tokenizer.parse(value, separator: '_').camelize(:lower)
         end
@@ -114,8 +149,26 @@ module Handlebars
         #   puts slash('the Quick brown Fox 99')
         #
         #   the/quick/brown/fox
+        #
+        # @return [String] value converted forward slash notation
         def slash(value)
           tokenizer.parse(value, preserve_case: true, separator: '/')
+        end
+
+        # Creates the name of a table like Rails does for models to table names.
+        #
+        # Note: This does not play well with number suffixes,
+        #       I'm not sure that the edge case is really needed.
+        #
+        # @example
+        #
+        #   puts titleize('the Quick brown Fox')
+        #
+        #   the_quick_brown_foxes
+        #
+        # @return [String] value converted to title case
+        def tableize(value)
+          tokenizer.parse(value).tableize
         end
 
         # convert text to title case
@@ -130,6 +183,8 @@ module Handlebars
         #   puts titleize('the Quick brown Fox 99')
         #
         #   The Quick Brown Fox 99
+        #
+        # @return [String] value converted to title case
         def titleize(value)
           tokenizer.parse(value,
                           separator: ' ',
@@ -139,7 +194,7 @@ module Handlebars
                    .titleize
         end
 
-        # convert text to human case
+        # convert text to human case, aka sentence case.
         #
         # @side effects
         #
@@ -151,6 +206,8 @@ module Handlebars
         #   puts titleize('the Quick brown Fox 99')
         #
         #   The quick brown fox 99
+        #
+        # @return [String] value converted to human case, aka sentence case.
         def humanize(value)
           tokenizer.parse(value,
                           separator: ' ',
