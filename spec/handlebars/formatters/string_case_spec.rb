@@ -89,20 +89,52 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'twentyFive66'
     end
 
-    fdescribe '#snake' do
+    describe '#snake' do
       subject { formatter.snake(value) }
 
-      # it { is_expected.to eq('the_quick_brown_fox') }
+      it { is_expected.to eq('the_quick_brown_fox') }
 
-      # it_behaves_like 'nil will parse to empty'
-      # it_behaves_like 'valid value will parse successfully',
-      #                 'trailing number',
-      #                 'TwentyFive66',
-      #                 'twenty_five66'
+      it_behaves_like 'nil will parse to empty'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing number',
+                      'TwentyFive66',
+                      'twenty_five66'
       it_behaves_like 'valid value will parse successfully',
                       'trailing space and number',
                       'Twenty Five 66',
                       'twenty_five66'
+    end
+
+    describe '#slash' do
+      subject { formatter.slash(value) }
+
+      it { is_expected.to eq('the/quick/brown/fox') }
+
+      it_behaves_like 'nil will parse to empty'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing number',
+                      'TwentyFive66',
+                      'Twenty/Five66'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing space and number',
+                      'Twenty Five 66',
+                      'Twenty/Five66'
+    end
+
+    describe '#back_slash' do
+      subject { formatter.back_slash(value) }
+
+      it { is_expected.to eq('the\\quick\\brown\\fox') }
+
+      it_behaves_like 'nil will parse to empty'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing number',
+                      'TwentyFive66',
+                      'Twenty\\Five66'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing space and number',
+                      'Twenty Five 66',
+                      'Twenty\\Five66'
     end
   end
 end
