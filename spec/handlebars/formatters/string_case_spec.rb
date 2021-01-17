@@ -57,6 +57,22 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
   end
 
   context 'case change methods' do
+    describe '#back_slash' do
+      subject { formatter.back_slash(value) }
+
+      it { is_expected.to eq('the\\quick\\brown\\fox') }
+
+      it_behaves_like 'nil will parse to empty'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing number',
+                      'TwentyFive66',
+                      'Twenty\\Five66'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing space and number',
+                      'Twenty Five 66',
+                      'Twenty\\Five66'
+    end
+
     describe '#camel' do
       subject { formatter.camel(value) }
 
@@ -73,20 +89,40 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'TwentyFive66'
     end
 
-    describe '#lamel' do
-      subject { formatter.lamel(value) }
+    describe '#dasherize' do
+      subject { formatter.dasherize(value) }
 
-      it { is_expected.to eq('theQuickBrownFox') }
+      it { is_expected.to eq('the-quick-brown-fox') }
 
       it_behaves_like 'nil will parse to empty'
       it_behaves_like 'valid value will parse successfully',
                       'trailing number',
-                      'Twenty Five66',
-                      'twentyFive66'
+                      'TwentyFive66',
+                      'twenty-five66'
       it_behaves_like 'valid value will parse successfully',
                       'trailing space and number',
                       'Twenty Five 66',
-                      'twentyFive66'
+                      'twenty-five66'
+    end
+
+    describe '#humanize' do
+      subject { formatter.humanize(value) }
+
+      it { is_expected.to eq('The quick brown fox') }
+
+      it_behaves_like 'nil will parse to empty'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing number',
+                      'twenty five 66',
+                      'Twenty five 66'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing space and number',
+                      'Twenty Five 66',
+                      'Twenty five 66'
+      it_behaves_like 'valid value will parse successfully',
+                      'word and number has no extra space',
+                      'Twenty Five66',
+                      'Twenty five66'
     end
 
     describe '#snake' do
@@ -121,20 +157,40 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'Twenty/Five66'
     end
 
-    describe '#back_slash' do
-      subject { formatter.back_slash(value) }
+    describe '#titleize' do
+      subject { formatter.titleize(value) }
 
-      it { is_expected.to eq('the\\quick\\brown\\fox') }
+      it { is_expected.to eq('The Quick Brown Fox') }
 
       it_behaves_like 'nil will parse to empty'
       it_behaves_like 'valid value will parse successfully',
                       'trailing number',
-                      'TwentyFive66',
-                      'Twenty\\Five66'
+                      'twenty five 66',
+                      'Twenty Five 66'
       it_behaves_like 'valid value will parse successfully',
                       'trailing space and number',
                       'Twenty Five 66',
-                      'Twenty\\Five66'
+                      'Twenty Five 66'
+      it_behaves_like 'valid value will parse successfully',
+                      'word and number has no extra space',
+                      'Twenty Five66',
+                      'Twenty Five66'
+    end
+
+    describe '#lamel' do
+      subject { formatter.lamel(value) }
+
+      it { is_expected.to eq('theQuickBrownFox') }
+
+      it_behaves_like 'nil will parse to empty'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing number',
+                      'Twenty Five66',
+                      'twentyFive66'
+      it_behaves_like 'valid value will parse successfully',
+                      'trailing space and number',
+                      'Twenty Five 66',
+                      'twentyFive66'
     end
   end
 end
