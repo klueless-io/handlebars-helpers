@@ -8,11 +8,11 @@ module Handlebars
     # represented in a consistent fashion
     class StringTokenizer
       # Tokenize string
-      def self.parse(value,
-                     preserve_case: false,
-                     compress_prefix_numerals: true,
-                     compress_suffix_numerals: true,
-                     separator: '-')
+      def parse(value,
+                preserve_case: false,
+                compress_prefix_numerals: true,
+                compress_suffix_numerals: true,
+                separator: '-')
         return '' if value.nil?
 
         # Insert space before any lowercaseUppercase

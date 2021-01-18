@@ -3,6 +3,8 @@
 require 'pry'
 require 'bundler/setup'
 require 'handlebars/helpers'
+
+Dir['./spec/support/**/*.rb'].sort.each { |f| require f }
 # require 'k_usecases'
 
 RSpec.configure do |config|
