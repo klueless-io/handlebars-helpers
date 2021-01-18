@@ -9,23 +9,19 @@ module Handlebars
   module Helpers
     # String manipulation methods for case formatting
     module StringCaseFormatting
-      # convert to back slash notation
-      class BackSlash < Handlebars::Helpers::StringCaseFormatting::BaseHelper
-        # Parse will convert to back slash notation
-        #
-        # @side effects
-        #
-        #   Text casing is preserved.
+      # CONSTANT case the characters in the given 'string'.
+      class Constantize < Handlebars::Helpers::StringCaseFormatting::BaseHelper
+        # Parse will CONSTANT case the characters in the given 'string'.
         #
         # @example
         #
-        #   puts BackSlash.new.parse('the Quick brown Fox 99')
+        #   puts Constantize.new.parse('the quick brown fox 99')
         #
-        #   the\quick\brown\fox99
+        #   THE_QUICK_BROWN_FOX99
         #
-        # @return [String] value converted to back_slash case
+        # @return [String] value converted to constant case
         def parse(value)
-          tokenizer.parse(value, preserve_case: true, separator: '\\')
+          tokenizer.parse(value, separator: '_').upcase
         end
       end
     end

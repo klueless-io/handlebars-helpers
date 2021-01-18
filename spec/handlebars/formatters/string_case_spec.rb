@@ -57,38 +57,6 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
   end
 
   context 'formatter methods' do
-    describe '#back_slash' do
-      subject { formatter.back_slash(value) }
-
-      it { is_expected.to eq('the\\quick\\brown\\fox') }
-
-      it_behaves_like 'nil will parse to empty'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing number',
-                      'TwentyFive66',
-                      'Twenty\\Five66'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing space and number',
-                      'Twenty Five 66',
-                      'Twenty\\Five66'
-    end
-
-    describe '#camel' do
-      subject { formatter.camel(value) }
-
-      it { is_expected.to eq('TheQuickBrownFox') }
-
-      it_behaves_like 'nil will parse to empty'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing number',
-                      'twenty five66',
-                      'TwentyFive66'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing space and number',
-                      'twenty five 66',
-                      'TwentyFive66'
-    end
-
     describe '#constantize' do
       subject { formatter.constantize(value) }
 
