@@ -2,7 +2,7 @@
 
 require 'handlebars/helpers/version'
 require 'handlebars/helpers/template'
-require 'handlebars/helpers/registration'
+require 'handlebars/helpers/register_helpers'
 
 module Handlebars
   module Helpers
