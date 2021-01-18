@@ -57,22 +57,6 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
   end
 
   context 'formatter methods' do
-    describe '#constantize' do
-      subject { formatter.constantize(value) }
-
-      it { is_expected.to eq('THE_QUICK_BROWN_FOX') }
-
-      it_behaves_like 'nil will parse to empty'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing number',
-                      'TwentyFive66',
-                      'TWENTY_FIVE66'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing space and number',
-                      'Twenty Five 66',
-                      'TWENTY_FIVE66'
-    end
-
     describe '#dasherize' do
       subject { formatter.dasherize(value) }
 
