@@ -57,42 +57,6 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
   end
 
   context 'formatter methods' do
-    describe '#dasherize' do
-      subject { formatter.dasherize(value) }
-
-      it { is_expected.to eq('the-quick-brown-fox') }
-
-      it_behaves_like 'nil will parse to empty'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing number',
-                      'TwentyFive66',
-                      'twenty-five66'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing space and number',
-                      'Twenty Five 66',
-                      'twenty-five66'
-    end
-
-    describe '#humanize' do
-      subject { formatter.humanize(value) }
-
-      it { is_expected.to eq('The quick brown fox') }
-
-      it_behaves_like 'nil will parse to empty'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing number',
-                      'twenty five 66',
-                      'Twenty five 66'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing space and number',
-                      'Twenty Five 66',
-                      'Twenty five 66'
-      it_behaves_like 'valid value will parse successfully',
-                      'word and number has no extra space',
-                      'Twenty Five66',
-                      'Twenty five66'
-    end
-
     describe '#snake' do
       subject { formatter.snake(value) }
 

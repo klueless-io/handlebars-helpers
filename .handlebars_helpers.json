@@ -32,6 +32,24 @@
           "aliases": ["constantize", "constant"],
           "require_path": "handlebars/helpers/string_case_formatting/constantize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Constantize"
+        },
+        {
+          "name": "dasherize",
+          "description": "convert to dash notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the-quick-brown-fox",
+          "aliases": ["dasherize", "dashify"],
+          "require_path": "handlebars/helpers/string_case_formatting/dasherize",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Dasherize"
+        },
+        {
+          "name": "humanize",
+          "description": "convert text to human case, aka sentence case",
+          "test_in": "the Quick Brown Fox",
+          "test_out": "The quick brown fox",
+          "aliases": ["humanize"],
+          "require_path": "handlebars/helpers/string_case_formatting/humanize",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Humanize"
         }
       ]
     }

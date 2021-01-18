@@ -3,7 +3,7 @@
 require 'handlebars/helpers/string_case_formatting/dasherize'
 
 RSpec.describe Handlebars::Helpers::StringCaseFormatting::Dasherize do
-  let(:value) { 'the quick brown fox' }
+  let(:value) { 'The Quick Brown Fox' }
 
   it { is_expected.not_to be_nil }
 
@@ -17,12 +17,12 @@ RSpec.describe Handlebars::Helpers::StringCaseFormatting::Dasherize do
 
     it_behaves_like 'valid value will parse successfully',
                     'trailing number supplied',
-                    'twenty five66',
+                    'Twenty Five66',
                     'twenty-five66'
 
     it_behaves_like 'valid value will parse successfully',
                     'trailing space and number supplied',
-                    'twenty five 66',
+                    'Twenty Five 66',
                     'twenty-five66'
   end
 
