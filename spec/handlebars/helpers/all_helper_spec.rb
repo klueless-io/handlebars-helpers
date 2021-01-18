@@ -79,5 +79,27 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'convert to lamel case with first word lowercase and following words uppercase' do
+      let(:data) { 'The quick brown fox' }
+      let(:expected) { 'theQuickBrownFox' }
+      context 'lamel' do
+        let(:template) { '{{lamel .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'camelLower' do
+        let(:template) { '{{camelLower .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'camelL' do
+        let(:template) { '{{camelL .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 end
