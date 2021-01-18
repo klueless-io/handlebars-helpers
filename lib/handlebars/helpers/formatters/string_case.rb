@@ -32,23 +32,6 @@ module Handlebars
           @tokenizer
         end
 
-        # convert to dash notation
-        #
-        # @side effects
-        #
-        #   All text is in lower case
-        #
-        # @example
-        #
-        #   puts dasherize('the Quick brown Fox 99')
-        #
-        #   the-quick-brown-fox99
-        #
-        # @return [String] value converted to dash notation
-        def dasherize(value)
-          tokenizer.parse(value)
-        end
-
         # camel case the characters in the given 'string', with the first character as lower case.
         #
         # @example
@@ -117,29 +100,6 @@ module Handlebars
                           compress_prefix_numerals: false,
                           compress_suffix_numerals: false)
                    .titleize
-        end
-
-        # convert text to human case, aka sentence case.
-        #
-        # @side effects
-        #
-        #   Text casing set to upper case for first letter only.
-        #   Numbers will maintain their spacing
-        #
-        # @example
-        #
-        #   puts titleize('the Quick brown Fox 99')
-        #
-        #   The quick brown fox 99
-        #
-        # @return [String] value converted to human case, aka sentence case.
-        def humanize(value)
-          tokenizer.parse(value,
-                          separator: ' ',
-                          preserve_case: true,
-                          compress_prefix_numerals: false,
-                          compress_suffix_numerals: false)
-                   .humanize
         end
       end
     end

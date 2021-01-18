@@ -53,5 +53,31 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'convert to dash notation' do
+      let(:data) { 'the quick brown fox' }
+      let(:expected) { 'the-quick-brown-fox' }
+      context 'dasherize' do
+        let(:template) { '{{dasherize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'dashify' do
+        let(:template) { '{{dashify .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'convert text to human case, aka sentence case' do
+      let(:data) { 'the Quick Brown Fox' }
+      let(:expected) { 'The quick brown fox' }
+      context 'humanize' do
+        let(:template) { '{{humanize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 end
