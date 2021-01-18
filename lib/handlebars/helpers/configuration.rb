@@ -24,10 +24,11 @@ module Handlebars
 
     # Configuration class
     class Configuration
-      attr_accessor :tokenizer
+      attr_accessor :tokenizer, :helper_config_file
 
       def initialize
         @tokenizer = Handlebars::Helpers::StringTokenizer.new
+        @helper_config_file = '.handlebars_helpers.json'
       end
     end
   end

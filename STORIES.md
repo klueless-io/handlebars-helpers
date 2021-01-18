@@ -8,6 +8,12 @@ As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I h
 
 ### Stories next on list
 
+As a Developer, I have flexible and modular formatters, so that I can format data into a new format
+
+- Define formatter categories, https://github.com/helpers/handlebars-helpers has 20 categories
+- Create modular formatters with tests
+- Provide a lazy loading technique to load formatters on an as needed basis
+
 As a Developer, I can easily render Handlebar Templates, so that I am more efficient
 
 - Build simplified API for rendering templates
@@ -19,6 +25,13 @@ As a Developer, I can alias existing helpers, so that I have helper names that m
 As a Developer, I can load specific groups of helpers, so that memory consumption can be minimized
 
 - Lazy load ruby helpers on an as needed basis
+
+### Tasks next on list
+
+String tokenizer that formats input strings in a consistent fashion
+
+- Setup a single opinionated string tokenizer
+- Make the string tokenizer configurable so it can be replaced with a different opinionated tokenizer
 
 ## Stories and tasks
 
