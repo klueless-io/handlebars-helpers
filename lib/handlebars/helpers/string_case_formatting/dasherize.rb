@@ -13,6 +13,10 @@ module Handlebars
       class Dasherize < Handlebars::Helpers::StringCaseFormatting::BaseHelper
         # Parse will convert to dash notation
         #
+        # @side effects
+        #
+        #   All text is in lower case
+        #
         # @example
         #
         #   puts Dasherize.new.parse('the quick brown fox 99')
