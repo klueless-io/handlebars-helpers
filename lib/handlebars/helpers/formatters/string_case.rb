@@ -32,49 +32,6 @@ module Handlebars
           @tokenizer
         end
 
-        # convert to back slash notation
-        #
-        # @side effects
-        #
-        #   Text casing is preserved.
-        #
-        # @example
-        #
-        #   puts back_slash('the Quick brown Fox 99')
-        #
-        #   the\quick\brown\fox99
-        #
-        # @return [String] value converted forward back slash notation
-        def back_slash(value)
-          tokenizer.parse(value, preserve_case: true, separator: '\\')
-        end
-
-        # camel case the characters in the given 'string'.
-        #
-        # @example
-        #
-        #   puts camel('the quick brown fox 99')
-        #
-        #   TheQuickBrownFox99
-        #
-        # @return [String] value converted to camel case
-        def camel(value)
-          tokenizer.parse(value).underscore.camelize
-        end
-
-        # CONSTANT case the characters in the given 'string'.
-        #
-        # @example
-        #
-        #   puts camel('the quick brown fox 99')
-        #
-        #   THE_QUICK_BROWN_FOX99
-        #
-        # @return [String] value converted to constant case
-        def constantize(value)
-          tokenizer.parse(value, separator: '_').upcase
-        end
-
         # convert to dash notation
         #
         # @side effects
