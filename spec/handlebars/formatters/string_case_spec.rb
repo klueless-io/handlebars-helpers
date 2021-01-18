@@ -108,21 +108,5 @@ RSpec.describe Handlebars::Helpers::Formatters::StringCase do
                       'Twenty Five66',
                       'Twenty Five66'
     end
-
-    describe '#lamel' do
-      subject { formatter.lamel(value) }
-
-      it { is_expected.to eq('theQuickBrownFox') }
-
-      it_behaves_like 'nil will parse to empty'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing number',
-                      'Twenty Five66',
-                      'twentyFive66'
-      it_behaves_like 'valid value will parse successfully',
-                      'trailing space and number',
-                      'Twenty Five 66',
-                      'twentyFive66'
-    end
   end
 end

@@ -32,19 +32,6 @@ module Handlebars
           @tokenizer
         end
 
-        # camel case the characters in the given 'string', with the first character as lower case.
-        #
-        # @example
-        #
-        #   puts lamel('the quick brown fox 99')
-        #
-        #   theQuickBrownFox99
-        #
-        # @return [String] value converted to lower first camel case
-        def lamel(value)
-          tokenizer.parse(value, separator: '_').camelize(:lower)
-        end
-
         # snake case the characters in the given 'string'.
         #
         # @side effects
