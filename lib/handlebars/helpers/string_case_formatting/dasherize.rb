@@ -21,13 +21,8 @@ module Handlebars
         #
         # @return [String] value converted to dash notation
         def parse(value)
-          tokenizer.parse(value) #.underscore.camelize
+          tokenizer.parse(value)
         end
-
-        # Sample handlebars registration helper
-        # def handlebars_helper
-        #   proc { |_context, value| parse(value) }
-        # end
       end
     end
   end

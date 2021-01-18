@@ -1,0 +1,39 @@
+{
+  "groups": [
+    {
+      "name": "string_case_formatting",
+      "base_require": "handlebars/helpers/string_case_formatting",
+      "base_namespace": "Handlebars::Helpers::StringCaseFormatting",
+      "description": "Case modification string manipulation methods",
+      "helpers": [
+        {
+          "name": "back_slash",
+          "description": "convert to back slash notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the\\quick\\brown\\fox",
+          "aliases": ["back_slash"],
+          "require_path": "handlebars/helpers/string_case_formatting/back_slash",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::BackSlash"
+        },
+        {
+          "name": "camel",
+          "description": "convert to camel case with first word uppercase and following words uppercase",
+          "test_in": "the quick brown fox",
+          "test_out": "TheQuickBrownFox",
+          "aliases": ["camel", "camelUpper", "camelU"],
+          "require_path": "handlebars/helpers/string_case_formatting/camel",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Camel"
+        },
+        {
+          "name": "constantize",
+          "description": "convert to constant case",
+          "test_in": "the quick brown fox",
+          "test_out": "THE_QUICK_BROWN_FOX",
+          "aliases": ["constantize", "constant"],
+          "require_path": "handlebars/helpers/string_case_formatting/constantize",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Constantize"
+        }
+      ]
+    }
+  ]
+}

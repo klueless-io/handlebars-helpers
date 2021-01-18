@@ -28,4 +28,19 @@ RSpec.describe Handlebars::Helpers::Configuration do
       it { is_expected.to be_a(ConfigurationSampleTokenizer) }
     end
   end
+  describe '.helper_config_file' do
+    subject { Handlebars::Helpers.configuration.helper_config_file }
+
+    it { is_expected.to eq('.handlebars_helpers.json') }
+
+    context 'custom helper_config_file' do
+      before :each do
+        Handlebars::Helpers.configure do |config|
+          config.helper_config_file = 'xxx.json'
+        end
+      end
+
+      it { is_expected.to eq('xxx.json') }
+    end
+  end
 end
