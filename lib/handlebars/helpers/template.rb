@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'handlebars'
+require 'handlebars/helpers/register_helpers'
 
 module Handlebars
   module Helpers
@@ -11,18 +12,21 @@ module Handlebars
       # @param [String] template The handlebars template to render against
       # @param [Hash, Array] data The data to merge with the template
       # NOTE: I'm considering where to put the configuration block, &block)
-      def self.render(template, data)
-        handlebars = Handlebars::Context.new
+      def self.render(template, data, &block)
+        register = if block_given?
+                     Handlebars::Helpers::RegisterHelpers.new(&block)
+                   else
+                     Handlebars::Helpers::RegisterHelpers.new
+                   end
 
-        Handlebars::Helpers::Registration.register(handlebars)
-
+        handlebars = register.handlebars
         compiled_template = handlebars.compile(template)
 
-        # L.ostruct data#, skip_array: true
-
         begin
-          # REFACT: Array and Hash need to be looked at
-          obj = if data.is_a?(Array)
+          obj = case data
+                when String
+                  data
+                when Array
                   process_array(data)
                 else
                   process_hash(data)

@@ -2,12 +2,13 @@
 
 require 'handlebars/helpers/string_tokenizer'
 
+# TODO: Needs to move into string_case_formatting
 RSpec.describe Handlebars::Helpers::StringTokenizer do
   let(:subject) do
-    described_class.parse(value,
-                          preserve_case: preserve_case,
-                          compress_prefix_numerals: compress_prefix_numerals,
-                          compress_suffix_numerals: compress_suffix_numerals)
+    described_class.new.parse(value,
+                              preserve_case: preserve_case,
+                              compress_prefix_numerals: compress_prefix_numerals,
+                              compress_suffix_numerals: compress_suffix_numerals)
   end
 
   let(:preserve_case) { false }
