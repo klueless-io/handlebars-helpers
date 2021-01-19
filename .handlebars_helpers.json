@@ -11,6 +11,11 @@
           "description": "convert to back slash notation",
           "test_in": "the quick brown fox",
           "test_out": "the\\quick\\brown\\fox",
+          "tests": [
+            { "alias": "back_slash" },
+            { "alias": "backward_slash" },
+            { "alias": "slash_backward" }
+          ],
           "aliases": ["back_slash", "backward_slash", "slash_backward"],
           "require_path": "handlebars/helpers/string_case_formatting/back_slash",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::BackSlash"
@@ -20,6 +25,12 @@
           "description": "convert to camel case with first word uppercase and following words uppercase",
           "test_in": "the quick brown fox",
           "test_out": "TheQuickBrownFox",
+          "tests": [
+            { "alias": "camel" },
+            { "alias": "camel_upper" },
+            { "alias": "camelUpper" },
+            { "alias": "camelU" }
+          ],
           "aliases": ["camel", "camel_upper", "camelUpper", "camelU"],
           "require_path": "handlebars/helpers/string_case_formatting/camel",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Camel"
@@ -29,6 +40,7 @@
           "description": "convert to constant case",
           "test_in": "the quick brown fox",
           "test_out": "THE_QUICK_BROWN_FOX",
+          "tests": [{ "alias": "constantize" }, { "alias": "constant" }],
           "aliases": ["constantize", "constant"],
           "require_path": "handlebars/helpers/string_case_formatting/constantize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Constantize"
@@ -38,6 +50,7 @@
           "description": "convert to dash notation",
           "test_in": "the quick brown fox",
           "test_out": "the-quick-brown-fox",
+          "tests": [{ "alias": "dasherize" }, { "alias": "dashify" }],
           "aliases": ["dasherize", "dashify"],
           "require_path": "handlebars/helpers/string_case_formatting/dasherize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Dasherize"
@@ -47,6 +60,7 @@
           "description": "double_colon notation, similar to ruby namespace",
           "test_in": "the quick brown fox",
           "test_out": "the::quick::brown::fox",
+          "tests": [{ "alias": "double_colon" }],
           "aliases": ["double_colon"],
           "require_path": "handlebars/helpers/string_case_formatting/double_colon",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::DoubleColon"
@@ -56,6 +70,7 @@
           "description": "convert text to human case, aka sentence case",
           "test_in": "the Quick Brown Fox",
           "test_out": "The quick brown fox",
+          "tests": [{ "alias": "humanize" }, { "alias": "sentence" }],
           "aliases": ["humanize", "sentence"],
           "require_path": "handlebars/helpers/string_case_formatting/humanize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Humanize"
@@ -65,6 +80,12 @@
           "description": "convert to lamel case with first word lowercase and following words uppercase",
           "test_in": "The quick brown fox",
           "test_out": "theQuickBrownFox",
+          "tests": [
+            { "alias": "lamel" },
+            { "alias": "camel_lower" },
+            { "alias": "camelLower" },
+            { "alias": "camelL" }
+          ],
           "aliases": ["lamel", "camel_lower", "camelLower", "camelL"],
           "require_path": "handlebars/helpers/string_case_formatting/lamel",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Lamel"
@@ -74,6 +95,11 @@
           "description": "convert to slash notation, aka forward slash",
           "test_in": "the Quick brown Fox",
           "test_out": "the/Quick/brown/Fox",
+          "tests": [
+            { "alias": "slash" },
+            { "alias": "forward_slash" },
+            { "alias": "slash_forward" }
+          ],
           "aliases": ["slash", "forward_slash", "slash_forward"],
           "require_path": "handlebars/helpers/string_case_formatting/slash",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Slash"
@@ -83,6 +109,7 @@
           "description": "convert to snake notation",
           "test_in": "the quick brown fox",
           "test_out": "the_quick_brown_fox",
+          "tests": [{ "alias": "snake" }],
           "aliases": ["snake"],
           "require_path": "handlebars/helpers/string_case_formatting/snake",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Snake"
@@ -92,9 +119,45 @@
           "description": "value converted to titleize case, aka heading case",
           "test_in": "the quick brown fox",
           "test_out": "The Quick Brown Fox",
+          "tests": [{ "alias": "titleize" }, { "alias": "heading" }],
           "aliases": ["titleize", "heading"],
           "require_path": "handlebars/helpers/string_case_formatting/titleize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Titleize"
+        }
+      ]
+    },
+    {
+      "name": "string_formatting",
+      "base_require": "handlebars/helpers/string_formatting",
+      "base_namespace": "Handlebars::Helpers::StringFormatting",
+      "description": "General purpose string manipulation helpers",
+      "helpers": [
+        {
+          "name": "append",
+          "description": "append the specified `suffix` to the given string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "append",
+              "expected_value": "name.html",
+              "params": [
+                { "name": "value", "value": "name" },
+                { "name": "suffix", "value": ".html" }
+              ]
+            },
+            {
+              "alias": "appendix",
+              "expected_value": "name.html",
+              "params": [
+                { "name": "value", "value": "name" },
+                { "name": "suffix", "value": ".html" }
+              ]
+            }
+          ],
+          "aliases": ["append", "appendix"],
+          "require_path": "handlebars/helpers/string_formatting/append",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Append"
         }
       ]
     }
