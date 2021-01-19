@@ -341,4 +341,23 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
   end
+
+  context 'Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.' do
+    describe 'return block when first value is truthy' do
+      let(:expected) { 'param2' }
+      let(:data) { { p1: nil, p2: 'param2' } }
+
+      context 'or' do
+        let(:template) do
+          '
+                {{~#if (or p1 p2)~}}
+                  {{p1}}{{p2}}
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+  end
 end

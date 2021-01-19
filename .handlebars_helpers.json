@@ -1,10 +1,12 @@
 {
   "groups": [
     {
+      "active": true,
       "name": "string_case_formatting",
       "base_require": "handlebars/helpers/string_case_formatting",
       "base_namespace": "Handlebars::Helpers::StringCaseFormatting",
       "description": "Case modification string manipulation methods",
+      "examples": null,
       "helpers": [
         {
           "name": "back_slash",
@@ -191,10 +193,12 @@
       ]
     },
     {
+      "active": true,
       "name": "string_formatting",
       "base_require": "handlebars/helpers/string_formatting",
       "base_namespace": "Handlebars::Helpers::StringFormatting",
       "description": "General purpose string manipulation helpers",
+      "examples": null,
       "helpers": [
         {
           "name": "append",
@@ -242,6 +246,39 @@
           "aliases": ["singularize", "singular"],
           "require_path": "handlebars/helpers/string_formatting/singularize",
           "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize"
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "comparison",
+      "base_require": "handlebars/helpers/comparison",
+      "base_namespace": "Handlebars::Helpers::Comparison",
+      "description": "Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.",
+      "examples": [
+        "https://github.com/helpers/handlebars-helpers/blob/master/lib/comparison.js",
+        "https://github.com/helpers/handlebars-helpers/blob/master/test/comparison.js"
+      ],
+      "helpers": [
+        {
+          "name": "or",
+          "description": "return block when first value is truthy",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "or",
+              "expected_value": "param2",
+              "params": [
+                { "name": "p1", "value": null },
+                { "name": "p2", "value": "param2" }
+              ],
+              "template": "\n            {{~#if (or p1 p2)~}}\n              {{p1}}{{p2}}\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["or"],
+          "require_path": "handlebars/helpers/comparison/or",
+          "class_namespace": "Handlebars::Helpers::Comparison::Or"
         }
       ]
     }
