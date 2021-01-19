@@ -88,6 +88,16 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
+    describe 'double_colon notation, similar to ruby namespace' do
+      let(:data) { 'the quick brown fox' }
+      let(:expected) { 'the::quick::brown::fox' }
+      context 'double_colon' do
+        let(:template) { '{{double_colon .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
     describe 'convert text to human case, aka sentence case' do
       let(:data) { 'the Quick Brown Fox' }
       let(:expected) { 'The quick brown fox' }

@@ -43,6 +43,15 @@
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Dasherize"
         },
         {
+          "name": "double_colon",
+          "description": "double_colon notation, similar to ruby namespace",
+          "test_in": "the quick brown fox",
+          "test_out": "the::quick::brown::fox",
+          "aliases": ["double_colon"],
+          "require_path": "handlebars/helpers/string_case_formatting/double_colon",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::DoubleColon"
+        },
+        {
           "name": "humanize",
           "description": "convert text to human case, aka sentence case",
           "test_in": "the Quick Brown Fox",

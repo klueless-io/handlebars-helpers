@@ -8,6 +8,8 @@ As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I h
 
 ### Stories next on list
 
+As a Developer, I can have string case formatting helpers, so that I can generate code and documentation using handlebars
+
 As a Developer, I have flexible and modular formatters, so that I can format data into a new format
 
 - Define formatter categories, https://github.com/helpers/handlebars-helpers has 20 categories
