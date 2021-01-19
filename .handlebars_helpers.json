@@ -158,6 +158,26 @@
           "aliases": ["append", "appendix"],
           "require_path": "handlebars/helpers/string_formatting/append",
           "class_namespace": "Handlebars::Helpers::StringFormatting::Append"
+        },
+        {
+          "name": "pluralize",
+          "description": "singular value is converted to plural form",
+          "test_in": "category",
+          "test_out": "categories",
+          "tests": [{ "alias": "pluralize" }, { "alias": "plural" }],
+          "aliases": ["pluralize", "plural"],
+          "require_path": "handlebars/helpers/string_formatting/pluralize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluralize"
+        },
+        {
+          "name": "singularize",
+          "description": "plural value is converted to singular from",
+          "test_in": "categories",
+          "test_out": "category",
+          "tests": [{ "alias": "singularize" }, { "alias": "singular" }],
+          "aliases": ["singularize", "singular"],
+          "require_path": "handlebars/helpers/string_formatting/singularize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize"
         }
       ]
     }

@@ -208,5 +208,37 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'singular value is converted to plural form' do
+      let(:data) { 'category' }
+      let(:expected) { 'categories' }
+      context 'pluralize' do
+        let(:template) { '{{pluralize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'plural' do
+        let(:template) { '{{plural .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'plural value is converted to singular from' do
+      let(:data) { 'categories' }
+      let(:expected) { 'category' }
+      context 'singularize' do
+        let(:template) { '{{singularize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'singular' do
+        let(:template) { '{{singular .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 end
