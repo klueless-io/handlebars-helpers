@@ -59,6 +59,15 @@
           "aliases": ["lamel", "camelLower", "camelL"],
           "require_path": "handlebars/helpers/string_case_formatting/lamel",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Lamel"
+        },
+        {
+          "name": "snake",
+          "description": "convert to snake notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the_quick_brown_fox",
+          "aliases": ["snake"],
+          "require_path": "handlebars/helpers/string_case_formatting/snake",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Snake"
         }
       ]
     }

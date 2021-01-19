@@ -101,5 +101,15 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'convert to snake notation' do
+      let(:data) { 'the quick brown fox' }
+      let(:expected) { 'the_quick_brown_fox' }
+      context 'snake' do
+        let(:template) { '{{snake .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 end
