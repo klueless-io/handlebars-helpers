@@ -29,9 +29,16 @@
             { "alias": "camel" },
             { "alias": "camel_upper" },
             { "alias": "camelUpper" },
-            { "alias": "camelU" }
+            { "alias": "camelU" },
+            { "alias": "pascalcase" }
           ],
-          "aliases": ["camel", "camel_upper", "camelUpper", "camelU"],
+          "aliases": [
+            "camel",
+            "camel_upper",
+            "camelUpper",
+            "camelU",
+            "pascalcase"
+          ],
           "require_path": "handlebars/helpers/string_case_formatting/camel",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Camel"
         },
@@ -53,9 +60,10 @@
           "tests": [
             { "alias": "dasherize" },
             { "alias": "dashify" },
-            { "alias": "dash_case" }
+            { "alias": "dashcase" },
+            { "alias": "hyphenate" }
           ],
-          "aliases": ["dasherize", "dashify", "dash_case"],
+          "aliases": ["dasherize", "dashify", "dashcase", "hyphenate"],
           "require_path": "handlebars/helpers/string_case_formatting/dasherize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Dasherize"
         },
@@ -67,9 +75,9 @@
           "tests": [
             { "alias": "dotirize" },
             { "alias": "dotify" },
-            { "alias": "dot_case" }
+            { "alias": "dotcase" }
           ],
-          "aliases": ["dotirize", "dotify", "dot_case"],
+          "aliases": ["dotirize", "dotify", "dotcase"],
           "require_path": "handlebars/helpers/string_case_formatting/dotirize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Dotirize"
         },
@@ -117,6 +125,20 @@
           "aliases": ["lamel", "camel_lower", "camelLower", "camelL"],
           "require_path": "handlebars/helpers/string_case_formatting/lamel",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Lamel"
+        },
+        {
+          "name": "pluserize",
+          "description": "convert to plus notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the+quick+brown+fox",
+          "tests": [
+            { "alias": "pluserize" },
+            { "alias": "plusify" },
+            { "alias": "pluscase" }
+          ],
+          "aliases": ["pluserize", "plusify", "pluscase"],
+          "require_path": "handlebars/helpers/string_case_formatting/pluserize",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Pluserize"
         },
         {
           "name": "slash",
