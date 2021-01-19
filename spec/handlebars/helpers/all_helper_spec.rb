@@ -14,6 +14,18 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
         it { is_expected.to eq(expected) }
       end
+
+      context 'backward_slash' do
+        let(:template) { '{{backward_slash .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'slash_backward' do
+        let(:template) { '{{slash_backward .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
     end
 
     describe 'convert to camel case with first word uppercase and following words uppercase' do
@@ -21,6 +33,12 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       let(:expected) { 'TheQuickBrownFox' }
       context 'camel' do
         let(:template) { '{{camel .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'camel_upper' do
+        let(:template) { '{{camel_upper .}}' }
 
         it { is_expected.to eq(expected) }
       end
@@ -78,6 +96,12 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
         it { is_expected.to eq(expected) }
       end
+
+      context 'sentence' do
+        let(:template) { '{{sentence .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
     end
 
     describe 'convert to lamel case with first word lowercase and following words uppercase' do
@@ -85,6 +109,12 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       let(:expected) { 'theQuickBrownFox' }
       context 'lamel' do
         let(:template) { '{{lamel .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'camel_lower' do
+        let(:template) { '{{camel_lower .}}' }
 
         it { is_expected.to eq(expected) }
       end
@@ -102,11 +132,49 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
+    describe 'convert to slash notation, aka forward slash' do
+      let(:data) { 'the Quick brown Fox' }
+      let(:expected) { 'the/Quick/brown/Fox' }
+      context 'slash' do
+        let(:template) { '{{slash .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'forward_slash' do
+        let(:template) { '{{forward_slash .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'slash_forward' do
+        let(:template) { '{{slash_forward .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
     describe 'convert to snake notation' do
       let(:data) { 'the quick brown fox' }
       let(:expected) { 'the_quick_brown_fox' }
       context 'snake' do
         let(:template) { '{{snake .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'value converted to titleize case, aka heading case' do
+      let(:data) { 'the quick brown fox' }
+      let(:expected) { 'The Quick Brown Fox' }
+      context 'titleize' do
+        let(:template) { '{{titleize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'heading' do
+        let(:template) { '{{heading .}}' }
 
         it { is_expected.to eq(expected) }
       end
