@@ -86,6 +86,34 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
         it { is_expected.to eq(expected) }
       end
+
+      context 'dash_case' do
+        let(:template) { '{{dash_case .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'convert to dash notation' do
+      let(:data) { 'the quick brown fox' }
+      let(:expected) { 'the.quick.brown.fox' }
+      context 'dotirize' do
+        let(:template) { '{{dotirize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'dotify' do
+        let(:template) { '{{dotify .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'dot_case' do
+        let(:template) { '{{dot_case .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
     end
 
     describe 'double_colon notation, similar to ruby namespace' do
@@ -98,7 +126,7 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
-    describe 'convert text to human case, aka sentence case' do
+    describe 'convert text to human case, aka capitalize' do
       let(:data) { 'the Quick Brown Fox' }
       let(:expected) { 'The quick brown fox' }
       context 'humanize' do
@@ -107,8 +135,8 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
 
-      context 'sentence' do
-        let(:template) { '{{sentence .}}' }
+      context 'capitalize' do
+        let(:template) { '{{capitalize .}}' }
 
         it { is_expected.to eq(expected) }
       end
@@ -185,6 +213,12 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
       context 'heading' do
         let(:template) { '{{heading .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'capitalize_all' do
+        let(:template) { '{{capitalize_all .}}' }
 
         it { is_expected.to eq(expected) }
       end
