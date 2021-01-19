@@ -32,23 +32,6 @@ module Handlebars
           @tokenizer
         end
 
-        # snake case the characters in the given 'string'.
-        #
-        # @side effects
-        #
-        #   All text is in lower case
-        #
-        # @example
-        #
-        #   puts snake('the quick brown fox 99')
-        #
-        #   the_quick_brown_fox99
-        #
-        # @return [String] value converted to snake case
-        def snake(value)
-          tokenizer.parse(value, separator: '_')
-        end
-
         # convert to slash (aka forward slash) notation
         #
         # @side effects
