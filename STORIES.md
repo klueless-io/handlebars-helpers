@@ -18,6 +18,10 @@ As a Developer, I can easily render Handlebar Templates, so that I am more effic
 
 - Build simplified API for rendering templates
 
+## Stories and tasks
+
+### Stories - completed
+
 As a Developer, I can alias existing helpers, so that I have helper names that make sense to me
 
 - Provide a flexible mechanism for template aliases
@@ -26,16 +30,12 @@ As a Developer, I can load specific groups of helpers, so that memory consumptio
 
 - Lazy load ruby helpers on an as needed basis
 
-### Tasks next on list
+### Tasks - completed
 
 String tokenizer that formats input strings in a consistent fashion
 
 - Setup a single opinionated string tokenizer
 - Make the string tokenizer configurable so it can be replaced with a different opinionated tokenizer
-
-## Stories and tasks
-
-### Tasks - completed
 
 Setup RubyGems and RubyDoc
 
