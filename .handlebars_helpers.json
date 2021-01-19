@@ -50,10 +50,28 @@
           "description": "convert to dash notation",
           "test_in": "the quick brown fox",
           "test_out": "the-quick-brown-fox",
-          "tests": [{ "alias": "dasherize" }, { "alias": "dashify" }],
-          "aliases": ["dasherize", "dashify"],
+          "tests": [
+            { "alias": "dasherize" },
+            { "alias": "dashify" },
+            { "alias": "dash_case" }
+          ],
+          "aliases": ["dasherize", "dashify", "dash_case"],
           "require_path": "handlebars/helpers/string_case_formatting/dasherize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Dasherize"
+        },
+        {
+          "name": "dotirize",
+          "description": "convert to dash notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the.quick.brown.fox",
+          "tests": [
+            { "alias": "dotirize" },
+            { "alias": "dotify" },
+            { "alias": "dot_case" }
+          ],
+          "aliases": ["dotirize", "dotify", "dot_case"],
+          "require_path": "handlebars/helpers/string_case_formatting/dotirize",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Dotirize"
         },
         {
           "name": "double_colon",
@@ -67,11 +85,11 @@
         },
         {
           "name": "humanize",
-          "description": "convert text to human case, aka sentence case",
+          "description": "convert text to human case, aka capitalize",
           "test_in": "the Quick Brown Fox",
           "test_out": "The quick brown fox",
-          "tests": [{ "alias": "humanize" }, { "alias": "sentence" }],
-          "aliases": ["humanize", "sentence"],
+          "tests": [{ "alias": "humanize" }, { "alias": "capitalize" }],
+          "aliases": ["humanize", "capitalize"],
           "require_path": "handlebars/helpers/string_case_formatting/humanize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Humanize"
         },
@@ -119,8 +137,12 @@
           "description": "value converted to titleize case, aka heading case",
           "test_in": "the quick brown fox",
           "test_out": "The Quick Brown Fox",
-          "tests": [{ "alias": "titleize" }, { "alias": "heading" }],
-          "aliases": ["titleize", "heading"],
+          "tests": [
+            { "alias": "titleize" },
+            { "alias": "heading" },
+            { "alias": "capitalize_all" }
+          ],
+          "aliases": ["titleize", "heading", "capitalize_all"],
           "require_path": "handlebars/helpers/string_case_formatting/titleize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Titleize"
         }

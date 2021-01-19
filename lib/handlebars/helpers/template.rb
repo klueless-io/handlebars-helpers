@@ -47,12 +47,6 @@ module Handlebars
             item # Handle array of strings
           else
             process_hash(item)
-            # o = item.to_h
-
-            # o.keys.each do |key|
-            #   o[key] = o[key].to_h if o[key].instance_of?(OpenStruct)
-            # end
-            # o
           end
         end
       end

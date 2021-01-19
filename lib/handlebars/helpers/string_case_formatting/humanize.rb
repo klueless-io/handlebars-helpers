@@ -9,9 +9,9 @@ module Handlebars
   module Helpers
     # String manipulation methods for case formatting
     module StringCaseFormatting
-      # humanize wil convert text to human case, aka sentence case
+      # humanize wil convert text to human case, aka capitalize
       class Humanize < Handlebars::Helpers::StringCaseFormatting::BaseHelper
-        # Parse will humanize wil convert text to human case, aka sentence case
+        # Parse will humanize wil convert text to human case, aka capitalize
         #
         # @side effects
         #
