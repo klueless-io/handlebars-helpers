@@ -12,7 +12,7 @@ module Handlebars
       # @param [String] template The handlebars template to render against
       # @param [Hash, Array] data The data to merge with the template
       # NOTE: I'm considering where to put the configuration block, &block)
-      def self.render(template, data, &block)
+      def self.render(template, data = {}, &block)
         register = if block_given?
                      Handlebars::Helpers::RegisterHelpers.new(&block)
                    else
