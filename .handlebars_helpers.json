@@ -11,7 +11,7 @@
           "description": "convert to back slash notation",
           "test_in": "the quick brown fox",
           "test_out": "the\\quick\\brown\\fox",
-          "aliases": ["back_slash"],
+          "aliases": ["back_slash", "backward_slash", "slash_backward"],
           "require_path": "handlebars/helpers/string_case_formatting/back_slash",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::BackSlash"
         },
@@ -20,7 +20,7 @@
           "description": "convert to camel case with first word uppercase and following words uppercase",
           "test_in": "the quick brown fox",
           "test_out": "TheQuickBrownFox",
-          "aliases": ["camel", "camelUpper", "camelU"],
+          "aliases": ["camel", "camel_upper", "camelUpper", "camelU"],
           "require_path": "handlebars/helpers/string_case_formatting/camel",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Camel"
         },
@@ -47,7 +47,7 @@
           "description": "convert text to human case, aka sentence case",
           "test_in": "the Quick Brown Fox",
           "test_out": "The quick brown fox",
-          "aliases": ["humanize"],
+          "aliases": ["humanize", "sentence"],
           "require_path": "handlebars/helpers/string_case_formatting/humanize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Humanize"
         },
@@ -56,9 +56,18 @@
           "description": "convert to lamel case with first word lowercase and following words uppercase",
           "test_in": "The quick brown fox",
           "test_out": "theQuickBrownFox",
-          "aliases": ["lamel", "camelLower", "camelL"],
+          "aliases": ["lamel", "camel_lower", "camelLower", "camelL"],
           "require_path": "handlebars/helpers/string_case_formatting/lamel",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Lamel"
+        },
+        {
+          "name": "slash",
+          "description": "convert to slash notation, aka forward slash",
+          "test_in": "the Quick brown Fox",
+          "test_out": "the/Quick/brown/Fox",
+          "aliases": ["slash", "forward_slash", "slash_forward"],
+          "require_path": "handlebars/helpers/string_case_formatting/slash",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Slash"
         },
         {
           "name": "snake",
@@ -68,6 +77,15 @@
           "aliases": ["snake"],
           "require_path": "handlebars/helpers/string_case_formatting/snake",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Snake"
+        },
+        {
+          "name": "titleize",
+          "description": "value converted to titleize case, aka heading case",
+          "test_in": "the quick brown fox",
+          "test_out": "The Quick Brown Fox",
+          "aliases": ["titleize", "heading"],
+          "require_path": "handlebars/helpers/string_case_formatting/titleize",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Titleize"
         }
       ]
     }
