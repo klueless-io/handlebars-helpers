@@ -126,6 +126,22 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
+    describe 'convert all characters to lower case' do
+      let(:data) { 'THE QUICK BROWN FOX' }
+      let(:expected) { 'the quick brown fox' }
+      context 'downcase' do
+        let(:template) { '{{downcase .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'lowercase' do
+        let(:template) { '{{lowercase .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
     describe 'convert text to human case, aka capitalize' do
       let(:data) { 'the Quick Brown Fox' }
       let(:expected) { 'The quick brown fox' }
@@ -219,6 +235,22 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
       context 'capitalize_all' do
         let(:template) { '{{capitalize_all .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'convert all characters to lower case' do
+      let(:data) { 'The quick brown fox' }
+      let(:expected) { 'THE QUICK BROWN FOX' }
+      context 'upcase' do
+        let(:template) { '{{upcase .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'uppercase' do
+        let(:template) { '{{uppercase .}}' }
 
         it { is_expected.to eq(expected) }
       end

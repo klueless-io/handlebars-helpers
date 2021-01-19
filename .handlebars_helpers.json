@@ -84,6 +84,16 @@
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::DoubleColon"
         },
         {
+          "name": "downcase",
+          "description": "convert all characters to lower case",
+          "test_in": "THE QUICK BROWN FOX",
+          "test_out": "the quick brown fox",
+          "tests": [{ "alias": "downcase" }, { "alias": "lowercase" }],
+          "aliases": ["downcase", "lowercase"],
+          "require_path": "handlebars/helpers/string_case_formatting/downcase",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Downcase"
+        },
+        {
           "name": "humanize",
           "description": "convert text to human case, aka capitalize",
           "test_in": "the Quick Brown Fox",
@@ -145,6 +155,16 @@
           "aliases": ["titleize", "heading", "capitalize_all"],
           "require_path": "handlebars/helpers/string_case_formatting/titleize",
           "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Titleize"
+        },
+        {
+          "name": "upcase",
+          "description": "convert all characters to lower case",
+          "test_in": "The quick brown fox",
+          "test_out": "THE QUICK BROWN FOX",
+          "tests": [{ "alias": "upcase" }, { "alias": "uppercase" }],
+          "aliases": ["upcase", "uppercase"],
+          "require_path": "handlebars/helpers/string_case_formatting/upcase",
+          "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Upcase"
         }
       ]
     },
