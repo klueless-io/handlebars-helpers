@@ -54,6 +54,12 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
         it { is_expected.to eq(expected) }
       end
+
+      context 'pascalcase' do
+        let(:template) { '{{pascalcase .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
     end
 
     describe 'convert to constant case' do
@@ -87,8 +93,14 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
 
-      context 'dash_case' do
-        let(:template) { '{{dash_case .}}' }
+      context 'dashcase' do
+        let(:template) { '{{dashcase .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'hyphenate' do
+        let(:template) { '{{hyphenate .}}' }
 
         it { is_expected.to eq(expected) }
       end
@@ -109,8 +121,8 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
 
-      context 'dot_case' do
-        let(:template) { '{{dot_case .}}' }
+      context 'dotcase' do
+        let(:template) { '{{dotcase .}}' }
 
         it { is_expected.to eq(expected) }
       end
@@ -181,6 +193,28 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
       context 'camelL' do
         let(:template) { '{{camelL .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'convert to plus notation' do
+      let(:data) { 'the quick brown fox' }
+      let(:expected) { 'the+quick+brown+fox' }
+      context 'pluserize' do
+        let(:template) { '{{pluserize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'plusify' do
+        let(:template) { '{{plusify .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'pluscase' do
+        let(:template) { '{{pluscase .}}' }
 
         it { is_expected.to eq(expected) }
       end
