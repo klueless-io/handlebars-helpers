@@ -6,8 +6,6 @@ RSpec.describe Handlebars::Helpers::Comparison::Or do
   let(:lhs) { nil }
   let(:rhs) { nil }
 
-  it { is_expected.not_to be_nil }
-
   # Or: Block helper that renders a block if **any of** the given values is truthy. If an inverse block is specified it will be rendered when falsy.
   describe '#parse' do
     subject { described_class.new.parse([lhs, rhs]) }
