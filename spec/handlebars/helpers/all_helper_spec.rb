@@ -488,6 +488,35 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
+    describe 'return block when first parameter is less than or equal to second paramater' do
+      let(:expected) { '1 is less than or equal 1' }
+      let(:data) { { p1: '1', p2: '1' } }
+
+      context 'lte' do
+        let(:template) do
+          '
+                {{~#if (lte p1 p2)~}}
+                1 is less than or equal 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'less_than_or_equal_to' do
+        let(:template) do
+          '
+                {{~#if (less_than_or_equal_to p1 p2)~}}
+                1 is less than or equal 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
     describe 'return block when first parameter is greater than second paramater' do
       let(:expected) { '2 is greater than 1' }
       let(:data) { { p1: '2', p2: '1' } }
@@ -509,6 +538,35 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
           '
                 {{~#if (greater_than p1 p2)~}}
                 2 is greater than 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first parameter is greater than or equal to second paramater' do
+      let(:expected) { '1 is greater than or equal 1' }
+      let(:data) { { p1: '1', p2: '1' } }
+
+      context 'gte' do
+        let(:template) do
+          '
+                {{~#if (gte p1 p2)~}}
+                1 is greater than or equal 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'greater_than_or_equal_to' do
+        let(:template) do
+          '
+                {{~#if (greater_than_or_equal_to p1 p2)~}}
+                1 is greater than or equal 1
                 {{~/if~}}
                 '
         end
