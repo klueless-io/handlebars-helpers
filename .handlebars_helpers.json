@@ -288,6 +288,35 @@
           "aliases": ["or", "any"],
           "require_path": "handlebars/helpers/comparison/or",
           "class_namespace": "Handlebars::Helpers::Comparison::Or"
+        },
+        {
+          "name": "and",
+          "description": "return block when first value is truthy",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "and",
+              "expected_value": "all exist",
+              "params": [
+                { "name": "p1", "value": "param1" },
+                { "name": "p2", "value": "param2" }
+              ],
+              "template": "\n            {{~#if (and p1 p2)~}}\n              all exist\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "all",
+              "expected_value": "all exist",
+              "params": [
+                { "name": "p1", "value": "param1" },
+                { "name": "p2", "value": "param2" }
+              ],
+              "template": "\n            {{~#if (all p1 p2)~}}\n              all exist\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["and", "all"],
+          "require_path": "handlebars/helpers/comparison/and",
+          "class_namespace": "Handlebars::Helpers::Comparison::And"
         }
       ]
     }
