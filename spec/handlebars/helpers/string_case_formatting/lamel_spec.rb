@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/lamel'
+require 'handlebars/helpers/string_formatting/lamel'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::Lamel do
+RSpec.describe Handlebars::Helpers::StringFormatting::Lamel do
   let(:value) { 'The quick brown fox' }
 
   it { is_expected.not_to be_nil }

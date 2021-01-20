@@ -3,14 +3,14 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/string_case_formatting/base_helper'
+require 'handlebars/helpers/string_formatting/base_helper'
 
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
-    module StringCaseFormatting
+    module StringFormatting
       # snake case the characters in the given 'string'.
-      class Snake < Handlebars::Helpers::StringCaseFormatting::BaseHelper
+      class Snake < Handlebars::Helpers::StringFormatting::BaseHelper
         # Parse will snake case the characters in the given 'string'.
         #
         # @side effects

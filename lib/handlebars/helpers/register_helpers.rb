@@ -33,17 +33,17 @@ module Handlebars
       # Sample configuration
       # "groups": [
       #   {
-      #     "name": "string_case_formatting",
-      #     "base_require": "handlebars/helpers/string_case_formatting",
-      #     "base_namespace": "Handlebars::Helpers::StringCaseFormatting",
+      #     "name": "string_formatting",
+      #     "base_require": "handlebars/helpers/string_formatting",
+      #     "base_namespace": "Handlebars::Helpers::StringFormatting",
       #     "description": "Case modification string manipulation methods",
       #     "helpers": [
       #       {
       #         "name": "camel",
       #         "description": "convert to camel case with first word uppercase and following words uppercase",
       #         "aliases": ["camel", "camelUpper", "camelU"],
-      #         "require_path": "handlebars/helpers/string_case_formatting/camel",
-      #         "class_namespace": "Handlebars::Helpers::StringCaseFormatting::Camel"
+      #         "require_path": "handlebars/helpers/string_formatting/camel",
+      #         "class_namespace": "Handlebars::Helpers::StringFormatting::Camel"
       #       }
       #     ]
       #   }

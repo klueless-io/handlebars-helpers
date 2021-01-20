@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/double_colon'
+require 'handlebars/helpers/string_formatting/double_colon'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::DoubleColon do
+RSpec.describe Handlebars::Helpers::StringFormatting::DoubleColon do
   let(:value) { 'the quick brown fox' }
 
   it { is_expected.not_to be_nil }

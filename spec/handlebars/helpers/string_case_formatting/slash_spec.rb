@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/slash'
+require 'handlebars/helpers/string_formatting/slash'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::Slash do
+RSpec.describe Handlebars::Helpers::StringFormatting::Slash do
   let(:value) { 'the quick brown fox' }
 
   it { is_expected.not_to be_nil }

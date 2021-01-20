@@ -5,7 +5,7 @@ require 'handlebars/helpers/template'
 RSpec.describe 'Handlebars::Helpers::AllHelper' do
   subject { Handlebars::Helpers::Template.render(template, data) }
 
-  context 'Case modification string manipulation methods' do
+  context 'String formatting and manipulation methods' do
     describe 'convert to back slash notation' do
       let(:data) { 'the quick brown fox' }
       let(:expected) { 'the\quick\brown\fox' }
@@ -285,25 +285,6 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
       context 'uppercase' do
         let(:template) { '{{uppercase .}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-  end
-
-  context 'General purpose string manipulation helpers' do
-    describe 'append the specified `suffix` to the given string' do
-      let(:expected) { 'name.html' }
-      let(:data) { { value: 'name', suffix: '.html' } }
-
-      context 'append' do
-        let(:template) { '{{append value suffix}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'appendix' do
-        let(:template) { '{{appendix value suffix}}' }
 
         it { is_expected.to eq(expected) }
       end

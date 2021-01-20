@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require 'handlebars/helpers/string_tokenizer'
-require 'handlebars/helpers/string_case_formatting/camel'
+require 'handlebars/helpers/string_formatting/camel'
 
 RSpec.describe Handlebars::Helpers::Template do
   let(:subject) { described_class.render(template, data) }

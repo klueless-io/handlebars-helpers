@@ -3,15 +3,15 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/string_case_formatting/base_helper'
+require 'handlebars/helpers/string_formatting/base_helper'
 
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
-    module StringCaseFormatting
-      # convert to dot notation
-      class Dotirize < Handlebars::Helpers::StringCaseFormatting::BaseHelper
-        # Parse will convert to dot notation
+    module StringFormatting
+      # convert to dash notation
+      class Dasherize < Handlebars::Helpers::StringFormatting::BaseHelper
+        # Parse will convert to dash notation
         #
         # @side effects
         #
@@ -19,13 +19,13 @@ module Handlebars
         #
         # @example
         #
-        #   puts Dotirize.new.parse('the quick brown fox 99')
+        #   puts Dasherize.new.parse('the quick brown fox 99')
         #
-        #   the.quick.brown.fox99
+        #   the-quick-brown-fox99
         #
-        # @return [String] value converted to dot notation
+        # @return [String] value converted to dash notation
         def parse(value)
-          tokenizer.parse(value, separator: '.')
+          tokenizer.parse(value)
         end
       end
     end
