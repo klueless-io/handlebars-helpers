@@ -373,14 +373,14 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
     end
 
     describe 'return block when first value is truthy' do
-      let(:expected) { 'all exist' }
+      let(:expected) { 'all params exist' }
       let(:data) { { p1: 'param1', p2: 'param2' } }
 
       context 'and' do
         let(:template) do
           '
                 {{~#if (and p1 p2)~}}
-                  all exist
+                  all params exist
                 {{~/if~}}
                 '
         end
@@ -392,7 +392,24 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         let(:template) do
           '
                 {{~#if (all p1 p2)~}}
-                  all exist
+                  all params exist
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when two values are equal' do
+      let(:expected) { 'params are equal' }
+      let(:data) { { p1: 'david', p2: 'david' } }
+
+      context 'eq' do
+        let(:template) do
+          '
+                {{~#if (eq p1 p2)~}}
+                params are equal
                 {{~/if~}}
                 '
         end

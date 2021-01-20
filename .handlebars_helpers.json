@@ -297,26 +297,46 @@
           "tests": [
             {
               "alias": "and",
-              "expected_value": "all exist",
+              "expected_value": "all params exist",
               "params": [
                 { "name": "p1", "value": "param1" },
                 { "name": "p2", "value": "param2" }
               ],
-              "template": "\n            {{~#if (and p1 p2)~}}\n              all exist\n            {{~/if~}}\n            "
+              "template": "\n            {{~#if (and p1 p2)~}}\n              all params exist\n            {{~/if~}}\n            "
             },
             {
               "alias": "all",
-              "expected_value": "all exist",
+              "expected_value": "all params exist",
               "params": [
                 { "name": "p1", "value": "param1" },
                 { "name": "p2", "value": "param2" }
               ],
-              "template": "\n            {{~#if (all p1 p2)~}}\n              all exist\n            {{~/if~}}\n            "
+              "template": "\n            {{~#if (all p1 p2)~}}\n              all params exist\n            {{~/if~}}\n            "
             }
           ],
           "aliases": ["and", "all"],
           "require_path": "handlebars/helpers/comparison/and",
           "class_namespace": "Handlebars::Helpers::Comparison::And"
+        },
+        {
+          "name": "eq",
+          "description": "return block when two values are equal",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "eq",
+              "expected_value": "params are equal",
+              "params": [
+                { "name": "p1", "value": "david" },
+                { "name": "p2", "value": "david" }
+              ],
+              "template": "\n            {{~#if (eq p1 p2)~}}\n            params are equal\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["eq"],
+          "require_path": "handlebars/helpers/comparison/eq",
+          "class_namespace": "Handlebars::Helpers::Comparison::Eq"
         }
       ]
     }
