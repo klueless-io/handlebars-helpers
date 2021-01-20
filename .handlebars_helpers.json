@@ -274,9 +274,18 @@
                 { "name": "p2", "value": "param2" }
               ],
               "template": "\n            {{~#if (or p1 p2)~}}\n              {{p1}}{{p2}}\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "any",
+              "expected_value": "param2",
+              "params": [
+                { "name": "p1", "value": null },
+                { "name": "p2", "value": "param2" }
+              ],
+              "template": "\n            {{~#if (any p1 p2)~}}\n              {{p1}}{{p2}}\n            {{~/if~}}\n            "
             }
           ],
-          "aliases": ["or"],
+          "aliases": ["or", "any"],
           "require_path": "handlebars/helpers/comparison/or",
           "class_namespace": "Handlebars::Helpers::Comparison::Or"
         }

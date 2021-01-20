@@ -10,7 +10,7 @@ RSpec.describe Handlebars::Helpers::Comparison::Or do
 
   # Or: Block helper that renders a block if **any of** the given values is truthy. If an inverse block is specified it will be rendered when falsy.
   describe '#parse' do
-    subject { described_class.new.parse(lhs, rhs) }
+    subject { described_class.new.parse([lhs, rhs]) }
 
     context 'nil || nil' do
       it { is_expected.to be_falsey }
@@ -67,6 +67,40 @@ RSpec.describe Handlebars::Helpers::Comparison::Or do
       let(:name) { 'david' }
       let(:age) { 49 }
       it { is_expected.to eq('david-49') }
+    end
+
+    context 'any' do
+      let(:template) { '{{#if (or p1 p2 p3 p4)}}found{{/if}}' }
+
+      context 'none' do
+        let(:data) { { p1: nil, p2: nil, p3: nil, p4: nil } }
+
+        it { is_expected.to eq('') }
+      end
+
+      context 'one paramater' do
+        let(:data) { { p1: nil, p2: 'pick me', p3: nil, p4: nil } }
+
+        it { is_expected.to eq('found') }
+      end
+
+      context 'multiple paramaters' do
+        let(:data) { { p1: nil, p2: nil, p3: 'pick me', p4: 'or me' } }
+
+        it { is_expected.to eq('found') }
+      end
+
+      context 'boolean falsey' do
+        let(:data) { { p1: nil, p2: nil, p3: nil, p4: false } }
+
+        it { is_expected.to eq('') }
+      end
+
+      context 'boolean true' do
+        let(:data) { { p1: false, p2: nil, p3: nil, p4: true } }
+
+        it { is_expected.to eq('found') }
+      end
     end
   end
 end
