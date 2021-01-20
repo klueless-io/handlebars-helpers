@@ -261,6 +261,26 @@
       ],
       "helpers": [
         {
+          "name": "default",
+          "description": "return value or default value",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "default",
+              "expected_value": "hello world",
+              "params": [
+                { "name": "p1", "value": null },
+                { "name": "p2", "value": null }
+              ],
+              "template": "{{default p1 p2 \"hello world\"}}"
+            }
+          ],
+          "aliases": ["default"],
+          "require_path": "handlebars/helpers/comparison/default",
+          "class_namespace": "Handlebars::Helpers::Comparison::Default"
+        },
+        {
           "name": "or",
           "description": "return block when first value is truthy",
           "test_in": null,
