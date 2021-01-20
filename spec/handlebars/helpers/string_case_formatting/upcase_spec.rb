@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/upcase'
+require 'handlebars/helpers/string_formatting/upcase'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::Upcase do
+RSpec.describe Handlebars::Helpers::StringFormatting::Upcase do
   let(:value) { 'the quick brown fox' }
 
   it { is_expected.not_to be_nil }

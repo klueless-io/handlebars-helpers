@@ -3,14 +3,14 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/string_case_formatting/base_helper'
+require 'handlebars/helpers/string_formatting/base_helper'
 
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
-    module StringCaseFormatting
+    module StringFormatting
       # titleize case the characters in the given 'string', aka heading case
-      class Titleize < Handlebars::Helpers::StringCaseFormatting::BaseHelper
+      class Titleize < Handlebars::Helpers::StringFormatting::BaseHelper
         # Parse will titleize case the characters in the given 'string', aka heading case
         #
         # @side effects

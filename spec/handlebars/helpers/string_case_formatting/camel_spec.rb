@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/camel'
+require 'handlebars/helpers/string_formatting/camel'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::Camel do
+RSpec.describe Handlebars::Helpers::StringFormatting::Camel do
   let(:value) { 'the quick brown fox' }
 
   it { is_expected.not_to be_nil }

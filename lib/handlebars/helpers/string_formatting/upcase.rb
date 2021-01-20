@@ -8,7 +8,7 @@ require 'handlebars/helpers/base_helper'
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
-    module StringCaseFormatting
+    module StringFormatting
       # Upcase/Uppercase all of the characters in the given string.
       class Upcase < Handlebars::Helpers::BaseHelper
         # Parse will Upcase/Uppercase all of the characters in the given string.

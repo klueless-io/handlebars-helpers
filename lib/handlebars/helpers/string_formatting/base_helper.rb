@@ -5,7 +5,7 @@ require 'handlebars/helpers/configuration'
 
 module Handlebars
   module Helpers
-    module StringCaseFormatting
+    module StringFormatting
       # camel case the characters in the given 'string'.
       class BaseHelper < Handlebars::Helpers::BaseHelper
         # String tokenizer will clean up a string so that
