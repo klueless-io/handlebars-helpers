@@ -487,5 +487,34 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'return block when first parameter is greater than second paramater' do
+      let(:expected) { '2 is greater than 1' }
+      let(:data) { { p1: '2', p2: '1' } }
+
+      context 'gt' do
+        let(:template) do
+          '
+                {{~#if (gt p1 p2)~}}
+                2 is greater than 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'greater_than' do
+        let(:template) do
+          '
+                {{~#if (greater_than p1 p2)~}}
+                2 is greater than 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 end
