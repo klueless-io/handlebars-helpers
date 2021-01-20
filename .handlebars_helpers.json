@@ -404,6 +404,35 @@
           "aliases": ["lt", "less_than"],
           "require_path": "handlebars/helpers/comparison/lt",
           "class_namespace": "Handlebars::Helpers::Comparison::Lt"
+        },
+        {
+          "name": "gt",
+          "description": "return block when first parameter is greater than second paramater",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "gt",
+              "expected_value": "2 is greater than 1",
+              "params": [
+                { "name": "p1", "value": 2 },
+                { "name": "p2", "value": 1 }
+              ],
+              "template": "\n            {{~#if (gt p1 p2)~}}\n            2 is greater than 1\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "greater_than",
+              "expected_value": "2 is greater than 1",
+              "params": [
+                { "name": "p1", "value": 2 },
+                { "name": "p2", "value": 1 }
+              ],
+              "template": "\n            {{~#if (greater_than p1 p2)~}}\n            2 is greater than 1\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["gt", "greater_than"],
+          "require_path": "handlebars/helpers/comparison/gt",
+          "class_namespace": "Handlebars::Helpers::Comparison::Gt"
         }
       ]
     }
