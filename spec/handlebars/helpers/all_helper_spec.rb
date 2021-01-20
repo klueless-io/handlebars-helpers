@@ -358,6 +358,18 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
         it { is_expected.to eq(expected) }
       end
+
+      context 'any' do
+        let(:template) do
+          '
+                {{~#if (any p1 p2)~}}
+                  {{p1}}{{p2}}
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
     end
   end
 end
