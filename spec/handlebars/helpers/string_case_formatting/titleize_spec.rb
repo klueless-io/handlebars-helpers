@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/titleize'
+require 'handlebars/helpers/string_formatting/titleize'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::Titleize do
+RSpec.describe Handlebars::Helpers::StringFormatting::Titleize do
   let(:value) { 'the quick brown fox' }
 
   it { is_expected.not_to be_nil }

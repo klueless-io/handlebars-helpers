@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/downcase'
+require 'handlebars/helpers/string_formatting/downcase'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::Downcase do
+RSpec.describe Handlebars::Helpers::StringFormatting::Downcase do
   let(:value) { 'The Quick Brown Fox' }
 
   it { is_expected.not_to be_nil }

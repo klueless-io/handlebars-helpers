@@ -2,7 +2,7 @@
 
 require 'handlebars/helpers/string_tokenizer'
 
-# TODO: Needs to move into string_case_formatting
+# TODO: Needs to move into string_formatting
 RSpec.describe Handlebars::Helpers::StringTokenizer do
   let(:subject) do
     described_class.new.parse(value,

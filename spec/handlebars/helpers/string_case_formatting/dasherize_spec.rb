@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_case_formatting/dasherize'
+require 'handlebars/helpers/string_formatting/dasherize'
 
-RSpec.describe Handlebars::Helpers::StringCaseFormatting::Dasherize do
+RSpec.describe Handlebars::Helpers::StringFormatting::Dasherize do
   let(:value) { 'The Quick Brown Fox' }
 
   it { is_expected.not_to be_nil }
