@@ -10,25 +10,25 @@ RSpec.describe Handlebars::Helpers::Comparison::Ne do
     let(:lhs) { nil }
     let(:rhs) { nil }
 
-    context 'nil ne nil' do
+    context 'nil != nil' do
       it { is_expected.to be_falsey }
     end
 
-    context "'aaa' ne 'aaa'" do
+    context "'aaa' != 'aaa'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'aaa' }
 
       it { is_expected.to be_falsey }
     end
 
-    context "'aaa' ne 'AAA'" do
+    context "'aaa' != 'AAA'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'AAA' }
 
       it { is_expected.to be_truthy }
     end
 
-    context "'aaa' ne 'bbb'" do
+    context "'aaa' != 'bbb'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'bbb' }
 
@@ -48,18 +48,18 @@ RSpec.describe Handlebars::Helpers::Comparison::Ne do
     let(:lhs) { nil }
     let(:rhs) { nil }
 
-    context 'nil not equal to nil' do
+    context 'nil != nil' do
       it { is_expected.to eq('FAIL: these values are equal') }
     end
 
-    context "'aaa' not equal to 'aaa'" do
+    context "'aaa' != 'aaa'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'aaa' }
 
       it { is_expected.to eq('FAIL: these values are equal') }
     end
 
-    context "'aaa' not equal to 'AAA'" do
+    context "'aaa' != 'AAA'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'AAA' }
 
