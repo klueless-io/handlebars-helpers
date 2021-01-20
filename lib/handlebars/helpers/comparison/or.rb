@@ -40,7 +40,7 @@ module Handlebars
         #
         #   truthy block
         #
-        # @param values list of values (via *splat) to be checked in OR condition
+        # @param values list of values (via *splat) to be checked via OR condition
         # @return [String] return block when first value is truthy
         def parse(values)
           values.any? { |value| value }
