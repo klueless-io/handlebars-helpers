@@ -332,9 +332,18 @@
                 { "name": "p2", "value": "david" }
               ],
               "template": "\n            {{~#if (eq p1 p2)~}}\n            params are equal\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "equal",
+              "expected_value": "params are equal",
+              "params": [
+                { "name": "p1", "value": "david" },
+                { "name": "p2", "value": "david" }
+              ],
+              "template": "\n            {{~#if (equal p1 p2)~}}\n            params are equal\n            {{~/if~}}\n            "
             }
           ],
-          "aliases": ["eq"],
+          "aliases": ["eq", "equal"],
           "require_path": "handlebars/helpers/comparison/eq",
           "class_namespace": "Handlebars::Helpers::Comparison::Eq"
         }

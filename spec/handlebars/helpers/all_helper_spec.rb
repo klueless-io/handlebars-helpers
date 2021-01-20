@@ -416,6 +416,18 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
         it { is_expected.to eq(expected) }
       end
+
+      context 'equal' do
+        let(:template) do
+          '
+                {{~#if (equal p1 p2)~}}
+                params are equal
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
     end
   end
 end
