@@ -43,27 +43,27 @@ RSpec.describe Handlebars::Helpers::Comparison::Eq do
       end
     end
 
-    let(:template) { '{{#if (eq lhs rhs)}}they are equal{{/if}}' }
+    let(:template) { '{{#if (eq lhs rhs)}}SUCCESS: they are equal{{^}}FAIL: they are not equal{{/if}}' }
     let(:data) { { lhs: lhs, rhs: rhs } }
     let(:lhs) { nil }
     let(:rhs) { nil }
 
-    context 'nil eq nil' do
-      it { is_expected.to eq('they are equal') }
+    context 'nil equal to nil' do
+      it { is_expected.to eq('SUCCESS: they are equal') }
     end
 
-    context "'aaa' eq 'aaa'" do
+    context "'aaa' equal to 'aaa'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'aaa' }
 
-      it { is_expected.to eq('they are equal') }
+      it { is_expected.to eq('SUCCESS: they are equal') }
     end
 
-    context "'aaa' eq 'AAA'" do
+    context "'aaa' equal to 'AAA'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'AAA' }
 
-      it { is_expected.to eq('') }
+      it { is_expected.to eq('FAIL: they are not equal') }
     end
   end
 end
