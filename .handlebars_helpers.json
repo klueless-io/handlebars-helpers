@@ -406,6 +406,35 @@
           "class_namespace": "Handlebars::Helpers::Comparison::Lt"
         },
         {
+          "name": "lte",
+          "description": "return block when first parameter is less than or equal to second paramater",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "lte",
+              "expected_value": "1 is less than or equal 1",
+              "params": [
+                { "name": "p1", "value": 1 },
+                { "name": "p2", "value": 1 }
+              ],
+              "template": "\n            {{~#if (lte p1 p2)~}}\n            1 is less than or equal 1\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "less_than_or_equal_to",
+              "expected_value": "1 is less than or equal 1",
+              "params": [
+                { "name": "p1", "value": 1 },
+                { "name": "p2", "value": 1 }
+              ],
+              "template": "\n            {{~#if (less_than_or_equal_to p1 p2)~}}\n            1 is less than or equal 1\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["lte", "less_than_or_equal_to"],
+          "require_path": "handlebars/helpers/comparison/lte",
+          "class_namespace": "Handlebars::Helpers::Comparison::Lte"
+        },
+        {
           "name": "gt",
           "description": "return block when first parameter is greater than second paramater",
           "test_in": null,
@@ -433,6 +462,35 @@
           "aliases": ["gt", "greater_than"],
           "require_path": "handlebars/helpers/comparison/gt",
           "class_namespace": "Handlebars::Helpers::Comparison::Gt"
+        },
+        {
+          "name": "gte",
+          "description": "return block when first parameter is greater than or equal to second paramater",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "gte",
+              "expected_value": "1 is greater than or equal 1",
+              "params": [
+                { "name": "p1", "value": 1 },
+                { "name": "p2", "value": 1 }
+              ],
+              "template": "\n            {{~#if (gte p1 p2)~}}\n            1 is greater than or equal 1\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "greater_than_or_equal_to",
+              "expected_value": "1 is greater than or equal 1",
+              "params": [
+                { "name": "p1", "value": 1 },
+                { "name": "p2", "value": 1 }
+              ],
+              "template": "\n            {{~#if (greater_than_or_equal_to p1 p2)~}}\n            1 is greater than or equal 1\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["gte", "greater_than_or_equal_to"],
+          "require_path": "handlebars/helpers/comparison/gte",
+          "class_namespace": "Handlebars::Helpers::Comparison::Gte"
         }
       ]
     }
