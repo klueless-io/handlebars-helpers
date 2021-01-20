@@ -13,8 +13,8 @@ module Handlebars
       #
       # @example
       #
-      # {{#if (or section1 section2)}}
-      # .. content
+      # {{#if (or p1 p2 p3 p4 p5)}}
+      #   found
       # {{/if}}
       #
       # @example
@@ -40,18 +40,15 @@ module Handlebars
         #
         #   truthy block
         #
-        # @param left hand side value
-        # @param right hand side value
+        # @param values list of values (via *splat) to be checked in OR condition
         # @return [String] return block when first value is truthy
-        def parse(lhs, rhs)
-          # L.kv 'lhs', lhs
-          # L.kv 'rhs', rhs
-          lhs || rhs
+        def parse(values)
+          values.any? { |value| value }
         end
 
-        # Sample handlebars registration helper
         def handlebars_helper
-          proc { |_context, lhs, rhs| parse(lhs, rhs) }
+          # Exclude last paramater which is the context V8::Object
+          proc { |_context, *values| parse(values[0..-2]) }
         end
       end
     end
