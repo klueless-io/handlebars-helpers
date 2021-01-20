@@ -346,6 +346,64 @@
           "aliases": ["eq", "equal"],
           "require_path": "handlebars/helpers/comparison/eq",
           "class_namespace": "Handlebars::Helpers::Comparison::Eq"
+        },
+        {
+          "name": "ne",
+          "description": "return block when two values are NOT equal",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "ne",
+              "expected_value": "params are not equal",
+              "params": [
+                { "name": "p1", "value": "aaa" },
+                { "name": "p2", "value": "bbb" }
+              ],
+              "template": "\n            {{~#if (ne p1 p2)~}}\n            params are not equal\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "not_equal",
+              "expected_value": "params are not equal",
+              "params": [
+                { "name": "p1", "value": "aaa" },
+                { "name": "p2", "value": "bbb" }
+              ],
+              "template": "\n            {{~#if (not_equal p1 p2)~}}\n            params are not equal\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["ne", "not_equal"],
+          "require_path": "handlebars/helpers/comparison/ne",
+          "class_namespace": "Handlebars::Helpers::Comparison::Ne"
+        },
+        {
+          "name": "lt",
+          "description": "return block when first parameter is less than second paramater",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "lt",
+              "expected_value": "1 is less than 2",
+              "params": [
+                { "name": "p1", "value": 1 },
+                { "name": "p2", "value": 2 }
+              ],
+              "template": "\n            {{~#if (lt p1 p2)~}}\n            1 is less than 2\n            {{~/if~}}\n            "
+            },
+            {
+              "alias": "less_than",
+              "expected_value": "1 is less than 2",
+              "params": [
+                { "name": "p1", "value": 1 },
+                { "name": "p2", "value": 2 }
+              ],
+              "template": "\n            {{~#if (less_than p1 p2)~}}\n            1 is less than 2\n            {{~/if~}}\n            "
+            }
+          ],
+          "aliases": ["lt", "less_than"],
+          "require_path": "handlebars/helpers/comparison/lt",
+          "class_namespace": "Handlebars::Helpers::Comparison::Lt"
         }
       ]
     }

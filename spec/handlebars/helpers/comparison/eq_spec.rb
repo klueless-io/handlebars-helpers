@@ -10,25 +10,25 @@ RSpec.describe Handlebars::Helpers::Comparison::Eq do
     let(:lhs) { nil }
     let(:rhs) { nil }
 
-    context 'nil eq nil' do
+    context 'nil == nil' do
       it { is_expected.to be_truthy }
     end
 
-    context "'aaa' eq 'aaa'" do
+    context "'aaa' == 'aaa'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'aaa' }
 
       it { is_expected.to be_truthy }
     end
 
-    context "'aaa' eq 'AAA'" do
+    context "'aaa' == 'AAA'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'AAA' }
 
       it { is_expected.to be_falsey }
     end
 
-    context "'aaa' eq 'bbb'" do
+    context "'aaa' == 'bbb'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'bbb' }
 
@@ -48,18 +48,18 @@ RSpec.describe Handlebars::Helpers::Comparison::Eq do
     let(:lhs) { nil }
     let(:rhs) { nil }
 
-    context 'nil equal to nil' do
+    context 'nil == nil' do
       it { is_expected.to eq('SUCCESS: they are equal') }
     end
 
-    context "'aaa' equal to 'aaa'" do
+    context "'aaa' == 'aaa'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'aaa' }
 
       it { is_expected.to eq('SUCCESS: they are equal') }
     end
 
-    context "'aaa' equal to 'AAA'" do
+    context "'aaa' == 'AAA'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'AAA' }
 

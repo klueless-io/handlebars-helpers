@@ -429,5 +429,63 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'return block when two values are NOT equal' do
+      let(:expected) { 'params are not equal' }
+      let(:data) { { p1: 'aaa', p2: 'bbb' } }
+
+      context 'ne' do
+        let(:template) do
+          '
+                {{~#if (ne p1 p2)~}}
+                params are not equal
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'not_equal' do
+        let(:template) do
+          '
+                {{~#if (not_equal p1 p2)~}}
+                params are not equal
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first parameter is less than second paramater' do
+      let(:expected) { '1 is less than 2' }
+      let(:data) { { p1: '1', p2: '2' } }
+
+      context 'lt' do
+        let(:template) do
+          '
+                {{~#if (lt p1 p2)~}}
+                1 is less than 2
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'less_than' do
+        let(:template) do
+          '
+                {{~#if (less_than p1 p2)~}}
+                1 is less than 2
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 end
