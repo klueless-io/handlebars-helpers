@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'handlebars/helpers/configuration'
+require 'handlebars/helpers/string_formatting/camel'
 
 class ConfigurationSampleTokenizer
   def parse(value, preserve_case: false)
@@ -42,5 +43,31 @@ RSpec.describe Handlebars::Helpers::Configuration do
 
       it { is_expected.to eq('xxx.json') }
     end
+  end
+  describe '.string_formatter_config_file' do
+    subject { Handlebars::Helpers.configuration.string_formatter_config_file }
+
+    it { is_expected.to eq('.handlebars_string_formatters.json') }
+
+    context 'custom string_formatter_config_file' do
+      before :each do
+        Handlebars::Helpers.configure do |config|
+          config.string_formatter_config_file = 'xxx.json'
+        end
+      end
+
+      it { is_expected.to eq('xxx.json') }
+    end
+  end
+  describe '.string_formatter_config' do
+    subject { Handlebars::Helpers.configuration.string_formatter_config }
+
+    it { is_expected.not_to be_nil }
+    it { is_expected.to have_key(:camel) }
+
+    it { is_expected.to include(camel: a_kind_of(Handlebars::Helpers::StringFormatting::Camel)) }
+    it { is_expected.to include(pascalcase: a_kind_of(Handlebars::Helpers::StringFormatting::Camel)) }
+    it { is_expected.to include(constantize: a_kind_of(Handlebars::Helpers::StringFormatting::Constantize)) }
+    it { is_expected.to include(constant: a_kind_of(Handlebars::Helpers::StringFormatting::Constantize)) }
   end
 end

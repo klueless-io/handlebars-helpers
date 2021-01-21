@@ -1,0 +1,123 @@
+{
+  "formatters": [
+    {
+      "name": "back_slash",
+      "description": "convert to back slash notation",
+      "aliases": ["back_slash", "backward_slash", "slash_backward"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::BackSlash",
+      "require_path": "handlebars/helpers/string_formatting/back_slash"
+    },
+    {
+      "name": "camel",
+      "description": "convert to camel case with first word uppercase and following words uppercase",
+      "aliases": ["camel", "camel_upper", "camelUpper", "camelU", "pascalcase"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Camel",
+      "require_path": "handlebars/helpers/string_formatting/camel"
+    },
+    {
+      "name": "constantize",
+      "description": "convert to constant case",
+      "aliases": ["constantize", "constant"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Constantize",
+      "require_path": "handlebars/helpers/string_formatting/constantize"
+    },
+    {
+      "name": "dasherize",
+      "description": "convert to dash notation",
+      "aliases": ["dasherize", "dashify", "dashcase", "hyphenate"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Dasherize",
+      "require_path": "handlebars/helpers/string_formatting/dasherize"
+    },
+    {
+      "name": "dotirize",
+      "description": "convert to dash notation",
+      "aliases": ["dotirize", "dotify", "dotcase"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Dotirize",
+      "require_path": "handlebars/helpers/string_formatting/dotirize"
+    },
+    {
+      "name": "double_colon",
+      "description": "double_colon notation, similar to ruby namespace",
+      "aliases": ["double_colon"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::DoubleColon",
+      "require_path": "handlebars/helpers/string_formatting/double_colon"
+    },
+    {
+      "name": "downcase",
+      "description": "convert all characters to lower case",
+      "aliases": ["downcase", "lowercase"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Downcase",
+      "require_path": "handlebars/helpers/string_formatting/downcase"
+    },
+    {
+      "name": "humanize",
+      "description": "convert text to human case, aka capitalize",
+      "aliases": ["humanize", "capitalize"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Humanize",
+      "require_path": "handlebars/helpers/string_formatting/humanize"
+    },
+    {
+      "name": "lamel",
+      "description": "convert to lamel case with first word lowercase and following words uppercase",
+      "aliases": ["lamel", "camel_lower", "camelLower", "camelL"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Lamel",
+      "require_path": "handlebars/helpers/string_formatting/lamel"
+    },
+    {
+      "name": "pluserize",
+      "description": "convert to plus notation",
+      "aliases": ["pluserize", "plusify", "pluscase"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Pluserize",
+      "require_path": "handlebars/helpers/string_formatting/pluserize"
+    },
+    {
+      "name": "slash",
+      "description": "convert to slash notation, aka forward slash",
+      "aliases": ["slash", "forward_slash", "slash_forward"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Slash",
+      "require_path": "handlebars/helpers/string_formatting/slash"
+    },
+    {
+      "name": "snake",
+      "description": "convert to snake notation",
+      "aliases": ["snake"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Snake",
+      "require_path": "handlebars/helpers/string_formatting/snake"
+    },
+    {
+      "name": "titleize",
+      "description": "value converted to titleize case, aka heading case",
+      "aliases": ["titleize", "heading", "capitalize_all"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Titleize",
+      "require_path": "handlebars/helpers/string_formatting/titleize"
+    },
+    {
+      "name": "upcase",
+      "description": "convert all characters to lower case",
+      "aliases": ["upcase", "uppercase"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Upcase",
+      "require_path": "handlebars/helpers/string_formatting/upcase"
+    },
+    {
+      "name": "pluralize",
+      "description": "singular value is converted to plural form",
+      "aliases": ["pluralize", "plural"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Pluralize",
+      "require_path": "handlebars/helpers/string_formatting/pluralize"
+    },
+    {
+      "name": "singularize",
+      "description": "plural value is converted to singular from",
+      "aliases": ["singularize", "singular"],
+      "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize",
+      "require_path": "handlebars/helpers/string_formatting/singularize"
+    },
+    {
+      "name": "tableize",
+      "description": "creates the name of a table like Rails does when converting models to table names",
+      "aliases": ["tableize"],
+      "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize",
+      "require_path": "handlebars/helpers/code_ruby/tableize"
+    }
+  ]
+}
