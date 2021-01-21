@@ -418,6 +418,24 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'returns value with surrounding character if the value is present?' do
+      let(:expected) { '(product_categories' }
+      let(:data) do
+        {
+          value: 'product category',
+          prefix: '(',
+          suffix: nil,
+          formats: 'pluralize,snake'
+        }
+      end
+
+      context 'surround_if' do
+        let(:template) { '{{surround_if value prefix suffix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 
   context 'Ruby code handling routines' do
