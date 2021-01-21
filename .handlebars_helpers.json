@@ -20,7 +20,8 @@
           ],
           "aliases": ["back_slash", "backward_slash", "slash_backward"],
           "require_path": "handlebars/helpers/string_formatting/back_slash",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::BackSlash"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::BackSlash",
+          "is_string_formatter": true
         },
         {
           "name": "camel",
@@ -42,7 +43,8 @@
             "pascalcase"
           ],
           "require_path": "handlebars/helpers/string_formatting/camel",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Camel"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Camel",
+          "is_string_formatter": true
         },
         {
           "name": "constantize",
@@ -52,7 +54,8 @@
           "tests": [{ "alias": "constantize" }, { "alias": "constant" }],
           "aliases": ["constantize", "constant"],
           "require_path": "handlebars/helpers/string_formatting/constantize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Constantize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Constantize",
+          "is_string_formatter": true
         },
         {
           "name": "dasherize",
@@ -67,7 +70,8 @@
           ],
           "aliases": ["dasherize", "dashify", "dashcase", "hyphenate"],
           "require_path": "handlebars/helpers/string_formatting/dasherize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Dasherize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Dasherize",
+          "is_string_formatter": true
         },
         {
           "name": "dotirize",
@@ -81,7 +85,8 @@
           ],
           "aliases": ["dotirize", "dotify", "dotcase"],
           "require_path": "handlebars/helpers/string_formatting/dotirize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Dotirize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Dotirize",
+          "is_string_formatter": true
         },
         {
           "name": "double_colon",
@@ -91,7 +96,8 @@
           "tests": [{ "alias": "double_colon" }],
           "aliases": ["double_colon"],
           "require_path": "handlebars/helpers/string_formatting/double_colon",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::DoubleColon"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::DoubleColon",
+          "is_string_formatter": true
         },
         {
           "name": "downcase",
@@ -101,7 +107,8 @@
           "tests": [{ "alias": "downcase" }, { "alias": "lowercase" }],
           "aliases": ["downcase", "lowercase"],
           "require_path": "handlebars/helpers/string_formatting/downcase",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Downcase"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Downcase",
+          "is_string_formatter": true
         },
         {
           "name": "humanize",
@@ -111,7 +118,8 @@
           "tests": [{ "alias": "humanize" }, { "alias": "capitalize" }],
           "aliases": ["humanize", "capitalize"],
           "require_path": "handlebars/helpers/string_formatting/humanize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Humanize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Humanize",
+          "is_string_formatter": true
         },
         {
           "name": "lamel",
@@ -126,7 +134,8 @@
           ],
           "aliases": ["lamel", "camel_lower", "camelLower", "camelL"],
           "require_path": "handlebars/helpers/string_formatting/lamel",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Lamel"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Lamel",
+          "is_string_formatter": true
         },
         {
           "name": "pluserize",
@@ -140,7 +149,8 @@
           ],
           "aliases": ["pluserize", "plusify", "pluscase"],
           "require_path": "handlebars/helpers/string_formatting/pluserize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluserize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluserize",
+          "is_string_formatter": true
         },
         {
           "name": "slash",
@@ -154,7 +164,8 @@
           ],
           "aliases": ["slash", "forward_slash", "slash_forward"],
           "require_path": "handlebars/helpers/string_formatting/slash",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Slash"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Slash",
+          "is_string_formatter": true
         },
         {
           "name": "snake",
@@ -164,7 +175,8 @@
           "tests": [{ "alias": "snake" }],
           "aliases": ["snake"],
           "require_path": "handlebars/helpers/string_formatting/snake",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Snake"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Snake",
+          "is_string_formatter": true
         },
         {
           "name": "titleize",
@@ -178,7 +190,8 @@
           ],
           "aliases": ["titleize", "heading", "capitalize_all"],
           "require_path": "handlebars/helpers/string_formatting/titleize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Titleize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Titleize",
+          "is_string_formatter": true
         },
         {
           "name": "upcase",
@@ -188,7 +201,8 @@
           "tests": [{ "alias": "upcase" }, { "alias": "uppercase" }],
           "aliases": ["upcase", "uppercase"],
           "require_path": "handlebars/helpers/string_formatting/upcase",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Upcase"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Upcase",
+          "is_string_formatter": true
         },
         {
           "name": "pluralize",
@@ -198,7 +212,8 @@
           "tests": [{ "alias": "pluralize" }, { "alias": "plural" }],
           "aliases": ["pluralize", "plural"],
           "require_path": "handlebars/helpers/string_formatting/pluralize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluralize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluralize",
+          "is_string_formatter": true
         },
         {
           "name": "singularize",
@@ -208,7 +223,8 @@
           "tests": [{ "alias": "singularize" }, { "alias": "singular" }],
           "aliases": ["singularize", "singular"],
           "require_path": "handlebars/helpers/string_formatting/singularize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize"
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize",
+          "is_string_formatter": true
         }
       ]
     },
@@ -240,7 +256,8 @@
           ],
           "aliases": ["classify"],
           "require_path": "handlebars/helpers/code_ruby/classify",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Classify"
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Classify",
+          "is_string_formatter": null
         },
         {
           "name": "demodulize",
@@ -262,7 +279,8 @@
           ],
           "aliases": ["demodulize"],
           "require_path": "handlebars/helpers/code_ruby/demodulize",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Demodulize"
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Demodulize",
+          "is_string_formatter": null
         },
         {
           "name": "deconstantize",
@@ -281,7 +299,8 @@
           ],
           "aliases": ["deconstantize"],
           "require_path": "handlebars/helpers/code_ruby/deconstantize",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Deconstantize"
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Deconstantize",
+          "is_string_formatter": null
         },
         {
           "name": "foreign_key",
@@ -298,7 +317,8 @@
           ],
           "aliases": ["foreign_key"],
           "require_path": "handlebars/helpers/code_ruby/foreign_key",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::ForeignKey"
+          "class_namespace": "Handlebars::Helpers::CodeRuby::ForeignKey",
+          "is_string_formatter": null
         },
         {
           "name": "tableize",
@@ -315,7 +335,8 @@
           ],
           "aliases": ["tableize"],
           "require_path": "handlebars/helpers/code_ruby/tableize",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize"
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize",
+          "is_string_formatter": true
         }
       ]
     },
@@ -348,7 +369,8 @@
           ],
           "aliases": ["default"],
           "require_path": "handlebars/helpers/comparison/default",
-          "class_namespace": "Handlebars::Helpers::Comparison::Default"
+          "class_namespace": "Handlebars::Helpers::Comparison::Default",
+          "is_string_formatter": null
         },
         {
           "name": "or",
@@ -377,7 +399,8 @@
           ],
           "aliases": ["or", "any"],
           "require_path": "handlebars/helpers/comparison/or",
-          "class_namespace": "Handlebars::Helpers::Comparison::Or"
+          "class_namespace": "Handlebars::Helpers::Comparison::Or",
+          "is_string_formatter": null
         },
         {
           "name": "and",
@@ -406,7 +429,8 @@
           ],
           "aliases": ["and", "all"],
           "require_path": "handlebars/helpers/comparison/and",
-          "class_namespace": "Handlebars::Helpers::Comparison::And"
+          "class_namespace": "Handlebars::Helpers::Comparison::And",
+          "is_string_formatter": null
         },
         {
           "name": "eq",
@@ -435,7 +459,8 @@
           ],
           "aliases": ["eq", "equal"],
           "require_path": "handlebars/helpers/comparison/eq",
-          "class_namespace": "Handlebars::Helpers::Comparison::Eq"
+          "class_namespace": "Handlebars::Helpers::Comparison::Eq",
+          "is_string_formatter": null
         },
         {
           "name": "ne",
@@ -464,7 +489,8 @@
           ],
           "aliases": ["ne", "not_equal"],
           "require_path": "handlebars/helpers/comparison/ne",
-          "class_namespace": "Handlebars::Helpers::Comparison::Ne"
+          "class_namespace": "Handlebars::Helpers::Comparison::Ne",
+          "is_string_formatter": null
         },
         {
           "name": "lt",
@@ -493,7 +519,8 @@
           ],
           "aliases": ["lt", "less_than"],
           "require_path": "handlebars/helpers/comparison/lt",
-          "class_namespace": "Handlebars::Helpers::Comparison::Lt"
+          "class_namespace": "Handlebars::Helpers::Comparison::Lt",
+          "is_string_formatter": null
         },
         {
           "name": "lte",
@@ -522,7 +549,8 @@
           ],
           "aliases": ["lte", "less_than_or_equal_to"],
           "require_path": "handlebars/helpers/comparison/lte",
-          "class_namespace": "Handlebars::Helpers::Comparison::Lte"
+          "class_namespace": "Handlebars::Helpers::Comparison::Lte",
+          "is_string_formatter": null
         },
         {
           "name": "gt",
@@ -551,7 +579,8 @@
           ],
           "aliases": ["gt", "greater_than"],
           "require_path": "handlebars/helpers/comparison/gt",
-          "class_namespace": "Handlebars::Helpers::Comparison::Gt"
+          "class_namespace": "Handlebars::Helpers::Comparison::Gt",
+          "is_string_formatter": null
         },
         {
           "name": "gte",
@@ -580,7 +609,8 @@
           ],
           "aliases": ["gte", "greater_than_or_equal_to"],
           "require_path": "handlebars/helpers/comparison/gte",
-          "class_namespace": "Handlebars::Helpers::Comparison::Gte"
+          "class_namespace": "Handlebars::Helpers::Comparison::Gte",
+          "is_string_formatter": null
         }
       ]
     }
