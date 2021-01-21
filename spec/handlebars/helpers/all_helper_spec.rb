@@ -380,6 +380,44 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'returns value with prefix if the value is present?' do
+      let(:expected) { '# product_categories' }
+      let(:data) do
+        { value: 'product category', prefix: '# ', formats: 'pluralize,snake' }
+      end
+
+      context 'prepend_if' do
+        let(:template) { '{{prepend_if value prefix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'prefix_if' do
+        let(:template) { '{{prefix_if value prefix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'returns value with suffix if the value is present?' do
+      let(:expected) { 'product_categories:' }
+      let(:data) do
+        { value: 'product category', suffix: ':', formats: 'pluralize,snake' }
+      end
+
+      context 'append_if' do
+        let(:template) { '{{append_if value suffix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'suffix_if' do
+        let(:template) { '{{suffix_if value suffix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 
   context 'Ruby code handling routines' do

@@ -330,6 +330,70 @@
           "require_path": "handlebars/helpers/string_formatting/padl",
           "class_namespace": "Handlebars::Helpers::StringFormatting::Padl",
           "is_string_formatter": null
+        },
+        {
+          "name": "prepend_if",
+          "description": "returns value with prefix if the value is present?",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "prepend_if",
+              "expected_value": "# product_categories",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "prefix", "value": "# " },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{prepend_if value prefix formats}}"
+            },
+            {
+              "alias": "prefix_if",
+              "expected_value": "# product_categories",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "prefix", "value": "# " },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{prefix_if value prefix formats}}"
+            }
+          ],
+          "aliases": ["prepend_if", "prefix_if"],
+          "require_path": "handlebars/helpers/string_formatting/prepend_if",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::PrependIf",
+          "is_string_formatter": null
+        },
+        {
+          "name": "append_if",
+          "description": "returns value with suffix if the value is present?",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "append_if",
+              "expected_value": "product_categories:",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "suffix", "value": ":" },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{append_if value suffix formats}}"
+            },
+            {
+              "alias": "suffix_if",
+              "expected_value": "product_categories:",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "suffix", "value": ":" },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{suffix_if value suffix formats}}"
+            }
+          ],
+          "aliases": ["append_if", "suffix_if"],
+          "require_path": "handlebars/helpers/string_formatting/append_if",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::AppendIf",
+          "is_string_formatter": null
         }
       ]
     },
