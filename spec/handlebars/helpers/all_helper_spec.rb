@@ -334,6 +334,19 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'removes the module part from the expression in the string' do
+      let(:expected) { 'Inflections' }
+      let(:data) do
+        { namespaced_class: 'ActiveSupport::Inflector::Inflections' }
+      end
+
+      context 'demodulize' do
+        let(:template) { '{{demodulize namespaced_class}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 
   context 'Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.' do
