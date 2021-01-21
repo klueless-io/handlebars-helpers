@@ -24,7 +24,12 @@ module Handlebars
 
     # Configuration class
     class Configuration
-      attr_accessor :tokenizer, :helper_config_file
+      attr_accessor :tokenizer,
+                    :helper_config_file,
+                    :padl_count,
+                    :padl_char,
+                    :padr_count,
+                    :padr_char
       attr_reader :string_formatter_config_file
       attr_writer :string_formatter_config
 
@@ -32,10 +37,16 @@ module Handlebars
         @tokenizer = Handlebars::Helpers::StringTokenizer.new
         @helper_config_file = '.handlebars_helpers.json'
         @string_formatter_config_file = '.handlebars_string_formatters.json'
+        @padr_count = 30
+        @padr_char = ' '
+        @padl_count = 30
+        @padl_char = ' '
       end
 
       def string_formatter_config_file=(value)
         @string_formatter_config_file = value
+        # updating the file will clear the config object,
+        # which will be reloaded on next call to string_formatter_config
         self.string_formatter_config = nil
       end
 

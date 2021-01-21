@@ -9,6 +9,27 @@
       "examples": null,
       "helpers": [
         {
+          "name": "format_as",
+          "description": "returns a value that has been processed by multiple formatters",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "format_as",
+              "expected_value": "the-quick-brown-foxes",
+              "params": [
+                { "name": "value", "value": "the quick brown fox" },
+                { "name": "format", "value": "pluralize,dashify" }
+              ],
+              "template": "{{format_as value format}}"
+            }
+          ],
+          "aliases": ["format_as"],
+          "require_path": "handlebars/helpers/string_formatting/format_as",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::FormatAs",
+          "is_string_formatter": null
+        },
+        {
           "name": "back_slash",
           "description": "convert to back slash notation",
           "test_in": "the quick brown fox",
@@ -225,6 +246,90 @@
           "require_path": "handlebars/helpers/string_formatting/singularize",
           "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize",
           "is_string_formatter": true
+        },
+        {
+          "name": "padr",
+          "description": "returns value with padding to right",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "padr",
+              "expected_value": "pad-me....",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{padr value count char}}"
+            },
+            {
+              "alias": "pad_right",
+              "expected_value": "pad-me....",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{pad_right value count char}}"
+            },
+            {
+              "alias": "ljust",
+              "expected_value": "pad-me....",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{ljust value count char}}"
+            }
+          ],
+          "aliases": ["padr", "pad_right", "ljust"],
+          "require_path": "handlebars/helpers/string_formatting/padr",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Padr",
+          "is_string_formatter": null
+        },
+        {
+          "name": "padl",
+          "description": "returns value with padding to left",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "padl",
+              "expected_value": "....pad-me",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{padl value count char}}"
+            },
+            {
+              "alias": "pad_left",
+              "expected_value": "....pad-me",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{pad_left value count char}}"
+            },
+            {
+              "alias": "rjust",
+              "expected_value": "....pad-me",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{rjust value count char}}"
+            }
+          ],
+          "aliases": ["padl", "pad_left", "rjust"],
+          "require_path": "handlebars/helpers/string_formatting/padl",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Padl",
+          "is_string_formatter": null
         }
       ]
     },

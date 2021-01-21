@@ -6,6 +6,19 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
   subject { Handlebars::Helpers::Template.render(template, data) }
 
   context 'String formatting and manipulation methods' do
+    describe 'returns a value that has been processed by multiple formatters' do
+      let(:expected) { 'the-quick-brown-foxes' }
+      let(:data) do
+        { value: 'the quick brown fox', format: 'pluralize,dashify' }
+      end
+
+      context 'format_as' do
+        let(:template) { '{{format_as value format}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
     describe 'convert to back slash notation' do
       let(:data) { 'the quick brown fox' }
       let(:expected) { 'the\quick\brown\fox' }
@@ -317,6 +330,52 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
       context 'singular' do
         let(:template) { '{{singular .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'returns value with padding to right' do
+      let(:expected) { 'pad-me....' }
+      let(:data) { { value: 'pad-me', count: '10', char: '.' } }
+
+      context 'padr' do
+        let(:template) { '{{padr value count char}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'pad_right' do
+        let(:template) { '{{pad_right value count char}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'ljust' do
+        let(:template) { '{{ljust value count char}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'returns value with padding to left' do
+      let(:expected) { '....pad-me' }
+      let(:data) { { value: 'pad-me', count: '10', char: '.' } }
+
+      context 'padl' do
+        let(:template) { '{{padl value count char}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'pad_left' do
+        let(:template) { '{{pad_left value count char}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'rjust' do
+        let(:template) { '{{rjust value count char}}' }
 
         it { is_expected.to eq(expected) }
       end
