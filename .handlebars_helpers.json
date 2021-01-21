@@ -214,6 +214,38 @@
     },
     {
       "active": true,
+      "name": "code_ruby",
+      "base_require": "handlebars/helpers/code_ruby",
+      "base_namespace": "Handlebars::Helpers::CodeRuby",
+      "description": "Ruby code handling routines",
+      "examples": [
+        "https://github.com/helpers/handlebars-helpers/blob/master/lib/code.js",
+        "https://github.com/helpers/handlebars-helpers/blob/master/test/code.js"
+      ],
+      "helpers": [
+        {
+          "name": "classify",
+          "description": "return class name from a plural table name like Rails does for table names to models",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "classify",
+              "expected_value": "ProductCategory",
+              "params": [
+                { "name": "table_name", "value": "product_categories" }
+              ],
+              "template": "{{classify table_name}}"
+            }
+          ],
+          "aliases": ["classify"],
+          "require_path": "handlebars/helpers/code_ruby/classify",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Classify"
+        }
+      ]
+    },
+    {
+      "active": true,
       "name": "comparison",
       "base_require": "handlebars/helpers/comparison",
       "base_namespace": "Handlebars::Helpers::Comparison",
