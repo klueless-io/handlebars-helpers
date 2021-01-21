@@ -241,6 +241,28 @@
           "aliases": ["classify"],
           "require_path": "handlebars/helpers/code_ruby/classify",
           "class_namespace": "Handlebars::Helpers::CodeRuby::Classify"
+        },
+        {
+          "name": "demodulize",
+          "description": "removes the module part from the expression in the string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "demodulize",
+              "expected_value": "Inflections",
+              "params": [
+                {
+                  "name": "namespaced_class",
+                  "value": "ActiveSupport::Inflector::Inflections"
+                }
+              ],
+              "template": "{{demodulize namespaced_class}}"
+            }
+          ],
+          "aliases": ["demodulize"],
+          "require_path": "handlebars/helpers/code_ruby/demodulize",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Demodulize"
         }
       ]
     },
