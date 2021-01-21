@@ -25,11 +25,6 @@ module Handlebars
 
           value.upcase
         end
-
-        # Sample handlebars registration helper
-        # def handlebars_helper
-        #   proc { |_context, value| parse(value) }
-        # end
       end
     end
   end
