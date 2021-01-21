@@ -70,4 +70,24 @@ RSpec.describe Handlebars::Helpers::Configuration do
     it { is_expected.to include(constantize: a_kind_of(Handlebars::Helpers::StringFormatting::Constantize)) }
     it { is_expected.to include(constant: a_kind_of(Handlebars::Helpers::StringFormatting::Constantize)) }
   end
+  describe '.padl_count' do
+    subject { Handlebars::Helpers.configuration.padl_count }
+
+    it { is_expected.to eq(30) }
+  end
+  describe '.padl_char' do
+    subject { Handlebars::Helpers.configuration.padl_char }
+
+    it { is_expected.to eq(' ') }
+  end
+  describe '.padr_count' do
+    subject { Handlebars::Helpers.configuration.padr_count }
+
+    it { is_expected.to eq(30) }
+  end
+  describe '.padr_char' do
+    subject { Handlebars::Helpers.configuration.padr_char }
+
+    it { is_expected.to eq(' ') }
+  end
 end
