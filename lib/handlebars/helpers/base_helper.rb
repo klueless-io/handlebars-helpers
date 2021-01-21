@@ -11,6 +11,13 @@ module Handlebars
       def handlebars_helper
         proc { |_context, value| parse(value) }
       end
+
+      # String tokenizer will clean up a string so that
+      # all sorts of case formatted strings can be
+      # represented in a consistent fashion
+      def tokenizer
+        @_tokenizer ||= Handlebars::Helpers.configuration.tokenizer
+      end
     end
   end
 end
