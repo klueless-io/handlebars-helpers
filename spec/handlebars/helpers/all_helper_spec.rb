@@ -358,6 +358,28 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'creates a foreign key name from a class name.' do
+      let(:expected) { 'message_id' }
+      let(:data) { { class_name: 'Message' } }
+
+      context 'foreign_key' do
+        let(:template) { '{{foreign_key class_name}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'creates the name of a table like Rails does when converting models to table names' do
+      let(:expected) { 'product_categories' }
+      let(:data) { { model_name: 'product_category' } }
+
+      context 'tableize' do
+        let(:template) { '{{tableize model_name}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 
   context 'Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.' do
