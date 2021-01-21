@@ -397,25 +397,59 @@
         },
         {
           "name": "surround_if",
-          "description": "returns value with surrounding character if the value is present?",
+          "description": "returns value with surrounding prefix/suffix if the value is present?",
           "test_in": null,
           "test_out": null,
           "tests": [
             {
               "alias": "surround_if",
-              "expected_value": "(product_categories",
+              "expected_value": "(product_categories)",
               "params": [
                 { "name": "value", "value": "product category" },
                 { "name": "prefix", "value": "(" },
-                { "name": "suffix", "value": "" },
+                { "name": "suffix", "value": ")" },
                 { "name": "formats", "value": "pluralize,snake" }
               ],
               "template": "{{surround_if value prefix suffix formats}}"
+            },
+            {
+              "alias": "surround_if_value",
+              "expected_value": "(product_categories)",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "prefix", "value": "(" },
+                { "name": "suffix", "value": ")" },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{surround_if_value value prefix suffix formats}}"
             }
           ],
-          "aliases": ["surround_if"],
+          "aliases": ["surround_if", "surround_if_value"],
           "require_path": "handlebars/helpers/string_formatting/surround_if",
           "class_namespace": "Handlebars::Helpers::StringFormatting::SurroundIf",
+          "is_string_formatter": null
+        },
+        {
+          "name": "surround",
+          "description": "returns value with surrounding prefix/suffix",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "surround",
+              "expected_value": "()",
+              "params": [
+                { "name": "value", "value": null },
+                { "name": "prefix", "value": "(" },
+                { "name": "suffix", "value": ")" },
+                { "name": "formats", "value": "" }
+              ],
+              "template": "{{surround value prefix suffix formats}}"
+            }
+          ],
+          "aliases": ["surround"],
+          "require_path": "handlebars/helpers/string_formatting/surround",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Surround",
           "is_string_formatter": null
         }
       ]
