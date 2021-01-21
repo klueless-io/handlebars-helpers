@@ -282,6 +282,40 @@
           "aliases": ["deconstantize"],
           "require_path": "handlebars/helpers/code_ruby/deconstantize",
           "class_namespace": "Handlebars::Helpers::CodeRuby::Deconstantize"
+        },
+        {
+          "name": "foreign_key",
+          "description": "creates a foreign key name from a class name.",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "foreign_key",
+              "expected_value": "message_id",
+              "params": [{ "name": "class_name", "value": "Message" }],
+              "template": "{{foreign_key class_name}}"
+            }
+          ],
+          "aliases": ["foreign_key"],
+          "require_path": "handlebars/helpers/code_ruby/foreign_key",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::ForeignKey"
+        },
+        {
+          "name": "tableize",
+          "description": "creates the name of a table like Rails does when converting models to table names",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "tableize",
+              "expected_value": "product_categories",
+              "params": [{ "name": "model_name", "value": "product_category" }],
+              "template": "{{tableize model_name}}"
+            }
+          ],
+          "aliases": ["tableize"],
+          "require_path": "handlebars/helpers/code_ruby/tableize",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize"
         }
       ]
     },
