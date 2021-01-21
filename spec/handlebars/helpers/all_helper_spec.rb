@@ -323,6 +323,19 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
     end
   end
 
+  context 'Ruby code handling routines' do
+    describe 'return class name from a plural table name like Rails does for table names to models' do
+      let(:expected) { 'ProductCategory' }
+      let(:data) { { table_name: 'product_categories' } }
+
+      context 'classify' do
+        let(:template) { '{{classify table_name}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+  end
+
   context 'Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.' do
     describe 'return value or default value' do
       let(:expected) { 'hello world' }

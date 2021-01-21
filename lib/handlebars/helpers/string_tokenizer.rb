@@ -8,11 +8,13 @@ module Handlebars
     # represented in a consistent fashion
     class StringTokenizer
       # Tokenize string
+      # rubocop:disable Metrics/ParameterLists
       def parse(value,
                 preserve_case: false,
                 compress_prefix_numerals: true,
                 compress_suffix_numerals: true,
-                separator: '-')
+                separator: '-',
+                forced_separator: false)
         return '' if value.nil?
 
         # Insert space before any lowercaseUppercase
@@ -29,8 +31,13 @@ module Handlebars
         # Technique2: make sure that trailing space followed by number is compressed
         value = value.gsub(/(\s*)(\d*)$/, '\2') if compress_suffix_numerals
 
-        value.parameterize(preserve_case: preserve_case, separator: separator) # (separator: ' ')
+        value = value.parameterize(preserve_case: preserve_case, separator: separator) # (separator: ' ')
+
+        value = value.gsub(/[-_]/, separator) if forced_separator
+
+        value
       end
+      # rubocop:enable Metrics/ParameterLists
     end
   end
 end
