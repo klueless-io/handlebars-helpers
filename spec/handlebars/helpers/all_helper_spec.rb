@@ -347,6 +347,17 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
         it { is_expected.to eq(expected) }
       end
     end
+
+    describe 'remove the rightmost segment from the constant expression in the string' do
+      let(:expected) { 'Net' }
+      let(:data) { { constant_expression: 'Net::HTTP' } }
+
+      context 'deconstantize' do
+        let(:template) { '{{deconstantize constant_expression}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
   end
 
   context 'Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.' do

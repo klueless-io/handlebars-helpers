@@ -11,7 +11,7 @@ module Handlebars
     module CodeRuby
       # Demodulize: Removes the module part from the expression in the string.
       class Demodulize < Handlebars::Helpers::BaseHelper
-        # Parse will Demodulize: Removes the module part from the expression in the string.
+        # Parse will demodulize, aka remove the module part from the expression in the string.
         #
         # @example
         #
