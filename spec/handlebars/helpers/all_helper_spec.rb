@@ -419,19 +419,36 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
-    describe 'returns value with surrounding character if the value is present?' do
-      let(:expected) { '(product_categories' }
+    describe 'returns value with surrounding prefix/suffix if the value is present?' do
+      let(:expected) { '(product_categories)' }
       let(:data) do
         {
           value: 'product category',
           prefix: '(',
-          suffix: nil,
+          suffix: ')',
           formats: 'pluralize,snake'
         }
       end
 
       context 'surround_if' do
         let(:template) { '{{surround_if value prefix suffix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'surround_if_value' do
+        let(:template) { '{{surround_if_value value prefix suffix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'returns value with surrounding prefix/suffix' do
+      let(:expected) { '()' }
+      let(:data) { { value: nil, prefix: '(', suffix: ')', formats: nil } }
+
+      context 'surround' do
+        let(:template) { '{{surround value prefix suffix formats}}' }
 
         it { is_expected.to eq(expected) }
       end
