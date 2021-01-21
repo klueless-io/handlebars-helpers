@@ -263,6 +263,25 @@
           "aliases": ["demodulize"],
           "require_path": "handlebars/helpers/code_ruby/demodulize",
           "class_namespace": "Handlebars::Helpers::CodeRuby::Demodulize"
+        },
+        {
+          "name": "deconstantize",
+          "description": "remove the rightmost segment from the constant expression in the string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "deconstantize",
+              "expected_value": "Net",
+              "params": [
+                { "name": "constant_expression", "value": "Net::HTTP" }
+              ],
+              "template": "{{deconstantize constant_expression}}"
+            }
+          ],
+          "aliases": ["deconstantize"],
+          "require_path": "handlebars/helpers/code_ruby/deconstantize",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Deconstantize"
         }
       ]
     },

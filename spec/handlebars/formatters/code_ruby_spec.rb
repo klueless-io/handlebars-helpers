@@ -14,52 +14,22 @@ RSpec.describe Handlebars::Helpers::Formatters::CodeRuby do
   it { is_expected.not_to be_nil }
 
   context 'formatter methods' do
-    describe '#classify' do
-      subject { formatter.classify(value) }
+    # describe '#foreign_key' do
+    #   subject { formatter.foreign_key(value) }
 
-      let(:value) { 'product_categories' }
+    #   let(:value) { 'Admin::Post' }
 
-      it { is_expected.to eq('ProductCategory') }
+    #   it { is_expected.to eq('post_id') }
+    # end
 
-      it_behaves_like 'nil will parse to empty'
-    end
+    # describe '#tableize' do
+    #   subject { formatter.tableize(value) }
 
-    describe '#demodulize' do
-      subject { formatter.demodulize(value) }
+    #   let(:value) { 'ProductCategory' }
 
-      let(:value) { 'ActiveSupport::Inflector::Inflections' }
+    #   it { is_expected.to eq('product_categories') }
 
-      it { is_expected.to eq('Inflections') }
-
-      it_behaves_like 'nil will parse to empty'
-    end
-
-    describe '#deconstantize' do
-      subject { formatter.deconstantize(value) }
-
-      let(:value) { 'Net::HTTP' }
-
-      it { is_expected.to eq('Net') }
-
-      it_behaves_like 'nil will parse to empty'
-    end
-
-    describe '#foreign_key' do
-      subject { formatter.foreign_key(value) }
-
-      let(:value) { 'Admin::Post' }
-
-      it { is_expected.to eq('post_id') }
-    end
-
-    describe '#tableize' do
-      subject { formatter.tableize(value) }
-
-      let(:value) { 'ProductCategory' }
-
-      it { is_expected.to eq('product_categories') }
-
-      it_behaves_like 'nil will parse to empty'
-    end
+    #   it_behaves_like 'nil will parse to empty'
+    # end
   end
 end
