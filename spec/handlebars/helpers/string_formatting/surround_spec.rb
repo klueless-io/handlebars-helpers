@@ -65,19 +65,19 @@ RSpec.describe Handlebars::Helpers::StringFormatting::Surround do
       let(:prefix) { '"' }
       let(:suffix) { '"' }
 
-      fit { is_expected.to eq('"product category"') }
+      it { is_expected.to eq('"product category"') }
 
       context 'when format' do
         let(:template) { '{{surround value prefix suffix formats}}' }
 
         context 'with single format' do
           let(:formats) { 'snake' }
-          fit { is_expected.to eq('"product_category"') }
+          it { is_expected.to eq('"product_category"') }
         end
 
         context 'and chained formats' do
           let(:formats) { 'snake,pluralize' }
-          fit { is_expected.to eq('"product_categories"') }
+          it { is_expected.to eq('"product_categories"') }
         end
       end
     end

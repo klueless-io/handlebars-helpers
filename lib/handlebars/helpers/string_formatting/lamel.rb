@@ -3,14 +3,14 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/string_formatting/base_helper'
+require 'handlebars/helpers/base_helper'
 
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
     module StringFormatting
       # lamel case is the same as camel case except with the first character as lower case
-      class Lamel < Handlebars::Helpers::StringFormatting::BaseHelper
+      class Lamel < Handlebars::Helpers::BaseHelper
         # Parse will lamel case is the same as camel case except with the first character as lower case
         #
         # @example
