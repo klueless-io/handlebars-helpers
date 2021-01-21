@@ -3,14 +3,14 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/string_formatting/base_helper'
+require 'handlebars/helpers/base_helper'
 
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
     module StringFormatting
       # humanize wil convert text to human case, aka capitalize
-      class Humanize < Handlebars::Helpers::StringFormatting::BaseHelper
+      class Humanize < Handlebars::Helpers::BaseHelper
         # Parse will humanize wil convert text to human case, aka capitalize
         #
         # @side effects

@@ -3,14 +3,14 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/string_formatting/base_helper'
+require 'handlebars/helpers/base_helper'
 
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
     module StringFormatting
       # camel case the characters in the given 'string'.
-      class Camel < Handlebars::Helpers::StringFormatting::BaseHelper
+      class Camel < Handlebars::Helpers::BaseHelper
         # Parse will camel case the characters in the given 'string'.
         #
         # @example

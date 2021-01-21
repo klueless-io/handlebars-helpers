@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_formatting/base_helper'
+require 'handlebars/helpers/base_helper'
 
-RSpec.describe Handlebars::Helpers::StringFormatting::BaseHelper do
+RSpec.describe Handlebars::Helpers::BaseHelper do
   let(:subject) { described_class.new }
 
   describe 'initialize' do
