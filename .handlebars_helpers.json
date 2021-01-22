@@ -308,6 +308,28 @@
           "is_string_formatter": true
         },
         {
+          "name": "pluralize_by_number",
+          "description": "use number/count to determine pluralization",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "pluralize_by_number",
+              "expected_value": "3 people",
+              "params": [
+                { "name": "value", "value": "person" },
+                { "name": "count", "value": "3" },
+                { "name": "format", "value": "number_word" }
+              ],
+              "template": "{{pluralize_by_number value count format}}"
+            }
+          ],
+          "aliases": ["pluralize_by_number"],
+          "require_path": "handlebars/helpers/inflection/pluralize_by_number",
+          "class_namespace": "Handlebars::Helpers::Inflection::PluralizeByNumber",
+          "is_string_formatter": null
+        },
+        {
           "name": "pluralize",
           "description": "singular value is converted to plural form",
           "test_in": "category",
