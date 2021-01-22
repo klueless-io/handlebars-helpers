@@ -36,7 +36,7 @@ module Handlebars
 
         def handlebars_helper
           # Exclude last paramater which is the context V8::Object
-          proc { |_context, *values| parse(values[0..-2]) }
+          proc { |_context, *values| wrapper(parse(values[0..-2])) }
         end
       end
     end

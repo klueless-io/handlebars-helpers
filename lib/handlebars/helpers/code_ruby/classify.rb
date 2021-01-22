@@ -32,7 +32,7 @@ module Handlebars
         end
 
         def handlebars_helper
-          proc { |_context, value| parse(value) }
+          proc { |_context, value| wrapper(parse(value)) }
         end
       end
     end
