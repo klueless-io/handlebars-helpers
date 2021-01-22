@@ -1,6 +1,41 @@
 {
   "formatters": [
     {
+      "name": "ordinalize",
+      "description": "number value turned to 1st, 2nd, 3rd, 4th etc.",
+      "aliases": ["ordinalize"],
+      "class_namespace": "Handlebars::Helpers::Inflection::Ordinalize",
+      "require_path": "handlebars/helpers/inflection/ordinalize"
+    },
+    {
+      "name": "ordinal",
+      "description": "ordinal suffix that would be required for a number, eg. st, nd, rd, th",
+      "aliases": ["ordinal"],
+      "class_namespace": "Handlebars::Helpers::Inflection::Ordinal",
+      "require_path": "handlebars/helpers/inflection/ordinal"
+    },
+    {
+      "name": "pluralize",
+      "description": "singular value is converted to plural form",
+      "aliases": ["pluralize", "plural"],
+      "class_namespace": "Handlebars::Helpers::Inflection::Pluralize",
+      "require_path": "handlebars/helpers/inflection/pluralize"
+    },
+    {
+      "name": "singularize",
+      "description": "plural value is converted to singular from",
+      "aliases": ["singularize", "singular"],
+      "class_namespace": "Handlebars::Helpers::Inflection::Singularize",
+      "require_path": "handlebars/helpers/inflection/singularize"
+    },
+    {
+      "name": "tableize",
+      "description": "creates the name of a table like Rails does when converting models to table names",
+      "aliases": ["tableize"],
+      "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize",
+      "require_path": "handlebars/helpers/code_ruby/tableize"
+    },
+    {
       "name": "back_slash",
       "description": "convert to back slash notation",
       "aliases": ["back_slash", "backward_slash", "slash_backward"],
@@ -97,27 +132,6 @@
       "aliases": ["upcase", "uppercase"],
       "class_namespace": "Handlebars::Helpers::StringFormatting::Upcase",
       "require_path": "handlebars/helpers/string_formatting/upcase"
-    },
-    {
-      "name": "pluralize",
-      "description": "singular value is converted to plural form",
-      "aliases": ["pluralize", "plural"],
-      "class_namespace": "Handlebars::Helpers::StringFormatting::Pluralize",
-      "require_path": "handlebars/helpers/string_formatting/pluralize"
-    },
-    {
-      "name": "singularize",
-      "description": "plural value is converted to singular from",
-      "aliases": ["singularize", "singular"],
-      "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize",
-      "require_path": "handlebars/helpers/string_formatting/singularize"
-    },
-    {
-      "name": "tableize",
-      "description": "creates the name of a table like Rails does when converting models to table names",
-      "aliases": ["tableize"],
-      "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize",
-      "require_path": "handlebars/helpers/code_ruby/tableize"
     }
   ]
 }

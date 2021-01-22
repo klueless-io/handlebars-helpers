@@ -2,6 +2,6 @@
 
 module Handlebars
   module Helpers
-    VERSION = '0.0.63'
+    VERSION = '0.0.64'
   end
 end

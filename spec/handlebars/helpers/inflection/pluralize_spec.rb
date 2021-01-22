@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_formatting/pluralize'
+require 'handlebars/helpers/inflection/pluralize'
 
-RSpec.describe Handlebars::Helpers::StringFormatting::Pluralize do
+RSpec.describe Handlebars::Helpers::Inflection::Pluralize do
   let(:value) { 'octopus' }
 
   it { is_expected.not_to be_nil }

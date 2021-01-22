@@ -2,572 +2,6 @@
   "groups": [
     {
       "active": true,
-      "name": "string_formatting",
-      "base_require": "handlebars/helpers/string_formatting",
-      "base_namespace": "Handlebars::Helpers::StringFormatting",
-      "description": "String formatting and manipulation methods",
-      "examples": null,
-      "helpers": [
-        {
-          "name": "format_as",
-          "description": "returns a value that has been processed by multiple formatters",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "format_as",
-              "expected_value": "the-quick-brown-foxes",
-              "params": [
-                { "name": "value", "value": "the quick brown fox" },
-                { "name": "format", "value": "pluralize,dashify" }
-              ],
-              "template": "{{format_as value format}}"
-            }
-          ],
-          "aliases": ["format_as"],
-          "require_path": "handlebars/helpers/string_formatting/format_as",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::FormatAs",
-          "is_string_formatter": null
-        },
-        {
-          "name": "back_slash",
-          "description": "convert to back slash notation",
-          "test_in": "the quick brown fox",
-          "test_out": "the\\quick\\brown\\fox",
-          "tests": [
-            { "alias": "back_slash" },
-            { "alias": "backward_slash" },
-            { "alias": "slash_backward" }
-          ],
-          "aliases": ["back_slash", "backward_slash", "slash_backward"],
-          "require_path": "handlebars/helpers/string_formatting/back_slash",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::BackSlash",
-          "is_string_formatter": true
-        },
-        {
-          "name": "camel",
-          "description": "convert to camel case with first word uppercase and following words uppercase",
-          "test_in": "the quick brown fox",
-          "test_out": "TheQuickBrownFox",
-          "tests": [
-            { "alias": "camel" },
-            { "alias": "camel_upper" },
-            { "alias": "camelUpper" },
-            { "alias": "camelU" },
-            { "alias": "pascalcase" }
-          ],
-          "aliases": [
-            "camel",
-            "camel_upper",
-            "camelUpper",
-            "camelU",
-            "pascalcase"
-          ],
-          "require_path": "handlebars/helpers/string_formatting/camel",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Camel",
-          "is_string_formatter": true
-        },
-        {
-          "name": "constantize",
-          "description": "convert to constant case",
-          "test_in": "the quick brown fox",
-          "test_out": "THE_QUICK_BROWN_FOX",
-          "tests": [{ "alias": "constantize" }, { "alias": "constant" }],
-          "aliases": ["constantize", "constant"],
-          "require_path": "handlebars/helpers/string_formatting/constantize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Constantize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "dasherize",
-          "description": "convert to dash notation",
-          "test_in": "the quick brown fox",
-          "test_out": "the-quick-brown-fox",
-          "tests": [
-            { "alias": "dasherize" },
-            { "alias": "dashify" },
-            { "alias": "dashcase" },
-            { "alias": "hyphenate" }
-          ],
-          "aliases": ["dasherize", "dashify", "dashcase", "hyphenate"],
-          "require_path": "handlebars/helpers/string_formatting/dasherize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Dasherize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "dotirize",
-          "description": "convert to dash notation",
-          "test_in": "the quick brown fox",
-          "test_out": "the.quick.brown.fox",
-          "tests": [
-            { "alias": "dotirize" },
-            { "alias": "dotify" },
-            { "alias": "dotcase" }
-          ],
-          "aliases": ["dotirize", "dotify", "dotcase"],
-          "require_path": "handlebars/helpers/string_formatting/dotirize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Dotirize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "double_colon",
-          "description": "double_colon notation, similar to ruby namespace",
-          "test_in": "the quick brown fox",
-          "test_out": "the::quick::brown::fox",
-          "tests": [{ "alias": "double_colon" }],
-          "aliases": ["double_colon"],
-          "require_path": "handlebars/helpers/string_formatting/double_colon",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::DoubleColon",
-          "is_string_formatter": true
-        },
-        {
-          "name": "downcase",
-          "description": "convert all characters to lower case",
-          "test_in": "THE QUICK BROWN FOX",
-          "test_out": "the quick brown fox",
-          "tests": [{ "alias": "downcase" }, { "alias": "lowercase" }],
-          "aliases": ["downcase", "lowercase"],
-          "require_path": "handlebars/helpers/string_formatting/downcase",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Downcase",
-          "is_string_formatter": true
-        },
-        {
-          "name": "humanize",
-          "description": "convert text to human case, aka capitalize",
-          "test_in": "the Quick Brown Fox",
-          "test_out": "The quick brown fox",
-          "tests": [{ "alias": "humanize" }, { "alias": "capitalize" }],
-          "aliases": ["humanize", "capitalize"],
-          "require_path": "handlebars/helpers/string_formatting/humanize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Humanize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "lamel",
-          "description": "convert to lamel case with first word lowercase and following words uppercase",
-          "test_in": "The quick brown fox",
-          "test_out": "theQuickBrownFox",
-          "tests": [
-            { "alias": "lamel" },
-            { "alias": "camel_lower" },
-            { "alias": "camelLower" },
-            { "alias": "camelL" }
-          ],
-          "aliases": ["lamel", "camel_lower", "camelLower", "camelL"],
-          "require_path": "handlebars/helpers/string_formatting/lamel",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Lamel",
-          "is_string_formatter": true
-        },
-        {
-          "name": "pluserize",
-          "description": "convert to plus notation",
-          "test_in": "the quick brown fox",
-          "test_out": "the+quick+brown+fox",
-          "tests": [
-            { "alias": "pluserize" },
-            { "alias": "plusify" },
-            { "alias": "pluscase" }
-          ],
-          "aliases": ["pluserize", "plusify", "pluscase"],
-          "require_path": "handlebars/helpers/string_formatting/pluserize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluserize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "slash",
-          "description": "convert to slash notation, aka forward slash",
-          "test_in": "the Quick brown Fox",
-          "test_out": "the/Quick/brown/Fox",
-          "tests": [
-            { "alias": "slash" },
-            { "alias": "forward_slash" },
-            { "alias": "slash_forward" }
-          ],
-          "aliases": ["slash", "forward_slash", "slash_forward"],
-          "require_path": "handlebars/helpers/string_formatting/slash",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Slash",
-          "is_string_formatter": true
-        },
-        {
-          "name": "snake",
-          "description": "convert to snake notation",
-          "test_in": "the quick brown fox",
-          "test_out": "the_quick_brown_fox",
-          "tests": [{ "alias": "snake" }],
-          "aliases": ["snake"],
-          "require_path": "handlebars/helpers/string_formatting/snake",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Snake",
-          "is_string_formatter": true
-        },
-        {
-          "name": "titleize",
-          "description": "value converted to titleize case, aka heading case",
-          "test_in": "the quick brown fox",
-          "test_out": "The Quick Brown Fox",
-          "tests": [
-            { "alias": "titleize" },
-            { "alias": "heading" },
-            { "alias": "capitalize_all" }
-          ],
-          "aliases": ["titleize", "heading", "capitalize_all"],
-          "require_path": "handlebars/helpers/string_formatting/titleize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Titleize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "upcase",
-          "description": "convert all characters to lower case",
-          "test_in": "The quick brown fox",
-          "test_out": "THE QUICK BROWN FOX",
-          "tests": [{ "alias": "upcase" }, { "alias": "uppercase" }],
-          "aliases": ["upcase", "uppercase"],
-          "require_path": "handlebars/helpers/string_formatting/upcase",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Upcase",
-          "is_string_formatter": true
-        },
-        {
-          "name": "pluralize",
-          "description": "singular value is converted to plural form",
-          "test_in": "category",
-          "test_out": "categories",
-          "tests": [{ "alias": "pluralize" }, { "alias": "plural" }],
-          "aliases": ["pluralize", "plural"],
-          "require_path": "handlebars/helpers/string_formatting/pluralize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluralize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "singularize",
-          "description": "plural value is converted to singular from",
-          "test_in": "categories",
-          "test_out": "category",
-          "tests": [{ "alias": "singularize" }, { "alias": "singular" }],
-          "aliases": ["singularize", "singular"],
-          "require_path": "handlebars/helpers/string_formatting/singularize",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Singularize",
-          "is_string_formatter": true
-        },
-        {
-          "name": "padr",
-          "description": "returns value with padding to right",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "padr",
-              "expected_value": "pad-me....",
-              "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
-              ],
-              "template": "{{padr value count char}}"
-            },
-            {
-              "alias": "pad_right",
-              "expected_value": "pad-me....",
-              "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
-              ],
-              "template": "{{pad_right value count char}}"
-            },
-            {
-              "alias": "ljust",
-              "expected_value": "pad-me....",
-              "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
-              ],
-              "template": "{{ljust value count char}}"
-            }
-          ],
-          "aliases": ["padr", "pad_right", "ljust"],
-          "require_path": "handlebars/helpers/string_formatting/padr",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Padr",
-          "is_string_formatter": null
-        },
-        {
-          "name": "padl",
-          "description": "returns value with padding to left",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "padl",
-              "expected_value": "....pad-me",
-              "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
-              ],
-              "template": "{{padl value count char}}"
-            },
-            {
-              "alias": "pad_left",
-              "expected_value": "....pad-me",
-              "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
-              ],
-              "template": "{{pad_left value count char}}"
-            },
-            {
-              "alias": "rjust",
-              "expected_value": "....pad-me",
-              "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
-              ],
-              "template": "{{rjust value count char}}"
-            }
-          ],
-          "aliases": ["padl", "pad_left", "rjust"],
-          "require_path": "handlebars/helpers/string_formatting/padl",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Padl",
-          "is_string_formatter": null
-        },
-        {
-          "name": "prepend_if",
-          "description": "returns value with prefix if the value is present?",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "prepend_if",
-              "expected_value": "# product_categories",
-              "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "# " },
-                { "name": "formats", "value": "pluralize,snake" }
-              ],
-              "template": "{{prepend_if value prefix formats}}"
-            },
-            {
-              "alias": "prefix_if",
-              "expected_value": "# product_categories",
-              "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "# " },
-                { "name": "formats", "value": "pluralize,snake" }
-              ],
-              "template": "{{prefix_if value prefix formats}}"
-            }
-          ],
-          "aliases": ["prepend_if", "prefix_if"],
-          "require_path": "handlebars/helpers/string_formatting/prepend_if",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::PrependIf",
-          "is_string_formatter": null
-        },
-        {
-          "name": "append_if",
-          "description": "returns value with suffix if the value is present?",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "append_if",
-              "expected_value": "product_categories:",
-              "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "suffix", "value": ":" },
-                { "name": "formats", "value": "pluralize,snake" }
-              ],
-              "template": "{{append_if value suffix formats}}"
-            },
-            {
-              "alias": "suffix_if",
-              "expected_value": "product_categories:",
-              "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "suffix", "value": ":" },
-                { "name": "formats", "value": "pluralize,snake" }
-              ],
-              "template": "{{suffix_if value suffix formats}}"
-            }
-          ],
-          "aliases": ["append_if", "suffix_if"],
-          "require_path": "handlebars/helpers/string_formatting/append_if",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::AppendIf",
-          "is_string_formatter": null
-        },
-        {
-          "name": "surround_if",
-          "description": "returns value with surrounding prefix/suffix if the value is present?",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "surround_if",
-              "expected_value": "(product_categories)",
-              "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "(" },
-                { "name": "suffix", "value": ")" },
-                { "name": "formats", "value": "pluralize,snake" }
-              ],
-              "template": "{{surround_if value prefix suffix formats}}"
-            },
-            {
-              "alias": "surround_if_value",
-              "expected_value": "(product_categories)",
-              "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "(" },
-                { "name": "suffix", "value": ")" },
-                { "name": "formats", "value": "pluralize,snake" }
-              ],
-              "template": "{{surround_if_value value prefix suffix formats}}"
-            }
-          ],
-          "aliases": ["surround_if", "surround_if_value"],
-          "require_path": "handlebars/helpers/string_formatting/surround_if",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::SurroundIf",
-          "is_string_formatter": null
-        },
-        {
-          "name": "surround",
-          "description": "returns value with surrounding prefix/suffix",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "surround",
-              "expected_value": "()",
-              "params": [
-                { "name": "value", "value": null },
-                { "name": "prefix", "value": "(" },
-                { "name": "suffix", "value": ")" },
-                { "name": "formats", "value": "" }
-              ],
-              "template": "{{surround value prefix suffix formats}}"
-            }
-          ],
-          "aliases": ["surround"],
-          "require_path": "handlebars/helpers/string_formatting/surround",
-          "class_namespace": "Handlebars::Helpers::StringFormatting::Surround",
-          "is_string_formatter": null
-        }
-      ]
-    },
-    {
-      "active": true,
-      "name": "code_ruby",
-      "base_require": "handlebars/helpers/code_ruby",
-      "base_namespace": "Handlebars::Helpers::CodeRuby",
-      "description": "Ruby code handling routines",
-      "examples": [
-        "https://github.com/helpers/handlebars-helpers/blob/master/lib/code.js",
-        "https://github.com/helpers/handlebars-helpers/blob/master/test/code.js"
-      ],
-      "helpers": [
-        {
-          "name": "classify",
-          "description": "return class name from a plural table name like Rails does for table names to models",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "classify",
-              "expected_value": "ProductCategory",
-              "params": [
-                { "name": "table_name", "value": "product_categories" }
-              ],
-              "template": "{{classify table_name}}"
-            }
-          ],
-          "aliases": ["classify"],
-          "require_path": "handlebars/helpers/code_ruby/classify",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Classify",
-          "is_string_formatter": null
-        },
-        {
-          "name": "demodulize",
-          "description": "removes the module part from the expression in the string",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "demodulize",
-              "expected_value": "Inflections",
-              "params": [
-                {
-                  "name": "namespaced_class",
-                  "value": "ActiveSupport::Inflector::Inflections"
-                }
-              ],
-              "template": "{{demodulize namespaced_class}}"
-            }
-          ],
-          "aliases": ["demodulize"],
-          "require_path": "handlebars/helpers/code_ruby/demodulize",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Demodulize",
-          "is_string_formatter": null
-        },
-        {
-          "name": "deconstantize",
-          "description": "remove the rightmost segment from the constant expression in the string",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "deconstantize",
-              "expected_value": "Net",
-              "params": [
-                { "name": "constant_expression", "value": "Net::HTTP" }
-              ],
-              "template": "{{deconstantize constant_expression}}"
-            }
-          ],
-          "aliases": ["deconstantize"],
-          "require_path": "handlebars/helpers/code_ruby/deconstantize",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Deconstantize",
-          "is_string_formatter": null
-        },
-        {
-          "name": "foreign_key",
-          "description": "creates a foreign key name from a class name.",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "foreign_key",
-              "expected_value": "message_id",
-              "params": [{ "name": "class_name", "value": "Message" }],
-              "template": "{{foreign_key class_name}}"
-            }
-          ],
-          "aliases": ["foreign_key"],
-          "require_path": "handlebars/helpers/code_ruby/foreign_key",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::ForeignKey",
-          "is_string_formatter": null
-        },
-        {
-          "name": "tableize",
-          "description": "creates the name of a table like Rails does when converting models to table names",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "tableize",
-              "expected_value": "product_categories",
-              "params": [{ "name": "model_name", "value": "product_category" }],
-              "template": "{{tableize model_name}}"
-            }
-          ],
-          "aliases": ["tableize"],
-          "require_path": "handlebars/helpers/code_ruby/tableize",
-          "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize",
-          "is_string_formatter": true
-        }
-      ]
-    },
-    {
-      "active": true,
       "name": "comparison",
       "base_require": "handlebars/helpers/comparison",
       "base_namespace": "Handlebars::Helpers::Comparison",
@@ -836,6 +270,607 @@
           "aliases": ["gte", "greater_than_or_equal_to"],
           "require_path": "handlebars/helpers/comparison/gte",
           "class_namespace": "Handlebars::Helpers::Comparison::Gte",
+          "is_string_formatter": null
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "inflection",
+      "base_require": "handlebars/helpers/inflection",
+      "base_namespace": "Handlebars::Helpers::Inflection",
+      "description": "Inflection handling routines, eg. pluralize, singular, ordinalize",
+      "examples": [
+        "https://github.com/helpers/handlebars-helpers/blob/master/lib/inflection.js",
+        "https://github.com/helpers/handlebars-helpers/blob/master/test/inflection.js"
+      ],
+      "helpers": [
+        {
+          "name": "ordinalize",
+          "description": "number value turned to 1st, 2nd, 3rd, 4th etc.",
+          "test_in": "1",
+          "test_out": "1st",
+          "tests": [{ "alias": "ordinalize" }],
+          "aliases": ["ordinalize"],
+          "require_path": "handlebars/helpers/inflection/ordinalize",
+          "class_namespace": "Handlebars::Helpers::Inflection::Ordinalize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "ordinal",
+          "description": "ordinal suffix that would be required for a number, eg. st, nd, rd, th",
+          "test_in": "1",
+          "test_out": "st",
+          "tests": [{ "alias": "ordinal" }],
+          "aliases": ["ordinal"],
+          "require_path": "handlebars/helpers/inflection/ordinal",
+          "class_namespace": "Handlebars::Helpers::Inflection::Ordinal",
+          "is_string_formatter": true
+        },
+        {
+          "name": "pluralize",
+          "description": "singular value is converted to plural form",
+          "test_in": "category",
+          "test_out": "categories",
+          "tests": [{ "alias": "pluralize" }, { "alias": "plural" }],
+          "aliases": ["pluralize", "plural"],
+          "require_path": "handlebars/helpers/inflection/pluralize",
+          "class_namespace": "Handlebars::Helpers::Inflection::Pluralize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "singularize",
+          "description": "plural value is converted to singular from",
+          "test_in": "categories",
+          "test_out": "category",
+          "tests": [{ "alias": "singularize" }, { "alias": "singular" }],
+          "aliases": ["singularize", "singular"],
+          "require_path": "handlebars/helpers/inflection/singularize",
+          "class_namespace": "Handlebars::Helpers::Inflection::Singularize",
+          "is_string_formatter": true
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "code_ruby",
+      "base_require": "handlebars/helpers/code_ruby",
+      "base_namespace": "Handlebars::Helpers::CodeRuby",
+      "description": "Ruby code handling routines",
+      "examples": [
+        "https://github.com/helpers/handlebars-helpers/blob/master/lib/code.js",
+        "https://github.com/helpers/handlebars-helpers/blob/master/test/code.js"
+      ],
+      "helpers": [
+        {
+          "name": "classify",
+          "description": "return class name from a plural table name like Rails does for table names to models",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "classify",
+              "expected_value": "ProductCategory",
+              "params": [
+                { "name": "table_name", "value": "product_categories" }
+              ],
+              "template": "{{classify table_name}}"
+            }
+          ],
+          "aliases": ["classify"],
+          "require_path": "handlebars/helpers/code_ruby/classify",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Classify",
+          "is_string_formatter": null
+        },
+        {
+          "name": "demodulize",
+          "description": "removes the module part from the expression in the string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "demodulize",
+              "expected_value": "Inflections",
+              "params": [
+                {
+                  "name": "namespaced_class",
+                  "value": "ActiveSupport::Inflector::Inflections"
+                }
+              ],
+              "template": "{{demodulize namespaced_class}}"
+            }
+          ],
+          "aliases": ["demodulize"],
+          "require_path": "handlebars/helpers/code_ruby/demodulize",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Demodulize",
+          "is_string_formatter": null
+        },
+        {
+          "name": "deconstantize",
+          "description": "remove the rightmost segment from the constant expression in the string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "deconstantize",
+              "expected_value": "Net",
+              "params": [
+                { "name": "constant_expression", "value": "Net::HTTP" }
+              ],
+              "template": "{{deconstantize constant_expression}}"
+            }
+          ],
+          "aliases": ["deconstantize"],
+          "require_path": "handlebars/helpers/code_ruby/deconstantize",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Deconstantize",
+          "is_string_formatter": null
+        },
+        {
+          "name": "foreign_key",
+          "description": "creates a foreign key name from a class name.",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "foreign_key",
+              "expected_value": "message_id",
+              "params": [{ "name": "class_name", "value": "Message" }],
+              "template": "{{foreign_key class_name}}"
+            }
+          ],
+          "aliases": ["foreign_key"],
+          "require_path": "handlebars/helpers/code_ruby/foreign_key",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::ForeignKey",
+          "is_string_formatter": null
+        },
+        {
+          "name": "tableize",
+          "description": "creates the name of a table like Rails does when converting models to table names",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "tableize",
+              "expected_value": "product_categories",
+              "params": [{ "name": "model_name", "value": "product_category" }],
+              "template": "{{tableize model_name}}"
+            }
+          ],
+          "aliases": ["tableize"],
+          "require_path": "handlebars/helpers/code_ruby/tableize",
+          "class_namespace": "Handlebars::Helpers::CodeRuby::Tableize",
+          "is_string_formatter": true
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "string_formatting",
+      "base_require": "handlebars/helpers/string_formatting",
+      "base_namespace": "Handlebars::Helpers::StringFormatting",
+      "description": "String formatting and manipulation methods",
+      "examples": null,
+      "helpers": [
+        {
+          "name": "format_as",
+          "description": "returns a value that has been processed by multiple formatters",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "format_as",
+              "expected_value": "the-quick-brown-foxes",
+              "params": [
+                { "name": "value", "value": "the quick brown fox" },
+                { "name": "format", "value": "pluralize,dashify" }
+              ],
+              "template": "{{format_as value format}}"
+            }
+          ],
+          "aliases": ["format_as"],
+          "require_path": "handlebars/helpers/string_formatting/format_as",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::FormatAs",
+          "is_string_formatter": null
+        },
+        {
+          "name": "back_slash",
+          "description": "convert to back slash notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the\\quick\\brown\\fox",
+          "tests": [
+            { "alias": "back_slash" },
+            { "alias": "backward_slash" },
+            { "alias": "slash_backward" }
+          ],
+          "aliases": ["back_slash", "backward_slash", "slash_backward"],
+          "require_path": "handlebars/helpers/string_formatting/back_slash",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::BackSlash",
+          "is_string_formatter": true
+        },
+        {
+          "name": "camel",
+          "description": "convert to camel case with first word uppercase and following words uppercase",
+          "test_in": "the quick brown fox",
+          "test_out": "TheQuickBrownFox",
+          "tests": [
+            { "alias": "camel" },
+            { "alias": "camel_upper" },
+            { "alias": "camelUpper" },
+            { "alias": "camelU" },
+            { "alias": "pascalcase" }
+          ],
+          "aliases": [
+            "camel",
+            "camel_upper",
+            "camelUpper",
+            "camelU",
+            "pascalcase"
+          ],
+          "require_path": "handlebars/helpers/string_formatting/camel",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Camel",
+          "is_string_formatter": true
+        },
+        {
+          "name": "constantize",
+          "description": "convert to constant case",
+          "test_in": "the quick brown fox",
+          "test_out": "THE_QUICK_BROWN_FOX",
+          "tests": [{ "alias": "constantize" }, { "alias": "constant" }],
+          "aliases": ["constantize", "constant"],
+          "require_path": "handlebars/helpers/string_formatting/constantize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Constantize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "dasherize",
+          "description": "convert to dash notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the-quick-brown-fox",
+          "tests": [
+            { "alias": "dasherize" },
+            { "alias": "dashify" },
+            { "alias": "dashcase" },
+            { "alias": "hyphenate" }
+          ],
+          "aliases": ["dasherize", "dashify", "dashcase", "hyphenate"],
+          "require_path": "handlebars/helpers/string_formatting/dasherize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Dasherize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "dotirize",
+          "description": "convert to dash notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the.quick.brown.fox",
+          "tests": [
+            { "alias": "dotirize" },
+            { "alias": "dotify" },
+            { "alias": "dotcase" }
+          ],
+          "aliases": ["dotirize", "dotify", "dotcase"],
+          "require_path": "handlebars/helpers/string_formatting/dotirize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Dotirize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "double_colon",
+          "description": "double_colon notation, similar to ruby namespace",
+          "test_in": "the quick brown fox",
+          "test_out": "the::quick::brown::fox",
+          "tests": [{ "alias": "double_colon" }],
+          "aliases": ["double_colon"],
+          "require_path": "handlebars/helpers/string_formatting/double_colon",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::DoubleColon",
+          "is_string_formatter": true
+        },
+        {
+          "name": "downcase",
+          "description": "convert all characters to lower case",
+          "test_in": "THE QUICK BROWN FOX",
+          "test_out": "the quick brown fox",
+          "tests": [{ "alias": "downcase" }, { "alias": "lowercase" }],
+          "aliases": ["downcase", "lowercase"],
+          "require_path": "handlebars/helpers/string_formatting/downcase",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Downcase",
+          "is_string_formatter": true
+        },
+        {
+          "name": "humanize",
+          "description": "convert text to human case, aka capitalize",
+          "test_in": "the Quick Brown Fox",
+          "test_out": "The quick brown fox",
+          "tests": [{ "alias": "humanize" }, { "alias": "capitalize" }],
+          "aliases": ["humanize", "capitalize"],
+          "require_path": "handlebars/helpers/string_formatting/humanize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Humanize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "lamel",
+          "description": "convert to lamel case with first word lowercase and following words uppercase",
+          "test_in": "The quick brown fox",
+          "test_out": "theQuickBrownFox",
+          "tests": [
+            { "alias": "lamel" },
+            { "alias": "camel_lower" },
+            { "alias": "camelLower" },
+            { "alias": "camelL" }
+          ],
+          "aliases": ["lamel", "camel_lower", "camelLower", "camelL"],
+          "require_path": "handlebars/helpers/string_formatting/lamel",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Lamel",
+          "is_string_formatter": true
+        },
+        {
+          "name": "pluserize",
+          "description": "convert to plus notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the+quick+brown+fox",
+          "tests": [
+            { "alias": "pluserize" },
+            { "alias": "plusify" },
+            { "alias": "pluscase" }
+          ],
+          "aliases": ["pluserize", "plusify", "pluscase"],
+          "require_path": "handlebars/helpers/string_formatting/pluserize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Pluserize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "slash",
+          "description": "convert to slash notation, aka forward slash",
+          "test_in": "the Quick brown Fox",
+          "test_out": "the/Quick/brown/Fox",
+          "tests": [
+            { "alias": "slash" },
+            { "alias": "forward_slash" },
+            { "alias": "slash_forward" }
+          ],
+          "aliases": ["slash", "forward_slash", "slash_forward"],
+          "require_path": "handlebars/helpers/string_formatting/slash",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Slash",
+          "is_string_formatter": true
+        },
+        {
+          "name": "snake",
+          "description": "convert to snake notation",
+          "test_in": "the quick brown fox",
+          "test_out": "the_quick_brown_fox",
+          "tests": [{ "alias": "snake" }],
+          "aliases": ["snake"],
+          "require_path": "handlebars/helpers/string_formatting/snake",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Snake",
+          "is_string_formatter": true
+        },
+        {
+          "name": "titleize",
+          "description": "value converted to titleize case, aka heading case",
+          "test_in": "the quick brown fox",
+          "test_out": "The Quick Brown Fox",
+          "tests": [
+            { "alias": "titleize" },
+            { "alias": "heading" },
+            { "alias": "capitalize_all" }
+          ],
+          "aliases": ["titleize", "heading", "capitalize_all"],
+          "require_path": "handlebars/helpers/string_formatting/titleize",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Titleize",
+          "is_string_formatter": true
+        },
+        {
+          "name": "upcase",
+          "description": "convert all characters to lower case",
+          "test_in": "The quick brown fox",
+          "test_out": "THE QUICK BROWN FOX",
+          "tests": [{ "alias": "upcase" }, { "alias": "uppercase" }],
+          "aliases": ["upcase", "uppercase"],
+          "require_path": "handlebars/helpers/string_formatting/upcase",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Upcase",
+          "is_string_formatter": true
+        },
+        {
+          "name": "padr",
+          "description": "returns value with padding to right",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "padr",
+              "expected_value": "pad-me....",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{padr value count char}}"
+            },
+            {
+              "alias": "pad_right",
+              "expected_value": "pad-me....",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{pad_right value count char}}"
+            },
+            {
+              "alias": "ljust",
+              "expected_value": "pad-me....",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{ljust value count char}}"
+            }
+          ],
+          "aliases": ["padr", "pad_right", "ljust"],
+          "require_path": "handlebars/helpers/string_formatting/padr",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Padr",
+          "is_string_formatter": null
+        },
+        {
+          "name": "padl",
+          "description": "returns value with padding to left",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "padl",
+              "expected_value": "....pad-me",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{padl value count char}}"
+            },
+            {
+              "alias": "pad_left",
+              "expected_value": "....pad-me",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{pad_left value count char}}"
+            },
+            {
+              "alias": "rjust",
+              "expected_value": "....pad-me",
+              "params": [
+                { "name": "value", "value": "pad-me" },
+                { "name": "count", "value": 10 },
+                { "name": "char", "value": "." }
+              ],
+              "template": "{{rjust value count char}}"
+            }
+          ],
+          "aliases": ["padl", "pad_left", "rjust"],
+          "require_path": "handlebars/helpers/string_formatting/padl",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Padl",
+          "is_string_formatter": null
+        },
+        {
+          "name": "prepend_if",
+          "description": "returns value with prefix if the value is present?",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "prepend_if",
+              "expected_value": "# product_categories",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "prefix", "value": "# " },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{prepend_if value prefix formats}}"
+            },
+            {
+              "alias": "prefix_if",
+              "expected_value": "# product_categories",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "prefix", "value": "# " },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{prefix_if value prefix formats}}"
+            }
+          ],
+          "aliases": ["prepend_if", "prefix_if"],
+          "require_path": "handlebars/helpers/string_formatting/prepend_if",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::PrependIf",
+          "is_string_formatter": null
+        },
+        {
+          "name": "append_if",
+          "description": "returns value with suffix if the value is present?",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "append_if",
+              "expected_value": "product_categories:",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "suffix", "value": ":" },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{append_if value suffix formats}}"
+            },
+            {
+              "alias": "suffix_if",
+              "expected_value": "product_categories:",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "suffix", "value": ":" },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{suffix_if value suffix formats}}"
+            }
+          ],
+          "aliases": ["append_if", "suffix_if"],
+          "require_path": "handlebars/helpers/string_formatting/append_if",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::AppendIf",
+          "is_string_formatter": null
+        },
+        {
+          "name": "surround_if",
+          "description": "returns value with surrounding prefix/suffix if the value is present?",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "surround_if",
+              "expected_value": "(product_categories)",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "prefix", "value": "(" },
+                { "name": "suffix", "value": ")" },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{surround_if value prefix suffix formats}}"
+            },
+            {
+              "alias": "surround_if_value",
+              "expected_value": "(product_categories)",
+              "params": [
+                { "name": "value", "value": "product category" },
+                { "name": "prefix", "value": "(" },
+                { "name": "suffix", "value": ")" },
+                { "name": "formats", "value": "pluralize,snake" }
+              ],
+              "template": "{{surround_if_value value prefix suffix formats}}"
+            }
+          ],
+          "aliases": ["surround_if", "surround_if_value"],
+          "require_path": "handlebars/helpers/string_formatting/surround_if",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::SurroundIf",
+          "is_string_formatter": null
+        },
+        {
+          "name": "surround",
+          "description": "returns value with surrounding prefix/suffix",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "surround",
+              "expected_value": "()",
+              "params": [
+                { "name": "value", "value": null },
+                { "name": "prefix", "value": "(" },
+                { "name": "suffix", "value": ")" },
+                { "name": "formats", "value": "" }
+              ],
+              "template": "{{surround value prefix suffix formats}}"
+            }
+          ],
+          "aliases": ["surround"],
+          "require_path": "handlebars/helpers/string_formatting/surround",
+          "class_namespace": "Handlebars::Helpers::StringFormatting::Surround",
           "is_string_formatter": null
         }
       ]

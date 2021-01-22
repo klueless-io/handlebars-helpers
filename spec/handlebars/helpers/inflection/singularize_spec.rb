@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/string_formatting/singularize'
+require 'handlebars/helpers/inflection/singularize'
 
-RSpec.describe Handlebars::Helpers::StringFormatting::Singularize do
+RSpec.describe Handlebars::Helpers::Inflection::Singularize do
   let(:value) { 'octopi' }
 
   it { is_expected.not_to be_nil }
