@@ -8,21 +8,45 @@ As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I h
 
 ### Stories next on list
 
-As a Developer, I can have string case formatting helpers, so that I can generate code and documentation using handlebars
+As a Documentor, I can create usage examples for this GEM, so that I can document the project
+
+- setup rspec-usage for the project
+- create templates for generating slide decks
+- record videos on how to use
+
+As a Developer, I can release a new version of the GEM, so that the updated Gem appears on rubygems and rubydoc
+
+- research automated solution, eg. rake
+- implement the solution
 
 As a Developer, I have flexible and modular formatters, so that I can format data into a new format
 
 - Define formatter categories, https://github.com/helpers/handlebars-helpers has 20 categories
 - Create modular formatters with tests
-- Provide a lazy loading technique to load formatters on an as needed basis
 
-As a Developer, I can easily render Handlebar Templates, so that I am more efficient
+### Tasks next on list
 
-- Build simplified API for rendering templates
+refactor inflections namespace
+
+- Move pluralize and singularize to inflections
+- Add support for ordinal case
+
+add support for misc helper category
+
+- add noop/raw helper
+- add safe helper
+
+add support for category count, helper count and formatter count to readme.md
 
 ## Stories and tasks
 
 ### Stories - completed
+
+As a Developer, I can have string case formatting helpers, so that I can generate code and documentation using handlebars
+
+As a Developer, I can easily render Handlebar Templates, so that I am more efficient
+
+- Build simplified API for rendering templates
 
 As a Developer, I can alias existing helpers, so that I have helper names that make sense to me
 
