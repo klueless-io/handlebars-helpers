@@ -3,14 +3,14 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/base_helper'
+require 'handlebars/helpers/base_safe_string_helper'
 
 module Handlebars
   module Helpers
     # String manipulation methods for case formatting
     module StringFormatting
       # Add padding to the left of the value.
-      class Padl < Handlebars::Helpers::BaseHelper
+      class Padl < Handlebars::Helpers::BaseSafeStringHelper
         # Parse will Add padding to the left of the value.
         #
         # @example
@@ -49,7 +49,7 @@ module Handlebars
             value = nil if value.is_a?(V8::Object)
             count = nil if count.is_a?(V8::Object)
             char = nil if char.is_a?(V8::Object)
-            parse(value, count, char)
+            wrapper(parse(value, count, char))
           end
         end
       end

@@ -61,5 +61,11 @@ RSpec.describe Handlebars::Helpers::StringFormatting::Padr do
         end
       end
     end
+
+    context 'safe string' do
+      let(:template) { '{{padr value 10}}' }
+      let(:value) { '"happy"' }
+      it { is_expected.to eq('"happy"   ') }
+    end
   end
 end

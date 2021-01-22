@@ -74,5 +74,12 @@ RSpec.describe Handlebars::Helpers::StringFormatting::SurroundIf do
         end
       end
     end
+    context 'safe string' do
+      let(:template) { '{{surround_if value prefix suffix}}' }
+      let(:value) { '<happy>' }
+      let(:prefix) { '[' }
+      let(:suffix) { ']' }
+      it { is_expected.to eq('[<happy>]') }
+    end
   end
 end
