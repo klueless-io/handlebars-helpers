@@ -3,14 +3,14 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/base_helper'
+require 'handlebars/helpers/base_safe_string_helper'
 
 module Handlebars
   module Helpers
     # Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.
     module Comparison
       # Default: Returns the first value that is not nil or undefined, otherwise the 'default' value is returned.
-      class Default < Handlebars::Helpers::BaseHelper
+      class Default < Handlebars::Helpers::BaseSafeStringHelper
         # Parse will Default: Returns the first value that is not nil or undefined, otherwise the 'default' value is returned.
         #
         # @example
@@ -58,7 +58,7 @@ module Handlebars
 
         def handlebars_helper
           # Exclude last paramater which is the context V8::Object
-          proc { |_context, *values| parse(values[0..-2]) }
+          proc { |_context, *values| wrapper(parse(values[0..-2])) }
         end
       end
     end

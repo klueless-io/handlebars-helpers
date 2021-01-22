@@ -41,7 +41,7 @@ module Handlebars
         end
 
         def handlebars_helper
-          proc { |_context, class_name, class_id_underscored| parse(class_name, class_id_underscored: class_id_underscored) }
+          proc { |_context, class_name, class_id_underscored| wrapper(parse(class_name, class_id_underscored: class_id_underscored)) }
         end
       end
     end

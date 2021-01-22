@@ -27,7 +27,7 @@ module Handlebars
         end
 
         def handlebars_helper
-          proc { |_context, lhs, rhs| parse(lhs, rhs) }
+          proc { |_context, lhs, rhs| wrapper(parse(lhs, rhs)) }
         end
       end
     end

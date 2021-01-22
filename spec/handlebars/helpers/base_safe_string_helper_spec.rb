@@ -1,20 +1,14 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/base_helper'
+require 'handlebars/context'
+require 'handlebars/safe_string'
+require 'handlebars/helpers/base_safe_string_helper'
 
-RSpec.describe Handlebars::Helpers::BaseHelper do
+RSpec.describe Handlebars::Helpers::BaseSafeStringHelper do
   let(:subject) { described_class.new }
 
   describe 'initialize' do
     it { is_expected.not_to be_nil }
-
-    describe '#handlebars_helper' do
-      it { is_expected.to respond_to(:handlebars_helper) }
-    end
-
-    describe '#tokenizer' do
-      it { is_expected.to respond_to(:tokenizer) }
-    end
   end
 
   describe 'use as handlebars helper' do
@@ -33,7 +27,7 @@ RSpec.describe Handlebars::Helpers::BaseHelper do
 
     context 'unsafe string' do
       let(:value) { '<value>' }
-      it { is_expected.to eq('&lt;value&gt;') }
+      it { is_expected.to eq('<value>') }
     end
   end
 end
