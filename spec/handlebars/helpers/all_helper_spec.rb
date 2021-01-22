@@ -317,11 +317,28 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
   context 'Miscellaneous handling routines' do
     describe 'value in safe string format' do
-      let(:expected) { '&quot;hello&quot;' }
-      let(:data) { { value: '&quot;hello&quot;' } }
+      let(:expected) { '"hello"' }
+      let(:data) { { value: '"hello"' } }
 
       context 'safe' do
         let(:template) { '{{safe value}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'NoOp is a wrapper for blocks that does nothing, it is useful with the raw output operator' do
+      let(:expected) { '{{no_parse}}' }
+      let(:data) { {} }
+
+      context 'noop' do
+        let(:template) { '{{{{noop}}}}{{no_parse}}{{{{/noop}}}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'raw' do
+        let(:template) { '{{{{raw}}}}{{no_parse}}{{{{/raw}}}}' }
 
         it { is_expected.to eq(expected) }
       end
