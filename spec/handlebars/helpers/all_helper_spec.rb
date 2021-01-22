@@ -315,6 +315,19 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
     end
   end
 
+  context 'Miscellaneous handling routines' do
+    describe 'value in safe string format' do
+      let(:expected) { '&quot;hello&quot;' }
+      let(:data) { { value: '&quot;hello&quot;' } }
+
+      context 'safe' do
+        let(:template) { '{{safe value}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+  end
+
   context 'Ruby code handling routines' do
     describe 'return class name from a plural table name like Rails does for table names to models' do
       let(:expected) { 'ProductCategory' }
