@@ -86,5 +86,10 @@ RSpec.describe Handlebars::Helpers::Comparison::Default do
         end
       end
     end
+
+    context 'safe string' do
+      let(:default_value) { '"happy"' }
+      it { is_expected.to eq('"happy"') }
+    end
   end
 end
