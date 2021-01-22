@@ -26,11 +26,6 @@ As a Developer, I have flexible and modular formatters, so that I can format dat
 
 ### Tasks next on list
 
-refactor inflections namespace
-
-- Move pluralize and singularize to inflections
-- Add support for ordinal case
-
 add support for misc helper category
 
 - add noop/raw helper
@@ -42,11 +37,11 @@ add support for category count, helper count and formatter count to readme.md
 
 ### Stories - completed
 
-As a Developer, I can have string case formatting helpers, so that I can generate code and documentation using handlebars
-
 As a Developer, I can easily render Handlebar Templates, so that I am more efficient
 
 - Build simplified API for rendering templates
+
+As a Developer, I can have string case formatting helpers, so that I can generate code and documentation using handlebars
 
 As a Developer, I can alias existing helpers, so that I have helper names that make sense to me
 
@@ -57,6 +52,12 @@ As a Developer, I can load specific groups of helpers, so that memory consumptio
 - Lazy load ruby helpers on an as needed basis
 
 ### Tasks - completed
+
+refactor inflections namespace
+
+- Move pluralize and singularize to inflections
+- Add support for ordinalize case, eg. 1st, 2nd, 3rd, 4th
+- Add support for ordinal case, eg. st, nd, rd, th
 
 String tokenizer that formats input strings in a consistent fashion
 

@@ -7,8 +7,8 @@ require 'handlebars/helpers/base_helper'
 
 module Handlebars
   module Helpers
-    # General purpose string manipulation helpers
-    module StringFormatting
+    # Inflection handling routines, eg. pluralize, singular, ordinalize
+    module Inflection
       # Returns the plural form of the word in the string
       class Pluralize < Handlebars::Helpers::BaseHelper
         # Parse will Returns the plural form of the word in the string

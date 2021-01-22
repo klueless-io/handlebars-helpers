@@ -5,6 +5,364 @@ require 'handlebars/helpers/template'
 RSpec.describe 'Handlebars::Helpers::AllHelper' do
   subject { Handlebars::Helpers::Template.render(template, data) }
 
+  context 'Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.' do
+    describe 'return value or default value' do
+      let(:expected) { 'hello world' }
+      let(:data) { { p1: nil, p2: nil } }
+
+      context 'default' do
+        let(:template) { '{{default p1 p2 "hello world"}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first value is truthy' do
+      let(:expected) { 'param2' }
+      let(:data) { { p1: nil, p2: 'param2' } }
+
+      context 'or' do
+        let(:template) do
+          '
+                {{~#if (or p1 p2)~}}
+                  {{p1}}{{p2}}
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'any' do
+        let(:template) do
+          '
+                {{~#if (any p1 p2)~}}
+                  {{p1}}{{p2}}
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first value is truthy' do
+      let(:expected) { 'all params exist' }
+      let(:data) { { p1: 'param1', p2: 'param2' } }
+
+      context 'and' do
+        let(:template) do
+          '
+                {{~#if (and p1 p2)~}}
+                  all params exist
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'all' do
+        let(:template) do
+          '
+                {{~#if (all p1 p2)~}}
+                  all params exist
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when two values are equal' do
+      let(:expected) { 'params are equal' }
+      let(:data) { { p1: 'david', p2: 'david' } }
+
+      context 'eq' do
+        let(:template) do
+          '
+                {{~#if (eq p1 p2)~}}
+                params are equal
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'equal' do
+        let(:template) do
+          '
+                {{~#if (equal p1 p2)~}}
+                params are equal
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when two values are NOT equal' do
+      let(:expected) { 'params are not equal' }
+      let(:data) { { p1: 'aaa', p2: 'bbb' } }
+
+      context 'ne' do
+        let(:template) do
+          '
+                {{~#if (ne p1 p2)~}}
+                params are not equal
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'not_equal' do
+        let(:template) do
+          '
+                {{~#if (not_equal p1 p2)~}}
+                params are not equal
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first parameter is less than second paramater' do
+      let(:expected) { '1 is less than 2' }
+      let(:data) { { p1: '1', p2: '2' } }
+
+      context 'lt' do
+        let(:template) do
+          '
+                {{~#if (lt p1 p2)~}}
+                1 is less than 2
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'less_than' do
+        let(:template) do
+          '
+                {{~#if (less_than p1 p2)~}}
+                1 is less than 2
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first parameter is less than or equal to second paramater' do
+      let(:expected) { '1 is less than or equal 1' }
+      let(:data) { { p1: '1', p2: '1' } }
+
+      context 'lte' do
+        let(:template) do
+          '
+                {{~#if (lte p1 p2)~}}
+                1 is less than or equal 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'less_than_or_equal_to' do
+        let(:template) do
+          '
+                {{~#if (less_than_or_equal_to p1 p2)~}}
+                1 is less than or equal 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first parameter is greater than second paramater' do
+      let(:expected) { '2 is greater than 1' }
+      let(:data) { { p1: '2', p2: '1' } }
+
+      context 'gt' do
+        let(:template) do
+          '
+                {{~#if (gt p1 p2)~}}
+                2 is greater than 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'greater_than' do
+        let(:template) do
+          '
+                {{~#if (greater_than p1 p2)~}}
+                2 is greater than 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'return block when first parameter is greater than or equal to second paramater' do
+      let(:expected) { '1 is greater than or equal 1' }
+      let(:data) { { p1: '1', p2: '1' } }
+
+      context 'gte' do
+        let(:template) do
+          '
+                {{~#if (gte p1 p2)~}}
+                1 is greater than or equal 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'greater_than_or_equal_to' do
+        let(:template) do
+          '
+                {{~#if (greater_than_or_equal_to p1 p2)~}}
+                1 is greater than or equal 1
+                {{~/if~}}
+                '
+        end
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+  end
+
+  context 'Inflection handling routines, eg. pluralize, singular, ordinalize' do
+    describe 'number value turned to 1st, 2nd, 3rd, 4th etc.' do
+      let(:data) { '1' }
+      let(:expected) { '1st' }
+      context 'ordinalize' do
+        let(:template) { '{{ordinalize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'ordinal suffix that would be required for a number, eg. st, nd, rd, th' do
+      let(:data) { '1' }
+      let(:expected) { 'st' }
+      context 'ordinal' do
+        let(:template) { '{{ordinal .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'singular value is converted to plural form' do
+      let(:data) { 'category' }
+      let(:expected) { 'categories' }
+      context 'pluralize' do
+        let(:template) { '{{pluralize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'plural' do
+        let(:template) { '{{plural .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'plural value is converted to singular from' do
+      let(:data) { 'categories' }
+      let(:expected) { 'category' }
+      context 'singularize' do
+        let(:template) { '{{singularize .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'singular' do
+        let(:template) { '{{singular .}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+  end
+
+  context 'Ruby code handling routines' do
+    describe 'return class name from a plural table name like Rails does for table names to models' do
+      let(:expected) { 'ProductCategory' }
+      let(:data) { { table_name: 'product_categories' } }
+
+      context 'classify' do
+        let(:template) { '{{classify table_name}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'removes the module part from the expression in the string' do
+      let(:expected) { 'Inflections' }
+      let(:data) do
+        { namespaced_class: 'ActiveSupport::Inflector::Inflections' }
+      end
+
+      context 'demodulize' do
+        let(:template) { '{{demodulize namespaced_class}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'remove the rightmost segment from the constant expression in the string' do
+      let(:expected) { 'Net' }
+      let(:data) { { constant_expression: 'Net::HTTP' } }
+
+      context 'deconstantize' do
+        let(:template) { '{{deconstantize constant_expression}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'creates a foreign key name from a class name.' do
+      let(:expected) { 'message_id' }
+      let(:data) { { class_name: 'Message' } }
+
+      context 'foreign_key' do
+        let(:template) { '{{foreign_key class_name}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
+    describe 'creates the name of a table like Rails does when converting models to table names' do
+      let(:expected) { 'product_categories' }
+      let(:data) { { model_name: 'product_category' } }
+
+      context 'tableize' do
+        let(:template) { '{{tableize model_name}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+  end
+
   context 'String formatting and manipulation methods' do
     describe 'returns a value that has been processed by multiple formatters' do
       let(:expected) { 'the-quick-brown-foxes' }
@@ -303,38 +661,6 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
-    describe 'singular value is converted to plural form' do
-      let(:data) { 'category' }
-      let(:expected) { 'categories' }
-      context 'pluralize' do
-        let(:template) { '{{pluralize .}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'plural' do
-        let(:template) { '{{plural .}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'plural value is converted to singular from' do
-      let(:data) { 'categories' }
-      let(:expected) { 'category' }
-      context 'singularize' do
-        let(:template) { '{{singularize .}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'singular' do
-        let(:template) { '{{singular .}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
     describe 'returns value with padding to right' do
       let(:expected) { 'pad-me....' }
       let(:data) { { value: 'pad-me', count: '10', char: '.' } }
@@ -449,310 +775,6 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
       context 'surround' do
         let(:template) { '{{surround value prefix suffix formats}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-  end
-
-  context 'Ruby code handling routines' do
-    describe 'return class name from a plural table name like Rails does for table names to models' do
-      let(:expected) { 'ProductCategory' }
-      let(:data) { { table_name: 'product_categories' } }
-
-      context 'classify' do
-        let(:template) { '{{classify table_name}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'removes the module part from the expression in the string' do
-      let(:expected) { 'Inflections' }
-      let(:data) do
-        { namespaced_class: 'ActiveSupport::Inflector::Inflections' }
-      end
-
-      context 'demodulize' do
-        let(:template) { '{{demodulize namespaced_class}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'remove the rightmost segment from the constant expression in the string' do
-      let(:expected) { 'Net' }
-      let(:data) { { constant_expression: 'Net::HTTP' } }
-
-      context 'deconstantize' do
-        let(:template) { '{{deconstantize constant_expression}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'creates a foreign key name from a class name.' do
-      let(:expected) { 'message_id' }
-      let(:data) { { class_name: 'Message' } }
-
-      context 'foreign_key' do
-        let(:template) { '{{foreign_key class_name}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'creates the name of a table like Rails does when converting models to table names' do
-      let(:expected) { 'product_categories' }
-      let(:data) { { model_name: 'product_category' } }
-
-      context 'tableize' do
-        let(:template) { '{{tableize model_name}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-  end
-
-  context 'Comparison helpers, eg. or, and, equal, not equal, less than, greater than etc.' do
-    describe 'return value or default value' do
-      let(:expected) { 'hello world' }
-      let(:data) { { p1: nil, p2: nil } }
-
-      context 'default' do
-        let(:template) { '{{default p1 p2 "hello world"}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when first value is truthy' do
-      let(:expected) { 'param2' }
-      let(:data) { { p1: nil, p2: 'param2' } }
-
-      context 'or' do
-        let(:template) do
-          '
-                {{~#if (or p1 p2)~}}
-                  {{p1}}{{p2}}
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'any' do
-        let(:template) do
-          '
-                {{~#if (any p1 p2)~}}
-                  {{p1}}{{p2}}
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when first value is truthy' do
-      let(:expected) { 'all params exist' }
-      let(:data) { { p1: 'param1', p2: 'param2' } }
-
-      context 'and' do
-        let(:template) do
-          '
-                {{~#if (and p1 p2)~}}
-                  all params exist
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'all' do
-        let(:template) do
-          '
-                {{~#if (all p1 p2)~}}
-                  all params exist
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when two values are equal' do
-      let(:expected) { 'params are equal' }
-      let(:data) { { p1: 'david', p2: 'david' } }
-
-      context 'eq' do
-        let(:template) do
-          '
-                {{~#if (eq p1 p2)~}}
-                params are equal
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'equal' do
-        let(:template) do
-          '
-                {{~#if (equal p1 p2)~}}
-                params are equal
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when two values are NOT equal' do
-      let(:expected) { 'params are not equal' }
-      let(:data) { { p1: 'aaa', p2: 'bbb' } }
-
-      context 'ne' do
-        let(:template) do
-          '
-                {{~#if (ne p1 p2)~}}
-                params are not equal
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'not_equal' do
-        let(:template) do
-          '
-                {{~#if (not_equal p1 p2)~}}
-                params are not equal
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when first parameter is less than second paramater' do
-      let(:expected) { '1 is less than 2' }
-      let(:data) { { p1: '1', p2: '2' } }
-
-      context 'lt' do
-        let(:template) do
-          '
-                {{~#if (lt p1 p2)~}}
-                1 is less than 2
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'less_than' do
-        let(:template) do
-          '
-                {{~#if (less_than p1 p2)~}}
-                1 is less than 2
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when first parameter is less than or equal to second paramater' do
-      let(:expected) { '1 is less than or equal 1' }
-      let(:data) { { p1: '1', p2: '1' } }
-
-      context 'lte' do
-        let(:template) do
-          '
-                {{~#if (lte p1 p2)~}}
-                1 is less than or equal 1
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'less_than_or_equal_to' do
-        let(:template) do
-          '
-                {{~#if (less_than_or_equal_to p1 p2)~}}
-                1 is less than or equal 1
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when first parameter is greater than second paramater' do
-      let(:expected) { '2 is greater than 1' }
-      let(:data) { { p1: '2', p2: '1' } }
-
-      context 'gt' do
-        let(:template) do
-          '
-                {{~#if (gt p1 p2)~}}
-                2 is greater than 1
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'greater_than' do
-        let(:template) do
-          '
-                {{~#if (greater_than p1 p2)~}}
-                2 is greater than 1
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
-    describe 'return block when first parameter is greater than or equal to second paramater' do
-      let(:expected) { '1 is greater than or equal 1' }
-      let(:data) { { p1: '1', p2: '1' } }
-
-      context 'gte' do
-        let(:template) do
-          '
-                {{~#if (gte p1 p2)~}}
-                1 is greater than or equal 1
-                {{~/if~}}
-                '
-        end
-
-        it { is_expected.to eq(expected) }
-      end
-
-      context 'greater_than_or_equal_to' do
-        let(:template) do
-          '
-                {{~#if (greater_than_or_equal_to p1 p2)~}}
-                1 is greater than or equal 1
-                {{~/if~}}
-                '
-        end
 
         it { is_expected.to eq(expected) }
       end
