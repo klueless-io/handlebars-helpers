@@ -71,5 +71,12 @@ RSpec.describe Handlebars::Helpers::StringFormatting::PrependIf do
         end
       end
     end
+
+    context 'safe string' do
+      let(:template) { '{{prepend_if value prefix}}' }
+      let(:value) { '<happy>' }
+      let(:prefix) { '# ' }
+      it { is_expected.to eq('# <happy>') }
+    end
   end
 end

@@ -73,5 +73,12 @@ RSpec.describe Handlebars::Helpers::StringFormatting::AppendIf do
         end
       end
     end
+
+    context 'safe string' do
+      let(:template) { '{{append_if value suffix}}' }
+      let(:value) { '<happy>' }
+      let(:suffix) { ' #' }
+      it { is_expected.to eq('<happy> #') }
+    end
   end
 end

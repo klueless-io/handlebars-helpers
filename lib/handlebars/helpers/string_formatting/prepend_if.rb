@@ -3,7 +3,7 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/base_helper'
+require 'handlebars/helpers/base_safe_string_helper'
 require 'handlebars/helpers/string_formatting/format_as'
 
 module Handlebars
@@ -11,7 +11,7 @@ module Handlebars
     # String manipulation methods for case formatting
     module StringFormatting
       # Append If will prepend the prefix to value, if value is not empty
-      class PrependIf < Handlebars::Helpers::BaseHelper
+      class PrependIf < Handlebars::Helpers::BaseSafeStringHelper
         # Parse will Append If will prepend the prefix to value, if value is not empty
         #
         # @example
@@ -33,7 +33,7 @@ module Handlebars
           proc do |_context, value, prefix, formats|
             # Handle optional: formats
             formats = nil if formats.is_a?(V8::Object)
-            parse(value, prefix, formats)
+            wrapper(parse(value, prefix, formats))
           end
         end
       end

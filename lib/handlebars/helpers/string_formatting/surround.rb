@@ -3,7 +3,7 @@
 # reference: https://github.com/rails/rails/blob/master/activesupport/lib/active_support/inflector/methods.rb
 require 'active_support/core_ext/string'
 
-require 'handlebars/helpers/base_helper'
+require 'handlebars/helpers/base_safe_string_helper'
 require 'handlebars/helpers/string_formatting/format_as'
 
 module Handlebars
@@ -11,7 +11,7 @@ module Handlebars
     # String manipulation methods for case formatting
     module StringFormatting
       # Surround will surround a value with prefix and suffix, an empty value is considered valid data
-      class Surround < Handlebars::Helpers::BaseHelper
+      class Surround < Handlebars::Helpers::BaseSafeStringHelper
         # Parse will surround a value with prefix and suffix, an empty value is considered valid data
         #
         # @example
@@ -40,7 +40,7 @@ module Handlebars
           proc do |_context, value, prefix, suffix, formats|
             # Handle optional: formats
             formats = nil if formats.is_a?(V8::Object)
-            Handlebars::SafeString.new(parse(value, prefix, suffix, formats))
+            wrapper(parse(value, prefix, suffix, formats))
           end
         end
       end
