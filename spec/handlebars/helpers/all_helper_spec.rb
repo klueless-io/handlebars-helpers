@@ -271,6 +271,17 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
       end
     end
 
+    describe 'use number/count to determine pluralization' do
+      let(:expected) { '3 people' }
+      let(:data) { { value: 'person', count: '3', format: 'number_word' } }
+
+      context 'pluralize_by_number' do
+        let(:template) { '{{pluralize_by_number value count format}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
     describe 'singular value is converted to plural form' do
       let(:data) { 'category' }
       let(:expected) { 'categories' }
