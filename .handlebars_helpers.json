@@ -381,6 +381,30 @@
           "require_path": "handlebars/helpers/misc/safe",
           "class_namespace": "Handlebars::Helpers::Misc::Safe",
           "is_string_formatter": null
+        },
+        {
+          "name": "noop",
+          "description": "NoOp is a wrapper for blocks that does nothing, it is useful with the raw output operator",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "noop",
+              "expected_value": "{{no_parse}}",
+              "params": [],
+              "template": "{{{{noop}}}}{{no_parse}}{{{{/noop}}}}"
+            },
+            {
+              "alias": "raw",
+              "expected_value": "{{no_parse}}",
+              "params": [],
+              "template": "{{{{raw}}}}{{no_parse}}{{{{/raw}}}}"
+            }
+          ],
+          "aliases": ["noop", "raw"],
+          "require_path": "handlebars/helpers/misc/noop",
+          "class_namespace": "Handlebars::Helpers::Misc::Noop",
+          "is_string_formatter": null
         }
       ]
     },
