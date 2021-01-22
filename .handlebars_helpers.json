@@ -355,6 +355,37 @@
     },
     {
       "active": true,
+      "name": "misc",
+      "base_require": "handlebars/helpers/misc",
+      "base_namespace": "Handlebars::Helpers::Misc",
+      "description": "Miscellaneous handling routines",
+      "examples": [
+        "https://github.com/helpers/handlebars-helpers/blob/master/lib/misc.js",
+        "https://github.com/helpers/handlebars-helpers/blob/master/test/misc.js"
+      ],
+      "helpers": [
+        {
+          "name": "safe",
+          "description": "value in safe string format",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "safe",
+              "expected_value": "\"hello\"",
+              "params": [{ "name": "value", "value": "\"hello\"" }],
+              "template": "{{safe value}}"
+            }
+          ],
+          "aliases": ["safe"],
+          "require_path": "handlebars/helpers/misc/safe",
+          "class_namespace": "Handlebars::Helpers::Misc::Safe",
+          "is_string_formatter": null
+        }
+      ]
+    },
+    {
+      "active": true,
       "name": "code_ruby",
       "base_require": "handlebars/helpers/code_ruby",
       "base_namespace": "Handlebars::Helpers::CodeRuby",
