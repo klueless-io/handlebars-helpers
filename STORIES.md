@@ -1,6 +1,6 @@
 # Handlebars Helpers
 
-> Handlebars Helpers is a library that provides (x) handlebars helpers across (y) categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
+> Handlebars Helpers is a library that provides &lt;b&gt;$HELPER_COUNT$&lt;/b&gt; handlebars helpers across &lt;b&gt;$HELPER_CATEGORY_COUNT$&lt;/b&gt; categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
 
 As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I have a rich templating experience
 
@@ -26,12 +26,7 @@ As a Developer, I have flexible and modular formatters, so that I can format dat
 
 ### Tasks next on list
 
-add support for misc helper category
-
-- add noop/raw helper
-- add safe helper
-
-add support for category count, helper count and formatter count to readme.md
+add support for category and helper count to readme.md
 
 ## Stories and tasks
 
@@ -52,6 +47,11 @@ As a Developer, I can load specific groups of helpers, so that memory consumptio
 - Lazy load ruby helpers on an as needed basis
 
 ### Tasks - completed
+
+add support for misc helper category
+
+- add noop/raw helper
+- add safe helper
 
 refactor inflections namespace
 
