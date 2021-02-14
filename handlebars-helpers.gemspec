@@ -25,6 +25,7 @@ Gem::Specification.new do |spec|
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = 'https://github.com/klueless-io/handlebars-helpers'
   spec.metadata['changelog_uri'] = 'https://github.com/klueless-io/handlebars-helpers/commits/master'
+  spec.metadata['documentation_uri'] = 'https://rubydoc.info/github/klueless-io/handlebars-helpers/master'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the RubyGem files that have been added into git.
