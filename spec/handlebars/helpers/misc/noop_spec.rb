@@ -14,12 +14,12 @@ RSpec.describe Handlebars::Helpers::Misc::Noop do
 
     context 'when using normal content' do
       let(:template) { '{{#noop}}body [{{body}}] should parse{{/noop}}' }
-      fit { is_expected.to eq('body [nice body] should parse') }
+      it { is_expected.to eq('body [nice body] should parse') }
     end
 
     context 'when raw block escaping is used' do
       let(:template) { '{{{{noop}}}}nothing in [{{body}}] should be parsed{{{{/noop}}}}' }
-      fit { is_expected.to eq('nothing in [{{body}}] should be parsed') }
+      it { is_expected.to eq('nothing in [{{body}}] should be parsed') }
     end
   end
 end
