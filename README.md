@@ -1,6 +1,6 @@
 # Handlebars Helpers
 
-> Handlebars Helpers is a library that provides <b>$HELPER_COUNT$</b> handlebars helpers across <b>$HELPER_CATEGORY_COUNT$</b> categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
+> Handlebars Helpers is a library that provides <b>42</b> handlebars helpers across <b>5</b> categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
 
 This GEM is inspired by the Javascript Library [handlebars-helpers](https://github.com/helpers/handlebars-helpers).
 
