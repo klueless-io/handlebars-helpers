@@ -36,13 +36,12 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
-  # spec.extensions    = ['ext/handlebars_helpers/extconf.rb']
 
   spec.extra_rdoc_files = ['README.md', 'STORIES.md', 'USAGE.md']
   spec.rdoc_options    += [
     '--title', 'handlebars-helpers by appydave.com',
     '--main', 'README.md',
-    '--files STORIES.MD USAGE.MD'
+    '--files', 'STORIES.MD USAGE.MD'
   ]
 
   # spec.add_dependency 'tty-box',         '~> 0.5.0'
