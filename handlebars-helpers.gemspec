@@ -38,6 +38,13 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   # spec.extensions    = ['ext/handlebars_helpers/extconf.rb']
 
+  spec.extra_rdoc_files = ['README.md', 'STORIES.md', 'USAGE.md']
+  spec.rdoc_options    += [
+    '--title', 'handlebars-helpers by appydave.com',
+    '--main', 'README.md',
+    '--files STORIES.MD USAGE.MD'
+  ]
+
   # spec.add_dependency 'tty-box',         '~> 0.5.0'
   spec.add_dependency 'activesupport'
   spec.add_dependency 'handlebars'
