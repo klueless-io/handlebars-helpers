@@ -2,6 +2,8 @@
 
 module Handlebars
   module Helpers
-    VERSION = '0.0.75'
+    HANDLER_COUNT = 42
+
+    CATEGORY_COUNT = 5
   end
 end
