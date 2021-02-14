@@ -1,10 +1,10 @@
 # Handlebars Helpers
 
-> Handlebars Helpers is a library that provides <b>42</b> handlebars helpers across <b>5</b> categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
+> Handlebars Helpers is a library that provides <b>$HELPER_COUNT$</b> handlebars helpers across <b>$HELPER_CATEGORY_COUNT$</b> categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
 
 This GEM is inspired by the Javascript Library [handlebars-helpers](https://github.com/helpers/handlebars-helpers).
 
-I am following a lot of the categories found, there but this is not a 1 for 1 match, as I feel the the JS library is quite old and could new helpers and categories may be relevant today.
+I am following a lot of the categories found there, but this GEM is not a one for one match to the existing JS library as I feel it is a bit dated and could use some new helpers and categories may be relevant today.
 
 ## Installation
 
@@ -50,7 +50,22 @@ class SomeRuby; end
 
 ## Development
 
+Checkout the repo
+
+```bash
+git clone klueless-io/handlebars-helpers
+```
+
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+
+```bash
+bin/console
+
+Handlebars::Helpers::Template.render('{{camel .}}', 'david was here')
+# => "DavidWasHere"
+Handlebars::Helpers::Template.render('{{dasherize .}}', 'david was here')
+# => "david-was-here"
+```
 
 `handlebars-helpers` is setup with Guard, run `guard`, this will watch development file changes and run tests automatically, if successful, it will then run rubocop for style quality.
 
