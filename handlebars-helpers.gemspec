@@ -47,7 +47,7 @@ Gem::Specification.new do |spec|
   spec.rdoc_options    += [
     '--title', 'handlebars-helpers by appydave.com',
     '--main', 'README.md',
-    '--files', 'STORIES.MD USAGE.MD'
+    '--files STORIES.MD USAGE.MD'
   ]
 
   # spec.add_dependency 'tty-box',         '~> 0.5.0'
