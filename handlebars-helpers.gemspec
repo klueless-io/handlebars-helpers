@@ -1,18 +1,19 @@
 # frozen_string_literal: true
 
 require_relative 'lib/handlebars/helpers/version'
+require_relative 'lib/handlebars/helpers/statistics'
 
 Gem::Specification.new do |spec|
+  description = "Handlebars Helpers provides (#{Handlebars::Helpers::HANDLER_COUNT}) handlebars helpers across (#{Handlebars::Helpers::CATEGORY_COUNT}) categories"
+
   spec.required_ruby_version  = '>= 2.5'
   spec.name                   = 'handlebars-helpers'
   spec.version                = Handlebars::Helpers::VERSION
   spec.authors                = ['David Cruwys']
   spec.email                  = ['david@ideasmen.com.au']
 
-  spec.summary                = 'Handlebars Helpers provides (Nx) handlebars helpers across (Ny) categories'
-  spec.description            = <<-TEXT
-    Handlebars Helpers provides (Nx) handlebars helpers across (Ny) categories
-  TEXT
+  spec.summary                = description
+  spec.description            = description
   spec.homepage               = 'http://appydave.com/gems/handlebars-helpers'
   spec.license                = 'MIT'
 
