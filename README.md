@@ -76,6 +76,8 @@ To release a new version, update the version number in `version.rb`, build the g
 ```bash
 gem build
 gem push rspec-usecases-?.?.??.gem
+# or push the latest gem
+ls handlebars-helpers*.gem | sort -r | head -1 | xargs gem push
 ```
 
 ## Contributing
