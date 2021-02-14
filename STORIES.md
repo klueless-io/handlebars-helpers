@@ -1,6 +1,6 @@
 # Handlebars Helpers
 
-> Handlebars Helpers is a library that provides &lt;b&gt;$HELPER_COUNT$&lt;/b&gt; handlebars helpers across &lt;b&gt;$HELPER_CATEGORY_COUNT$&lt;/b&gt; categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
+> Handlebars Helpers is a library that provides <b>5</b> handlebars helpers across <b>42</b> categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
 
 As a Ruby Developer, I want to use HandlebarsJS with useful helpers, so that I have a rich templating experience
 
@@ -16,6 +16,7 @@ As a Documentor, I can create usage examples for this GEM, so that I can documen
 
 As a Developer, I can release a new version of the GEM, so that the updated Gem appears on rubygems and rubydoc
 
+- gem release
 - research automated solution, eg. rake
 - implement the solution
 
@@ -25,6 +26,10 @@ As a Developer, I have flexible and modular formatters, so that I can format dat
 - Create modular formatters with tests
 
 ### Tasks next on list
+
+add support for string_formatter usage via STRING_FORMATTER.md
+
+add gem release rake task
 
 add support for category and helper count to readme.md
 
@@ -47,6 +52,11 @@ As a Developer, I can load specific groups of helpers, so that memory consumptio
 - Lazy load ruby helpers on an as needed basis
 
 ### Tasks - completed
+
+check camel P02E04 has correct formatting
+
+- tested alpha-numeric coded value with word separation (p02_ef4 &gt; P02Ef4)
+- tested alpha-numeric coded value without word separation (p02ef4 &gt; P02ef4)
 
 add support for misc helper category
 

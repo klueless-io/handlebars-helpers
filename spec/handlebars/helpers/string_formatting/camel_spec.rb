@@ -24,6 +24,16 @@ RSpec.describe Handlebars::Helpers::StringFormatting::Camel do
                     'trailing space and number supplied',
                     'twenty five 66',
                     'TwentyFive66'
+
+    it_behaves_like 'valid value will parse successfully',
+                    'alpha-numeric coded value with word separation',
+                    'p02_ef4',
+                    'P02Ef4'
+
+    it_behaves_like 'valid value will parse successfully',
+                    'alpha-numeric coded value without word separation',
+                    'p02ef4',
+                    'P02ef4'
   end
 
   describe 'use as handlebars helper' do
