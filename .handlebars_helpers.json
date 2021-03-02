@@ -365,6 +365,26 @@
       ],
       "helpers": [
         {
+          "name": "json",
+          "description": "value as JSON string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "json",
+              "expected_value": "{ \"david\": \"was here\" }",
+              "params": [
+                { "name": "value", "value": "{ \"david\": \"was here\" }" }
+              ],
+              "template": "{{json value}}"
+            }
+          ],
+          "aliases": ["json"],
+          "require_path": "handlebars/helpers/misc/json",
+          "class_namespace": "Handlebars::Helpers::Misc::Json",
+          "is_string_formatter": null
+        },
+        {
           "name": "safe",
           "description": "value in safe string format",
           "test_in": null,

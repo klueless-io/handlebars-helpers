@@ -316,6 +316,17 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
   end
 
   context 'Miscellaneous handling routines' do
+    describe 'value as JSON string' do
+      let(:expected) { '{ "david": "was here" }' }
+      let(:data) { { value: '{ "david": "was here" }' } }
+
+      context 'json' do
+        let(:template) { '{{json value}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+
     describe 'value in safe string format' do
       let(:expected) { '"hello"' }
       let(:data) { { value: '"hello"' } }
