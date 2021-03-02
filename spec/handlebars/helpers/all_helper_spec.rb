@@ -316,17 +316,6 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
   end
 
   context 'Miscellaneous handling routines' do
-    describe 'value as JSON string' do
-      let(:expected) { '{ "david": "was here" }' }
-      let(:data) { { value: '{ "david": "was here" }' } }
-
-      context 'json' do
-        let(:template) { '{{json value}}' }
-
-        it { is_expected.to eq(expected) }
-      end
-    end
-
     describe 'value in safe string format' do
       let(:expected) { '"hello"' }
       let(:data) { { value: '"hello"' } }
@@ -827,6 +816,46 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
 
       context 'surround' do
         let(:template) { '{{surround value prefix suffix formats}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+    end
+  end
+
+  context 'Javascript code handling routines' do
+    describe 'value as javascript string' do
+      let(:expected) { '{ david: "was here" }' }
+      let(:data) { { value: { david: 'was here' } } }
+
+      context 'as_javascript' do
+        let(:template) { '{{as_javascript value}}' }
+
+        it do
+          expected_value = <<~RUBY.strip
+            {
+              david: "was here"
+            }
+          RUBY
+
+          is_expected.to eq(expected_value)
+        end
+      end
+    end
+  end
+
+  context 'Json handling routines' do
+    describe 'value as JSON string' do
+      let(:expected) { '{ "david": "was here" }' }
+      let(:data) { { value: '{ "david": "was here" }' } }
+
+      context 'as_json' do
+        let(:template) { '{{as_json value}}' }
+
+        it { is_expected.to eq(expected) }
+      end
+
+      context 'json' do
+        let(:template) { '{{json value}}' }
 
         it { is_expected.to eq(expected) }
       end

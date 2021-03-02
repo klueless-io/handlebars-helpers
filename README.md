@@ -1,6 +1,6 @@
 # Handlebars Helpers
 
-> Handlebars Helpers is a library that provides <b>42</b> handlebars helpers across <b>5</b> categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
+> Handlebars Helpers is a library that provides <b>44</b> handlebars helpers across <b>7</b> categories, it was built to complement [cowboyd/handlebars.rb](https://github.com/cowboyd/handlebars.rb) with Ruby helpers commonly found in the Javascript community
 
 This GEM is inspired by the Javascript Library [handlebars-helpers](https://github.com/helpers/handlebars-helpers).
 
@@ -42,10 +42,12 @@ See all [usage examples](./USAGE.md)
 
 #### Basic example
 
-Description for a basic example to be featured in the main README.MD file
+Render a template value using camel case and dasherize case
 
 ```ruby
-class SomeRuby; end
+Handlebars::Helpers::Template.render('{{camel .}}', 'david was here') # => "DavidWasHere"
+
+Handlebars::Helpers::Template.render('{{dasherize .}}', 'david was here') # => "david-was-here"
 ```
 
 ## Development
@@ -75,7 +77,7 @@ To release a new version, update the version number in `version.rb`, build the g
 
 ```bash
 gem build
-gem push rspec-handlebars-helpers-?.?.??.gem
+gem push rspec-usecases-?.?.??.gem
 # or push the latest gem
 ls *.gem | sort -r | head -1 | xargs gem push
 ```
