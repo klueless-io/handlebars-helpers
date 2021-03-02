@@ -2,8 +2,8 @@
 
 module Handlebars
   module Helpers
-    HANDLER_COUNT = 42
+    HANDLER_COUNT = 44
 
-    CATEGORY_COUNT = 5
+    CATEGORY_COUNT = 7
   end
 end
