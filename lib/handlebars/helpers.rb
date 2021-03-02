@@ -3,6 +3,8 @@
 require 'handlebars/helpers/version'
 require 'handlebars/helpers/template'
 require 'handlebars/helpers/register_helpers'
+# ruby docs is not showing all classes because
+# this gem dynamically loads the classes for performance reasons
 
 module Handlebars
   module Helpers
