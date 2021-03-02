@@ -21,8 +21,8 @@
               "alias": "default",
               "expected_value": "hello world",
               "params": [
-                { "name": "p1", "value": null },
-                { "name": "p2", "value": null }
+                { "name": "p1", "nil_value": true },
+                { "name": "p2", "nil_value": true }
               ],
               "template": "{{default p1 p2 \"hello world\"}}"
             }
@@ -42,8 +42,8 @@
               "alias": "or",
               "expected_value": "param2",
               "params": [
-                { "name": "p1", "value": null },
-                { "name": "p2", "value": "param2" }
+                { "name": "p1", "nil_value": true },
+                { "name": "p2", "string_value": "param2" }
               ],
               "template": "\n            {{~#if (or p1 p2)~}}\n              {{p1}}{{p2}}\n            {{~/if~}}\n            "
             },
@@ -51,8 +51,8 @@
               "alias": "any",
               "expected_value": "param2",
               "params": [
-                { "name": "p1", "value": null },
-                { "name": "p2", "value": "param2" }
+                { "name": "p1", "nil_value": true },
+                { "name": "p2", "string_value": "param2" }
               ],
               "template": "\n            {{~#if (any p1 p2)~}}\n              {{p1}}{{p2}}\n            {{~/if~}}\n            "
             }
@@ -72,8 +72,8 @@
               "alias": "and",
               "expected_value": "all params exist",
               "params": [
-                { "name": "p1", "value": "param1" },
-                { "name": "p2", "value": "param2" }
+                { "name": "p1", "string_value": "param1" },
+                { "name": "p2", "string_value": "param2" }
               ],
               "template": "\n            {{~#if (and p1 p2)~}}\n              all params exist\n            {{~/if~}}\n            "
             },
@@ -81,8 +81,8 @@
               "alias": "all",
               "expected_value": "all params exist",
               "params": [
-                { "name": "p1", "value": "param1" },
-                { "name": "p2", "value": "param2" }
+                { "name": "p1", "string_value": "param1" },
+                { "name": "p2", "string_value": "param2" }
               ],
               "template": "\n            {{~#if (all p1 p2)~}}\n              all params exist\n            {{~/if~}}\n            "
             }
@@ -102,8 +102,8 @@
               "alias": "eq",
               "expected_value": "params are equal",
               "params": [
-                { "name": "p1", "value": "david" },
-                { "name": "p2", "value": "david" }
+                { "name": "p1", "string_value": "david" },
+                { "name": "p2", "string_value": "david" }
               ],
               "template": "\n            {{~#if (eq p1 p2)~}}\n            params are equal\n            {{~/if~}}\n            "
             },
@@ -111,8 +111,8 @@
               "alias": "equal",
               "expected_value": "params are equal",
               "params": [
-                { "name": "p1", "value": "david" },
-                { "name": "p2", "value": "david" }
+                { "name": "p1", "string_value": "david" },
+                { "name": "p2", "string_value": "david" }
               ],
               "template": "\n            {{~#if (equal p1 p2)~}}\n            params are equal\n            {{~/if~}}\n            "
             }
@@ -132,8 +132,8 @@
               "alias": "ne",
               "expected_value": "params are not equal",
               "params": [
-                { "name": "p1", "value": "aaa" },
-                { "name": "p2", "value": "bbb" }
+                { "name": "p1", "string_value": "aaa" },
+                { "name": "p2", "string_value": "bbb" }
               ],
               "template": "\n            {{~#if (ne p1 p2)~}}\n            params are not equal\n            {{~/if~}}\n            "
             },
@@ -141,8 +141,8 @@
               "alias": "not_equal",
               "expected_value": "params are not equal",
               "params": [
-                { "name": "p1", "value": "aaa" },
-                { "name": "p2", "value": "bbb" }
+                { "name": "p1", "string_value": "aaa" },
+                { "name": "p2", "string_value": "bbb" }
               ],
               "template": "\n            {{~#if (not_equal p1 p2)~}}\n            params are not equal\n            {{~/if~}}\n            "
             }
@@ -162,8 +162,8 @@
               "alias": "lt",
               "expected_value": "1 is less than 2",
               "params": [
-                { "name": "p1", "value": 1 },
-                { "name": "p2", "value": 2 }
+                { "name": "p1", "string_value": 1 },
+                { "name": "p2", "string_value": 2 }
               ],
               "template": "\n            {{~#if (lt p1 p2)~}}\n            1 is less than 2\n            {{~/if~}}\n            "
             },
@@ -171,8 +171,8 @@
               "alias": "less_than",
               "expected_value": "1 is less than 2",
               "params": [
-                { "name": "p1", "value": 1 },
-                { "name": "p2", "value": 2 }
+                { "name": "p1", "string_value": 1 },
+                { "name": "p2", "string_value": 2 }
               ],
               "template": "\n            {{~#if (less_than p1 p2)~}}\n            1 is less than 2\n            {{~/if~}}\n            "
             }
@@ -192,8 +192,8 @@
               "alias": "lte",
               "expected_value": "1 is less than or equal 1",
               "params": [
-                { "name": "p1", "value": 1 },
-                { "name": "p2", "value": 1 }
+                { "name": "p1", "string_value": 1 },
+                { "name": "p2", "string_value": 1 }
               ],
               "template": "\n            {{~#if (lte p1 p2)~}}\n            1 is less than or equal 1\n            {{~/if~}}\n            "
             },
@@ -201,8 +201,8 @@
               "alias": "less_than_or_equal_to",
               "expected_value": "1 is less than or equal 1",
               "params": [
-                { "name": "p1", "value": 1 },
-                { "name": "p2", "value": 1 }
+                { "name": "p1", "string_value": 1 },
+                { "name": "p2", "string_value": 1 }
               ],
               "template": "\n            {{~#if (less_than_or_equal_to p1 p2)~}}\n            1 is less than or equal 1\n            {{~/if~}}\n            "
             }
@@ -222,8 +222,8 @@
               "alias": "gt",
               "expected_value": "2 is greater than 1",
               "params": [
-                { "name": "p1", "value": 2 },
-                { "name": "p2", "value": 1 }
+                { "name": "p1", "string_value": 2 },
+                { "name": "p2", "string_value": 1 }
               ],
               "template": "\n            {{~#if (gt p1 p2)~}}\n            2 is greater than 1\n            {{~/if~}}\n            "
             },
@@ -231,8 +231,8 @@
               "alias": "greater_than",
               "expected_value": "2 is greater than 1",
               "params": [
-                { "name": "p1", "value": 2 },
-                { "name": "p2", "value": 1 }
+                { "name": "p1", "string_value": 2 },
+                { "name": "p2", "string_value": 1 }
               ],
               "template": "\n            {{~#if (greater_than p1 p2)~}}\n            2 is greater than 1\n            {{~/if~}}\n            "
             }
@@ -252,8 +252,8 @@
               "alias": "gte",
               "expected_value": "1 is greater than or equal 1",
               "params": [
-                { "name": "p1", "value": 1 },
-                { "name": "p2", "value": 1 }
+                { "name": "p1", "string_value": 1 },
+                { "name": "p2", "string_value": 1 }
               ],
               "template": "\n            {{~#if (gte p1 p2)~}}\n            1 is greater than or equal 1\n            {{~/if~}}\n            "
             },
@@ -261,8 +261,8 @@
               "alias": "greater_than_or_equal_to",
               "expected_value": "1 is greater than or equal 1",
               "params": [
-                { "name": "p1", "value": 1 },
-                { "name": "p2", "value": 1 }
+                { "name": "p1", "string_value": 1 },
+                { "name": "p2", "string_value": 1 }
               ],
               "template": "\n            {{~#if (greater_than_or_equal_to p1 p2)~}}\n            1 is greater than or equal 1\n            {{~/if~}}\n            "
             }
@@ -317,9 +317,9 @@
               "alias": "pluralize_by_number",
               "expected_value": "3 people",
               "params": [
-                { "name": "value", "value": "person" },
-                { "name": "count", "value": "3" },
-                { "name": "format", "value": "number_word" }
+                { "name": "value", "string_value": "person" },
+                { "name": "count", "string_value": "3" },
+                { "name": "format", "string_value": "number_word" }
               ],
               "template": "{{pluralize_by_number value count format}}"
             }
@@ -365,26 +365,6 @@
       ],
       "helpers": [
         {
-          "name": "json",
-          "description": "value as JSON string",
-          "test_in": null,
-          "test_out": null,
-          "tests": [
-            {
-              "alias": "json",
-              "expected_value": "{ \"david\": \"was here\" }",
-              "params": [
-                { "name": "value", "value": "{ \"david\": \"was here\" }" }
-              ],
-              "template": "{{json value}}"
-            }
-          ],
-          "aliases": ["json"],
-          "require_path": "handlebars/helpers/misc/json",
-          "class_namespace": "Handlebars::Helpers::Misc::Json",
-          "is_string_formatter": null
-        },
-        {
           "name": "safe",
           "description": "value in safe string format",
           "test_in": null,
@@ -393,7 +373,7 @@
             {
               "alias": "safe",
               "expected_value": "\"hello\"",
-              "params": [{ "name": "value", "value": "\"hello\"" }],
+              "params": [{ "name": "value", "string_value": "\"hello\"" }],
               "template": "{{safe value}}"
             }
           ],
@@ -449,7 +429,7 @@
               "alias": "classify",
               "expected_value": "ProductCategory",
               "params": [
-                { "name": "table_name", "value": "product_categories" }
+                { "name": "table_name", "string_value": "product_categories" }
               ],
               "template": "{{classify table_name}}"
             }
@@ -471,7 +451,7 @@
               "params": [
                 {
                   "name": "namespaced_class",
-                  "value": "ActiveSupport::Inflector::Inflections"
+                  "string_value": "ActiveSupport::Inflector::Inflections"
                 }
               ],
               "template": "{{demodulize namespaced_class}}"
@@ -492,7 +472,7 @@
               "alias": "deconstantize",
               "expected_value": "Net",
               "params": [
-                { "name": "constant_expression", "value": "Net::HTTP" }
+                { "name": "constant_expression", "string_value": "Net::HTTP" }
               ],
               "template": "{{deconstantize constant_expression}}"
             }
@@ -511,7 +491,7 @@
             {
               "alias": "foreign_key",
               "expected_value": "message_id",
-              "params": [{ "name": "class_name", "value": "Message" }],
+              "params": [{ "name": "class_name", "string_value": "Message" }],
               "template": "{{foreign_key class_name}}"
             }
           ],
@@ -529,7 +509,9 @@
             {
               "alias": "tableize",
               "expected_value": "product_categories",
-              "params": [{ "name": "model_name", "value": "product_category" }],
+              "params": [
+                { "name": "model_name", "string_value": "product_category" }
+              ],
               "template": "{{tableize model_name}}"
             }
           ],
@@ -558,8 +540,8 @@
               "alias": "format_as",
               "expected_value": "the-quick-brown-foxes",
               "params": [
-                { "name": "value", "value": "the quick brown fox" },
-                { "name": "format", "value": "pluralize,dashify" }
+                { "name": "value", "string_value": "the quick brown fox" },
+                { "name": "format", "string_value": "pluralize,dashify" }
               ],
               "template": "{{format_as value format}}"
             }
@@ -775,9 +757,9 @@
               "alias": "padr",
               "expected_value": "pad-me....",
               "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
+                { "name": "value", "string_value": "pad-me" },
+                { "name": "count", "string_value": 10 },
+                { "name": "char", "string_value": "." }
               ],
               "template": "{{padr value count char}}"
             },
@@ -785,9 +767,9 @@
               "alias": "pad_right",
               "expected_value": "pad-me....",
               "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
+                { "name": "value", "string_value": "pad-me" },
+                { "name": "count", "string_value": 10 },
+                { "name": "char", "string_value": "." }
               ],
               "template": "{{pad_right value count char}}"
             },
@@ -795,9 +777,9 @@
               "alias": "ljust",
               "expected_value": "pad-me....",
               "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
+                { "name": "value", "string_value": "pad-me" },
+                { "name": "count", "string_value": 10 },
+                { "name": "char", "string_value": "." }
               ],
               "template": "{{ljust value count char}}"
             }
@@ -817,9 +799,9 @@
               "alias": "padl",
               "expected_value": "....pad-me",
               "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
+                { "name": "value", "string_value": "pad-me" },
+                { "name": "count", "string_value": 10 },
+                { "name": "char", "string_value": "." }
               ],
               "template": "{{padl value count char}}"
             },
@@ -827,9 +809,9 @@
               "alias": "pad_left",
               "expected_value": "....pad-me",
               "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
+                { "name": "value", "string_value": "pad-me" },
+                { "name": "count", "string_value": 10 },
+                { "name": "char", "string_value": "." }
               ],
               "template": "{{pad_left value count char}}"
             },
@@ -837,9 +819,9 @@
               "alias": "rjust",
               "expected_value": "....pad-me",
               "params": [
-                { "name": "value", "value": "pad-me" },
-                { "name": "count", "value": 10 },
-                { "name": "char", "value": "." }
+                { "name": "value", "string_value": "pad-me" },
+                { "name": "count", "string_value": 10 },
+                { "name": "char", "string_value": "." }
               ],
               "template": "{{rjust value count char}}"
             }
@@ -859,9 +841,9 @@
               "alias": "prepend_if",
               "expected_value": "# product_categories",
               "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "# " },
-                { "name": "formats", "value": "pluralize,snake" }
+                { "name": "value", "string_value": "product category" },
+                { "name": "prefix", "string_value": "# " },
+                { "name": "formats", "string_value": "pluralize,snake" }
               ],
               "template": "{{prepend_if value prefix formats}}"
             },
@@ -869,9 +851,9 @@
               "alias": "prefix_if",
               "expected_value": "# product_categories",
               "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "# " },
-                { "name": "formats", "value": "pluralize,snake" }
+                { "name": "value", "string_value": "product category" },
+                { "name": "prefix", "string_value": "# " },
+                { "name": "formats", "string_value": "pluralize,snake" }
               ],
               "template": "{{prefix_if value prefix formats}}"
             }
@@ -891,9 +873,9 @@
               "alias": "append_if",
               "expected_value": "product_categories:",
               "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "suffix", "value": ":" },
-                { "name": "formats", "value": "pluralize,snake" }
+                { "name": "value", "string_value": "product category" },
+                { "name": "suffix", "string_value": ":" },
+                { "name": "formats", "string_value": "pluralize,snake" }
               ],
               "template": "{{append_if value suffix formats}}"
             },
@@ -901,9 +883,9 @@
               "alias": "suffix_if",
               "expected_value": "product_categories:",
               "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "suffix", "value": ":" },
-                { "name": "formats", "value": "pluralize,snake" }
+                { "name": "value", "string_value": "product category" },
+                { "name": "suffix", "string_value": ":" },
+                { "name": "formats", "string_value": "pluralize,snake" }
               ],
               "template": "{{suffix_if value suffix formats}}"
             }
@@ -923,10 +905,10 @@
               "alias": "surround_if",
               "expected_value": "(product_categories)",
               "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "(" },
-                { "name": "suffix", "value": ")" },
-                { "name": "formats", "value": "pluralize,snake" }
+                { "name": "value", "string_value": "product category" },
+                { "name": "prefix", "string_value": "(" },
+                { "name": "suffix", "string_value": ")" },
+                { "name": "formats", "string_value": "pluralize,snake" }
               ],
               "template": "{{surround_if value prefix suffix formats}}"
             },
@@ -934,10 +916,10 @@
               "alias": "surround_if_value",
               "expected_value": "(product_categories)",
               "params": [
-                { "name": "value", "value": "product category" },
-                { "name": "prefix", "value": "(" },
-                { "name": "suffix", "value": ")" },
-                { "name": "formats", "value": "pluralize,snake" }
+                { "name": "value", "string_value": "product category" },
+                { "name": "prefix", "string_value": "(" },
+                { "name": "suffix", "string_value": ")" },
+                { "name": "formats", "string_value": "pluralize,snake" }
               ],
               "template": "{{surround_if_value value prefix suffix formats}}"
             }
@@ -957,10 +939,10 @@
               "alias": "surround",
               "expected_value": "()",
               "params": [
-                { "name": "value", "value": null },
-                { "name": "prefix", "value": "(" },
-                { "name": "suffix", "value": ")" },
-                { "name": "formats", "value": "" }
+                { "name": "value", "nil_value": true },
+                { "name": "prefix", "string_value": "(" },
+                { "name": "suffix", "string_value": ")" },
+                { "name": "formats", "nil_value": true }
               ],
               "template": "{{surround value prefix suffix formats}}"
             }
@@ -968,6 +950,83 @@
           "aliases": ["surround"],
           "require_path": "handlebars/helpers/string_formatting/surround",
           "class_namespace": "Handlebars::Helpers::StringFormatting::Surround",
+          "is_string_formatter": null
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "code_javascript",
+      "base_require": "handlebars/helpers/code_javascript",
+      "base_namespace": "Handlebars::Helpers::CodeJavascript",
+      "description": "Javascript code handling routines",
+      "examples": [],
+      "helpers": [
+        {
+          "name": "as_javascript",
+          "description": "value as javascript string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "as_javascript",
+              "expected_value": "{ david: \"was here\" }",
+              "params": [
+                { "name": "value", "hash_value": "{ david: \"was here\" }" }
+              ],
+              "template": "{{as_javascript value}}",
+              "custom_expectation": "it {\n  expected_value = <<~RUBY.strip\n  {\n    david: \"was here\"\n  }      \n  RUBY\n\n  is_expected.to eq(expected_value)\n}"
+            }
+          ],
+          "aliases": ["as_javascript"],
+          "require_path": "handlebars/helpers/code_javascript/as_javascript",
+          "class_namespace": "Handlebars::Helpers::CodeJavascript::AsJavascript",
+          "is_string_formatter": null
+        }
+      ]
+    },
+    {
+      "active": true,
+      "name": "json",
+      "base_require": "handlebars/helpers/json",
+      "base_namespace": "Handlebars::Helpers::Json",
+      "description": "Json handling routines",
+      "examples": [
+        "https://github.com/rails/rails/blob/v6.1.1/activesupport/lib/active_support/json.rb"
+      ],
+      "helpers": [
+        {
+          "name": "as_json",
+          "description": "value as JSON string",
+          "test_in": null,
+          "test_out": null,
+          "tests": [
+            {
+              "alias": "as_json",
+              "expected_value": "{ \"david\": \"was here\" }",
+              "params": [
+                {
+                  "name": "value",
+                  "string_value": "{ \"david\": \"was here\" }"
+                }
+              ],
+              "template": "{{as_json value}}"
+            },
+            {
+              "alias": "json",
+              "expected_value": "{ \"david\": \"was here\" }",
+              "params": [
+                {
+                  "name": "value",
+                  "string_value": "{ \"david\": \"was here\" }"
+                }
+              ],
+              "template": "{{json value}}"
+            }
+          ],
+          "aliases": ["as_json", "json"],
+          "require_path": "handlebars/helpers/json/as_json",
+          "class_namespace": "Handlebars::Helpers::Json::AsJson",
           "is_string_formatter": null
         }
       ]

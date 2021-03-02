@@ -1,9 +1,29 @@
 # frozen_string_literal: true
 
-require 'handlebars/helpers/misc/json'
+require 'handlebars/helpers/code_javascript/as_javascript'
 
-RSpec.describe Handlebars::Helpers::Misc::Json do
-  # take handlebars object and write it out as JSON
+RSpec.describe Handlebars::Helpers::CodeJavascript::AsJavascript do
+  let(:expected_javascript) do
+    <<~JAVASCRIPT.strip
+      {
+        david: "was here",
+        why: [
+          "reason1",
+          "reason2",
+          "reason3"
+        ],
+        job: {
+          name: "developer",
+          languages: [
+            "C#",
+            "Ruby"
+          ]
+        }
+      }#{'        '}
+    JAVASCRIPT
+  end
+
+  # take ruby object and write it out as Javascript notation
   describe '#parse' do
     subject { described_class.new.parse(value) }
 
@@ -18,22 +38,12 @@ RSpec.describe Handlebars::Helpers::Misc::Json do
         let(:value) do
           {
             david: 'was here',
-            why: %w[reason1 reason2 reason3]
+            why: %w[reason1 reason2 reason3],
+            job: { name: 'developer', languages: ['C#', 'Ruby'] }
           }
         end
 
-        it { is_expected.to eq('{"david":"was here","why":["reason1","reason2","reason3"]}') }
-      end
-
-      context 'when complex and deep data' do
-        let(:value) do
-          {
-            david: 'was here',
-            why: %w[reason1 reason2 reason3]
-          }
-        end
-
-        it { is_expected.to eq('{"david":"was here","why":["reason1","reason2","reason3"]}') }
+        it { is_expected.to eq expected_javascript }
       end
     end
 
@@ -47,7 +57,7 @@ RSpec.describe Handlebars::Helpers::Misc::Json do
           )
         end
 
-        it { is_expected.to eq('{"david":"was here","why":["reason1","reason2","reason3"],"job":{"name":"developer","languages":["C#","Ruby"]}}') }
+        it { is_expected.to eq expected_javascript }
       end
     end
   end
@@ -55,11 +65,11 @@ RSpec.describe Handlebars::Helpers::Misc::Json do
   describe 'use as handlebars helper' do
     let(:subject) do
       Handlebars::Helpers::Template.render(template, data) do |register|
-        register.helper(:json, &described_class.new.handlebars_helper)
+        register.helper(:as_javascript, &described_class.new.handlebars_helper)
       end
     end
 
-    let(:template) { '{{json value}}' }
+    let(:template) { '{{as_javascript value}}' }
     let(:data) { { value: value } }
     let(:value) { nil }
 
@@ -70,10 +80,11 @@ RSpec.describe Handlebars::Helpers::Misc::Json do
       let(:value) do
         {
           david: 'was here',
-          why: %w[reason1 reason2 reason3]
+          why: %w[reason1 reason2 reason3],
+          job: { name: 'developer', languages: ['C#', 'Ruby'] }
         }
       end
-      it { is_expected.to eq('{"david":"was here","why":["reason1","reason2","reason3"]}') }
+      it { is_expected.to eq expected_javascript }
     end
   end
 end
