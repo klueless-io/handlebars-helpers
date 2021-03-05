@@ -825,10 +825,10 @@ RSpec.describe 'Handlebars::Helpers::AllHelper' do
   context 'Javascript code handling routines' do
     describe 'value as javascript string' do
       let(:expected) { '{ david: "was here" }' }
-      let(:data) { { value: { david: 'was here' } } }
+      let(:data) { { value: { david: 'was here' }, format: nil } }
 
       context 'as_javascript' do
-        let(:template) { '{{as_javascript value}}' }
+        let(:template) { '{{as_javascript value format}}' }
 
         it do
           expected_value = <<~RUBY.strip
