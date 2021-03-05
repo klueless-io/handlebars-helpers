@@ -41,8 +41,8 @@ module Handlebars
           proc do |_context, value, format|
             # Handle optional: format
             format = nil if format.is_a?(V8::Object)
-            # Handle optional: value
-            # value = nil if value.is_a?(V8::Object)
+            format = format.to_sym if format.is_a?(String)
+
             wrapper(parse(value, format))
           end
         end

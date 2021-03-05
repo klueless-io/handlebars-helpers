@@ -72,6 +72,11 @@ RSpec.describe Handlebars::Helpers::CodeJavascript::AsJavascript do
         end
 
         it { is_expected.to eq expected_javascript }
+
+        context 'with format: exclude_root' do
+          let(:format) { :exclude_root }
+          it { is_expected.to eq expected_javascript_exclude_root }
+        end
       end
     end
   end
@@ -100,6 +105,11 @@ RSpec.describe Handlebars::Helpers::CodeJavascript::AsJavascript do
         }
       end
       it { is_expected.to eq expected_javascript }
+
+      context 'with format: exclude_root' do
+        let(:template) { "{{as_javascript value 'exclude_root'}}" }
+        it { is_expected.to eq expected_javascript_exclude_root }
+      end
     end
   end
 end
