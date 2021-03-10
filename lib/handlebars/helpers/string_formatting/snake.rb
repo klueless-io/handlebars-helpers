@@ -21,11 +21,11 @@ module Handlebars
         #
         #   puts Snake.new.parse('the quick brown fox 99')
         #
-        #   the-quick-brown-fox99
+        #   the_quick_brown_fox99
         #
         # @return [String] value converted to snake case
         def parse(value)
-          tokenizer.parse(value, separator: '_')
+          tokenizer.parse(value, separator: '_', forced_separator: true)
         end
       end
     end
