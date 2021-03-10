@@ -66,5 +66,14 @@ RSpec.describe Handlebars::Helpers::StringFormatting::FormatAs do
       let(:formats) { 'camel,pluralize,snake' }
       it { is_expected.to eq('the_quick_brown_foxes') }
     end
+
+    context 'using format directly in the template' do
+      let(:template) { '{{format_as value "pluralize,snake"}}' }
+
+      context 'with value' do
+        let(:value) { 'the quick brown fox' }
+        it { is_expected.to eq('the_quick_brown_foxes') }
+      end
+    end
   end
 end
