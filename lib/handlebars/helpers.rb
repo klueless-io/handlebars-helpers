@@ -14,3 +14,5 @@ module Handlebars
     # Your code goes here...
   end
 end
+
+puts "Handlebars::Helpers::Version: #{Handlebars::Helpers::VERSION}" if ENV['KLUE_DEBUG']&.to_s&.downcase == 'true'
