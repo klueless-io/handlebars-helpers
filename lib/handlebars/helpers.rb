@@ -15,4 +15,9 @@ module Handlebars
   end
 end
 
-puts "Handlebars::Helpers::Version: #{Handlebars::Helpers::VERSION}" if ENV['KLUE_DEBUG']&.to_s&.downcase == 'true'
+if ENV['KLUE_DEBUG']&.to_s&.downcase == 'true'
+  namespace = 'Handlebars::Helpers::Version'
+  file_path = $LOADED_FEATURES.find { |f| f.include?('handlebars/helpers/version') }
+  version   = Handlebars::Helpers::VERSION.ljust(9)
+  puts "#{namespace.ljust(35)} : #{version.ljust(9)} : #{file_path}"
+end
