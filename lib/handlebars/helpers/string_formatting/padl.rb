@@ -40,7 +40,7 @@ module Handlebars
           count = Handlebars::Helpers.configuration.padl_count if count.nil?
           count = count.to_i if count.is_a?(String)
           char = Handlebars::Helpers.configuration.padl_char if char.nil?
-          value.rjust(count, char)
+          value.to_s.rjust(count, char)
         end
 
         def handlebars_helper

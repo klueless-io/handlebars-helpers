@@ -41,7 +41,7 @@ module Handlebars
           count = Handlebars::Helpers.configuration.padr_count if count.nil?
           count = count.to_i if count.is_a?(String)
           char = Handlebars::Helpers.configuration.padr_char if char.nil?
-          value.ljust(count, char)
+          value.to_s.ljust(count, char)
         end
 
         def handlebars_helper
