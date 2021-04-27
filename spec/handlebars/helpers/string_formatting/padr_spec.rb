@@ -18,6 +18,14 @@ RSpec.describe Handlebars::Helpers::StringFormatting::Padr do
     context 'when value supplied' do
       let(:value) { 'pad-me' }
       it { is_expected.to eq('pad-me                        ') }
+      context 'when value is integer' do
+        let(:value) { 123 }
+        it { is_expected.to eq('123                           ') }
+      end
+      context 'when value is symbol' do
+        let(:value) { :symbol }
+        it { is_expected.to eq('symbol                        ') }
+      end
       context 'and padding count' do
         let(:count) { 10 }
         it { is_expected.to eq('pad-me    ') }
