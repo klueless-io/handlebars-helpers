@@ -27,6 +27,8 @@ module Handlebars
         def parse(value)
           return '' if value.nil?
 
+          value = value.to_s if value.is_a?(Symbol)
+
           value.singularize
         end
       end

@@ -14,6 +14,12 @@ RSpec.describe Handlebars::Helpers::Inflection::Pluralize do
     it { is_expected.to eq('octopi') }
 
     it_behaves_like 'nil will parse to empty'
+
+    context 'when :symbol' do
+      let(:value) { :octopus }
+
+      it { is_expected.to eq('octopi') }
+    end
   end
 
   describe 'use as handlebars helper' do
