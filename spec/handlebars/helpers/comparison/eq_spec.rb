@@ -21,6 +21,20 @@ RSpec.describe Handlebars::Helpers::Comparison::Eq do
       it { is_expected.to be_truthy }
     end
 
+    context ":aaa == 'aaa'" do
+      let(:lhs) { :aaa }
+      let(:rhs) { 'aaa' }
+
+      it { is_expected.to be_truthy }
+    end
+
+    context "'aaa' == :aaa" do
+      let(:lhs) { 'aaa' }
+      let(:rhs) { :aaa }
+
+      it { is_expected.to be_truthy }
+    end
+
     context "'aaa' == 'AAA'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'AAA' }

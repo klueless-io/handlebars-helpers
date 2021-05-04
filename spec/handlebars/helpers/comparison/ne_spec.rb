@@ -21,6 +21,20 @@ RSpec.describe Handlebars::Helpers::Comparison::Ne do
       it { is_expected.to be_falsey }
     end
 
+    context ":aaa != 'aaa'" do
+      let(:lhs) { :aaa }
+      let(:rhs) { 'aaa' }
+
+      it { is_expected.to be_falsey }
+    end
+
+    context "'aaa' != :aaa" do
+      let(:lhs) { 'aaa' }
+      let(:rhs) { :aaa }
+
+      it { is_expected.to be_falsey }
+    end
+
     context "'aaa' != 'AAA'" do
       let(:lhs) { 'aaa' }
       let(:rhs) { 'AAA' }
