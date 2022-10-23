@@ -45,7 +45,7 @@ module Handlebars
 
           formatter = Handlebars::Helpers.configuration.string_formatter_config[format]
           unless formatter
-            puts 'Logger not found: format'
+            puts "Logger not found - format: #{format}"
             return value
           end
 

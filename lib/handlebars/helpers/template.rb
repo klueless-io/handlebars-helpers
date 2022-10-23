@@ -36,8 +36,11 @@ module Handlebars
         rescue StandardError => e
           puts 'Failed to process template'
           puts e.message
+          log.exception(e)
+          log.block(template)
           # L.block 'Failed to process template', e.message
           # L.exception e
+          binding.pry
         end
       end
 
